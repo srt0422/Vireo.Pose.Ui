@@ -1,0 +1,3 @@
+export = {
+    backgroundColor: "white"
+}

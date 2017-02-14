@@ -1,0 +1,6 @@
+
+
+interface IPoseConfiguration {
+    SharingUrl ?: string;
+    FacebookAppId ?: string;
+}

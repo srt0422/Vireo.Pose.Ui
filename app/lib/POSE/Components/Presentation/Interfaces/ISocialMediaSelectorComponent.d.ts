@@ -1,0 +1,3 @@
+interface ISocialMediaSelectorComponent {
+    options?: any;
+}

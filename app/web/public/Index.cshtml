@@ -1,0 +1,33 @@
+@using System.Web.Configuration;
+
+@Styles.Render(
+    "~/Areas/Sharing/Content/pose-sharing/css/styles.css"
+)
+
+@*@Scripts.Render(
+    "~/Scripts/jquery-1.10.2.min.js",
+    "~/Scripts/bootstrap.js"
+)*@
+
+@*pre load linkedin sdk*@
+<script type="text/javascript" src="//platform.linkedin.com/in.js">
+    api_key: 75v5vlraic1sa6
+    authorize: true
+    lang: en_US
+</script>
+
+<script>
+    var POSE;
+
+    (function () {
+        POSE.config = {
+            SharingUrl: "@(WebConfigurationManager.AppSettings["SharingUrl"])",
+            FacebookAppId: "@(WebConfigurationManager.AppSettings["FacebookAppId"])"
+        };
+    })(POSE || (POSE = {}));
+</script>
+@*pre load nodejs modules*@
+<script src="~/Areas/Sharing/Content/pose-sharing/js/node_bundles/oauth.js"></script>
+<script src="~/Scripts/require.js" data-main="/Areas/Sharing/Content/pose-sharing/js/lib/POSE/bundle.js"></script>
+
+<div id="sharing_container"></div>
