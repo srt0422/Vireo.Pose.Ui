@@ -1,5 +1,4 @@
 "use strict";
-//module POSE {
 const React = require("react");
 class App extends React.Component {
     render() {
@@ -8,4 +7,3 @@ class App extends React.Component {
 }
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = App;
-//}

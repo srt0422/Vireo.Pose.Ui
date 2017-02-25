@@ -1,38 +1,41 @@
 import React = require('react');
-import {List, ListItem, Text, Button} from 'native-base';
+import {List, ListItem, Text, Button, View, Card, CardItem} from 'native-base';
 import SharingContentComponent = require("../SharingContentComponent");
 import SocialMediaSelectorComponent = require("../SocialMediaSelectorComponent");
 import SocialOptions = require("../../SocialProviders");
 
-import styles from "../../../styles";
+import style from "../../../styles";
 
 export  function render() {
-    return (<List style={styles.poser}>
-<ListItem>
+    return (
+        <View>
             <SharingContentComponent
                 type={this.state.type}
                 value={this.state.value}
-                label={this.labelMap[this.state.value]}
+                label={labelMap[this.state.value]}
                 onChange={(val)=> this.typeChanged({
                     value: val,
                     type: this.typeMap[val]
                 })}
                 onContentChange={(val) => this.postValue = val}
                 wrapperClass="form-group"
-                style={styles.sharingContentComponent} />
-</ListItem>
-<ListItem>
+                style={style.sharingContentComponent} />
             <SocialMediaSelectorComponent options={SocialOptions}></SocialMediaSelectorComponent>
-</ListItem>
-<ListItem>
-            <Button
+
+            <Button block large success
             onPress={this.onClick}
-                    styles={styles.shareButton}
-                    title="Share"
-                    color="blue"
-            ></Button>
-</ListItem>
-        </List>)
+                    style={style.shareButton}
+                    color="blue">
+                <Text>Share</Text>
+            </Button>
+        </View>
+     );
+}
+
+const labelMap = {
+    Message: "Type Message",
+    Link: "Copy Link",
+    Picture: "Choose Picture"
 }
 
 export default render;

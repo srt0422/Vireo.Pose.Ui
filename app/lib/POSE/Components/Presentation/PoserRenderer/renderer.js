@@ -16,4 +16,3 @@ function render(props, state) {
 exports.render = render;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = render;
-// <SocialMediaSelectorComponent options={SocialOptions}></SocialMediaSelectorComponent>

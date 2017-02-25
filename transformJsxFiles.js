@@ -16,3 +16,5 @@ function transformJsxFiles(pathName) {
         }
     });
 }
+exports.transformJsxFiles = transformJsxFiles;
+;

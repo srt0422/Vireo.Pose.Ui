@@ -5,7 +5,7 @@ let jsxPath = path.join(__dirname, "app/lib");
 
 transformJsxFiles(jsxPath);
 
-function transformJsxFiles(pathName) {
+export function transformJsxFiles(pathName) {
 
     let pathNameObject = path.parse(pathName);
 
@@ -23,4 +23,4 @@ function transformJsxFiles(pathName) {
             transformJsxFiles(path.join(pathName, name));
         }
     });
-}
+};

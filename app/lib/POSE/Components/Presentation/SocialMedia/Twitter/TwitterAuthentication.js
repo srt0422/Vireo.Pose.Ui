@@ -1,4 +1,3 @@
-// try authenticaiton using: https://api.twitter.com/oauth/authenticate
 "use strict";
 const React = require("react");
 const SocialMediaAuthentiationBase = require("../SocialMediaAuthentiationWrapper");

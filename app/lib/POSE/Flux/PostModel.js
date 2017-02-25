@@ -1,4 +1,3 @@
-///<reference path="../../../../typings/index.d.ts" />
 "use strict";
 const SharingProviderCollection = require("./SharingProviderCollection");
 const SharingProviderModel = require("./SharingProviderModel");
@@ -67,17 +66,6 @@ class PostModel extends Backbone.Model {
         IN.User.authorize((optios) => {
             var sharingProvider = this.addNewSharingProvider(SocialProviders_1.default.LinkedIn);
             sharingProvider.setAuthToken(IN.ENV.auth.oauth_token);
-            //IN.API.Raw("/people/~/shares?format=json")
-            //    .method("POST")
-            //    .body(JSON.stringify({
-            //        "comment": "Check out developer.linkedin.com! http://linkd.in/1FC2PyG",
-            //        "visibility": {
-            //            "code": "anyone"
-            //        }
-            //    }))
-            //    .result((options) => console.log(options))
-            //    .error((options) => console.log(options));
-            //console.log(sharingProvider);
         }, this);
     }
     addNewSharingProvider(name) {

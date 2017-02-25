@@ -6,6 +6,7 @@ import SocialOptions = require("../SocialProviders");
 import ReactRouter = require("react-router");
 import Relay = require("react-relay");
 import renderer from "./PoserRenderer/renderer";
+import {Navigator} from "react-native";
 
 const styles = require("../../styles/styles");
 
@@ -18,7 +19,7 @@ var formStyle = {
 var postStore: PostModel = PostStore;
 
 //set this up as a relay container
-export default class Poser extends React.Component<React.Props<Poser>, any>
+export default class Poser extends React.Component<PoserProps, any>
 {
     private postValue: string;
 
@@ -31,7 +32,7 @@ export default class Poser extends React.Component<React.Props<Poser>, any>
 
         postStore.save();
     }
-//TODO: find out why ios picker always resets to devault value
+    //TODO: find out why ios picker always resets to devault value
     public componentWillMount() {
         this.setState({
             type: "text",
@@ -70,6 +71,10 @@ export default class Poser extends React.Component<React.Props<Poser>, any>
         Link: "Share a Link",
         Picture: "Show a Picture"
     }
+}
+
+export interface PoserProps extends React.Props<Poser> {
+    navigator?: Navigator;
 }
 
 //export default Relay.createContainer<any>(Poser, {

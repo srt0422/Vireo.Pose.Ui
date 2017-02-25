@@ -18,7 +18,13 @@
 	<string>1.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Select photos from photo library</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Take photos</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Take video</string>
 </dict>
 </plist>

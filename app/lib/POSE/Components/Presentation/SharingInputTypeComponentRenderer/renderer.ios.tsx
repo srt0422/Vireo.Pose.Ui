@@ -1,46 +1,52 @@
 import * as React from "react";
-import { Icon, Text, View, Picker} from "native-base";
-// import ReactNative =require("react-native");
+import ReactNative = require("react-native");
+import { Text, View, Button, List, ListItem, Card, CardItem } from "native-base";
+import Icon from 'react-native-vector-icons/FontAwesome';
 
-import UnorderedListComponent = require("../../../../HTML/Components/UnorderedListComponent");
-import EntypoIcon from 'react-native-vector-icons/Entypo';
+const {Modal, StyleSheet} = ReactNative;
 
-const {Item} = Picker;
-// const {PickerIOS} = ReactNative;
-// const {Item} = PickerIOS;
-// const Picker = PickerIOS;
+ const styles = {
+   buttonText: {
+     fontSize: 16
+   },
+   test:{}
+ };
 
 export = function() {
+  if(this.state == null){
+      this.state = {
+        showModal: false
+      };
+  }
+
   return (
-          <Picker
-            selectedValue={this.props.value}
-            onValueChange={this.props.onTypeChanged}>
-              {this.props.types.map((type, i, col) => {
-                  return (<Item key={type} label={type} value={type} />);
-              })}
-          </Picker>
-        );
+    <View>
+      <Button
+        rounded
+        onPress={setModalVisible.bind(this, true)}
+        iconRight>
+        <Text style={styles.buttonText}>{this.props.types[this.props.value]} </Text>
+        <Icon name="chevron-down" color="white" />
+      </Button>
+
+      <Modal visible={this.state.showModal}>
+        <Card>
+          {Object.keys(this.props.types).map((key, i, col) => {
+              return (
+                <CardItem key={key} button onPress={()=>{
+                   setModalVisible.call(this, false);
+                   this.props.onTypeChanged.call(this, key);
+                }}>
+                  <Text>{this.props.types[key]}</Text>
+                </CardItem>
+              );
+          })}
+        </Card>
+      </Modal>
+      </View>
+    );
 }
-// iosHeader="test"
-//   mode="dropdown"
-  //
-  //   <Text>{type} <EntypoIcon name='chevron-with-circle-down' style={{fontSize: 24}}/></Text>
-  // </Item>
-// <div className={`${styles.dropdown}`}>
-//
-//         <button type="button"
-//             className={`${styles.btn} ${styles["btn-lg"]} ${styles["btn-info"]} ${styles["dropdown-toggle"]} ${styles["btn-block"]}`}
-//             data-toggle="dropdown"
-//             aria-haspopup="true"
-//             aria-expanded="false"
-//             ref="button">
-//
-//             {this.props.value} <span className={styles.caret}></span>
-//
-//             </button>
-//
-//         <UnorderedListComponent
-//             onItemClick={this.props.onTypeChanged}
-//             types={this.props.types} />
-//
-//     </div>
+
+function setModalVisible (visible) {
+    this.setState({showModal: visible});
+};

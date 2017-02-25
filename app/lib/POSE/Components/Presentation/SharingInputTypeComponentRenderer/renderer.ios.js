@@ -1,34 +1,42 @@
 "use strict";
 const React = require("react");
+const ReactNative = require("react-native");
 const native_base_1 = require("native-base");
-const { Item } = native_base_1.Picker;
-module.exports = function () {
-    return (<native_base_1.Picker selectedValue={this.props.value} onValueChange={this.props.onTypeChanged}>
-              {this.props.types.map((type, i, col) => {
-        return (<Item key={type} label={type} value={type}/>);
-    })}
-          </native_base_1.Picker>);
+const FontAwesome_1 = require("react-native-vector-icons/FontAwesome");
+const { Modal, StyleSheet } = ReactNative;
+const styles = {
+    buttonText: {
+        fontSize: 16
+    },
+    test: {}
 };
-// iosHeader="test"
-//   mode="dropdown"
-//
-//   <Text>{type} <EntypoIcon name='chevron-with-circle-down' style={{fontSize: 24}}/></Text>
-// </Item>
-// <div className={`${styles.dropdown}`}>
-//
-//         <button type="button"
-//             className={`${styles.btn} ${styles["btn-lg"]} ${styles["btn-info"]} ${styles["dropdown-toggle"]} ${styles["btn-block"]}`}
-//             data-toggle="dropdown"
-//             aria-haspopup="true"
-//             aria-expanded="false"
-//             ref="button">
-//
-//             {this.props.value} <span className={styles.caret}></span>
-//
-//             </button>
-//
-//         <UnorderedListComponent
-//             onItemClick={this.props.onTypeChanged}
-//             types={this.props.types} />
-//
-//     </div>
+function setModalVisible(visible) {
+    this.setState({ showModal: visible });
+}
+;
+module.exports = function () {
+    if (this.state == null) {
+        this.state = {
+            showModal: false
+        };
+    }
+    return (<native_base_1.View>
+      <native_base_1.Button rounded onPress={setModalVisible.bind(this, true)} iconRight>
+        <native_base_1.Text style={styles.buttonText}>{this.props.types[this.props.value]} </native_base_1.Text>
+        <FontAwesome_1.default name="chevron-down" color="white"/>
+      </native_base_1.Button>
+
+      <Modal visible={this.state.showModal}>
+        <native_base_1.Card>
+          {Object.keys(this.props.types).map((key, i, col) => {
+        return (<native_base_1.CardItem key={key} button onPress={() => {
+            setModalVisible.call(this, false);
+            this.props.onTypeChanged.call(this, key);
+        }}>
+                  <native_base_1.Text>{this.props.types[key]}</native_base_1.Text>
+                </native_base_1.CardItem>);
+    })}
+        </native_base_1.Card>
+      </Modal>
+      </native_base_1.View>);
+};

@@ -1,12 +1,13 @@
 import React = require("react");
-import {Button,ListItem, Text} from "native-base";
+import {Button,ListItem, Text, CheckBox, View} from "native-base";
 
 export function render(){
-  return (
-    <ListItem>
-      <Button block onPress={this.onSelected}><Text>{this.props.label}</Text></Button>
-    </ListItem>
-  )
+  return (<ListItem>
+      <CheckBox
+          onPress={this.onSelected} checked={this.state.selected} />
+      <Text> Send to {this.props.label}</Text>
+      </ListItem>
+  );
 }
 
 export default render;

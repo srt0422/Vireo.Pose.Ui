@@ -27,5 +27,3 @@ class SocialAuth extends React.Component {
     }
 }
 module.exports = SocialAuth;
-// <Twitter shouldAuthenticate={() => this.authenticateTwitter}
-//          sharingProvider={this.getTwitterProvider()}></Twitter>

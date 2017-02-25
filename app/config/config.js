@@ -1,6 +1,5 @@
 "use strict";
 const react_native_1 = require("react-native");
-// const {Platform} = ReactNative;
 let process;
 if (react_native_1.Platform.OS === "ios" || react_native_1.Platform.OS !== "android") {
     process = {

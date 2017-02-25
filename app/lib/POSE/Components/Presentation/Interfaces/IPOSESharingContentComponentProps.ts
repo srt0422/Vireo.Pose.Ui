@@ -5,6 +5,7 @@ export interface IPOSESharingContentComponentProps {
     value: string;
     wrapperClass: string;
     label: string;
-    onChange: (e: React.SyntheticEvent) => void;
+    onChange: (e: React.SyntheticEvent<any>) => void;
     onContentChange: (val: string) => void;
+    style?: any;
 }

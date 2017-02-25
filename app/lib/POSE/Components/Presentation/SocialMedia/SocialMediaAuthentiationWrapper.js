@@ -1,6 +1,5 @@
 "use strict";
 const React = require("react");
-// import AddSharingProviderMutation = require("AddSharingProviderMutation");
 class SocialMediaAuthentiationWrapper extends React.Component {
     constructor() {
         super();
@@ -13,9 +12,6 @@ class SocialMediaAuthentiationWrapper extends React.Component {
         }
     }
     authCallback() {
-        // this.props.relay.commitUpdate(
-        //     new AddSharingProviderMutation()
-        // );
     }
 }
 SocialMediaAuthentiationWrapper.defaultProps = {

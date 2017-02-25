@@ -5,7 +5,6 @@ const React = require("react");
 const Relay = require("react-relay");
 const App_1 = require("../App");
 const Poser_1 = require("../Presentation/Poser");
-//import SocialAuth = require("SocialAuth");
 var Router = ReactRouter.Router;
 var Route = ReactRouter.Route;
 class AppRouter extends React.Component {
@@ -18,7 +17,6 @@ class AppRouter extends React.Component {
     }
     createRelayContainer(Component, props) {
         if (Relay.isContainer(Component)) {
-            // Construct the RelayQueryConfig from the route and the router props.
             var route = props.route;
             var { params } = props;
             return (<Relay.RootContainer Component={Component} renderFetched={(data) => <Component {...props} {...data}/>} route={{ params, name: route.path, queries: route.queries || {} }}/>);

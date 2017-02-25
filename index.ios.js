@@ -1,39 +1,12 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, {Component} from 'react';
 import {AppRegistry, StyleSheet, Text, View} from 'react-native';
-import {
-    Container,
-    Header,
-    Title,
-    Content,
-    Footer,
-    FooterTab,
-    Button,
-    Icon
-} from 'native-base';
-import Poser from "./app/lib/POSE/Components/Presentation/Poser";
+import Navigation from "./app/lib/POSE/Components/Routing/NativeNavigation";
+import App from "./app/lib/POSE/Components/App";
+
+import {Container, Header, Title, Content} from 'native-base';
 
 export default class PoseUi extends Component {
-    render() {
-        return (
-            <Container>
-                <Header>
-
-                    <Title>Pose</Title>
-                </Header>
-
-                <Content>
-
-                    <Poser></Poser>
-                </Content>
-            </Container>
-        );
-    }
+    render = () => (<App></App>);
 }
 
 const styles = StyleSheet.create({

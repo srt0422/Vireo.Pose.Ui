@@ -1,5 +1,4 @@
 "use strict";
-//module POSE.SocialMedia {
 class SocialProviders {
 }
 SocialProviders.Facebook = "facebook";
@@ -8,4 +7,3 @@ SocialProviders.LinkedIn = "linkedin";
 SocialProviders.Google_Plus = "google_plus";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = SocialProviders;
-//}

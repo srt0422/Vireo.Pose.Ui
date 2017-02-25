@@ -1,15 +1,17 @@
 import React = require("react");
 import SocialMediaOption from "../SocialMediaOption";
-import {List} from "native-base";
+import {List, ListItem, Card, CardItem} from "native-base";
 
 export function render() {
   return (
-      <List>
+    <Card >
+    <List >
           <SocialMediaOption value="facebook" label="Facebook"></SocialMediaOption>
-
           <SocialMediaOption value="linkedin" label="LinkedIn"></SocialMediaOption>
-      </List>
-  )
+    </List>
+    
+    </Card>
+  );
 }
 
 export default render;

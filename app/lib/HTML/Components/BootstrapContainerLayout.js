@@ -1,5 +1,4 @@
 "use strict";
-//module POSE.Html {
 const React = require("react");
 class BootstrapContainerLayout extends React.Component {
     render() {
@@ -14,5 +13,3 @@ class BootstrapContainerLayout extends React.Component {
 }
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = BootstrapContainerLayout;
-//export = BootstrapContainerLayout;
-//}

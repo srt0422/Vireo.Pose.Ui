@@ -12,7 +12,6 @@ class SocialMediaOption extends React.Component {
         this.setState({ selected: false });
     }
     componentWillUpdate(nextProps, nextState) {
-        // update flux store to track selected sharingProviders
         if (nextState.selected) {
             postStore.tryAddSharingProvider(this.props.value);
         }

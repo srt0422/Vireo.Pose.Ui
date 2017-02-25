@@ -1,30 +1,46 @@
 import React = require('react');
-import {InputGroup, Input} from 'native-base';
-import ImagePicker from "react-native-image-picker";
+const {Component} = React;
+import {InputGroup, Input, Button, Text, Card, CardItem, View} from 'native-base';
+import ImagePicker = require("react-native-image-picker");
 
 export = function(){
 
-    switch(this.props.value){
-        case "Picture":
-            return ImagePicker.showImagePicker(null,
+            if(this.props.value == "Picture"){
+                        return (
+                        <View>
+                                    <Button rounded info
+                                                onPress={showImagePicker.bind(this)}>
+                                                <Text>{this.props.label}</Text>
+                                    </Button>
+                        </View>
+                        );
+            }
+            else {
+                        return (
+                                    <InputGroup borderType='rounded' >
+                                                <Input placeholder={this.props.label} onChangeText={(val) => this.props.onContentChange(val) } />
+                                    </InputGroup>)
+            }
+}
+
+function showImagePicker(){
+            ImagePicker.showImagePicker(null,
                 (response) => {
                     if (response.error) {
                         throw response.error;
                     }
-                    else {
+
+                    if(response.didCancel){
+                     return;
+                    }
+
+                    if(response.uri != null && response.uri != "") {
                     // You can also display the image using data:
                     // let source = { uri: 'data:image/jpeg;base64,' + response.data };
 
-                    this.setState({
-                      avatarSource: { uri: response.uri }
-                    });
+// TODO: look into how I'm dealing with images right now.
+
+                    this.onContentChange(response.uri);
                 }
             });
-        case "Message":
-        default:
-            return (
-                <InputGroup borderType='regular' >
-                        <Input onChangeText={(val) => this.props.onContentChange(val) } placeholder='Type your text here' />
-                    </InputGroup>)
-          }
 }

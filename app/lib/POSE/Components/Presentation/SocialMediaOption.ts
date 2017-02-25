@@ -34,6 +34,5 @@ export default class SocialMediaOption extends React.Component<IPOSESocialMediaO
     constructor() {
         super();
         this.onSelected = this.onSelected.bind(this);
-
     }
 }
