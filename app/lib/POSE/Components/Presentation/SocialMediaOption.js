@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 const PostStore = require("../../Flux/Stores/PostStore");
 const renderer_1 = require("./SocialMediaOptionComponentRenderer/renderer");
@@ -27,5 +28,4 @@ class SocialMediaOption extends React.Component {
         this.onSelected = this.onSelected.bind(this);
     }
 }
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = SocialMediaOption;

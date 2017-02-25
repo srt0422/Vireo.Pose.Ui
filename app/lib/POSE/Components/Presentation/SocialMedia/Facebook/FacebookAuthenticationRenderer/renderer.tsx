@@ -1,4 +1,7 @@
-declare var FB;
+import React = require("react");
+import SocialMediaAuthentiationWrapper = require("../../SocialMediaAuthentiationWrapper");
+import FacebookSdk = require("../FacebookSdk");
+import config from "../../../../../../../config/config";
 
 export function renderer(){
 
@@ -10,32 +13,9 @@ export function renderer(){
       <SocialMediaAuthentiationWrapper  setAuthCallback={this.setAuthCallback}
                                         shouldAuthenticate={this.props.shouldAuthenticate}
                                         sharingProvider={null}>
-          <FacebookSdk appId={config.get("FacebookAppId") as string} onLoad={this.ensureLoggedIn}></FacebookSdk>
+          <FacebookSdk appId={config.FacebookAppId as string} onLoad={this.ensureLoggedIn}></FacebookSdk>
       </SocialMediaAuthentiationWrapper>
   );
 }
-
-
-  function onFBLoaded() {
-      initializeFBSdk();
-
-      if (this.props.onLoad) {
-          this.props.onLoad();
-      }
-  }
-
-  function initializeFBSdk() {
-      if (FB && FB.init) {
-          FB.init({
-              appId: this.props.appId,
-              xfbml: true,
-              version: 'v2.4'
-          });
-
-          return;
-      }
-
-      console.warn("FB failed to load");
-  }
 
 export default renderer;

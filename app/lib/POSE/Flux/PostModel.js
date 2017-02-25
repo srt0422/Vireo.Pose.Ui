@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const SharingProviderCollection = require("./SharingProviderCollection");
 const SharingProviderModel = require("./SharingProviderModel");
 const SocialProviders_1 = require("../Components/SocialProviders");
@@ -7,6 +8,7 @@ const TwitterLoginHelper = require("../Components/Presentation/SocialMedia/Twitt
 const config = require("../../../config/config");
 var twitterLoginHelper = new TwitterLoginHelper();
 const AddPostMutation = require("../Data/Mutations/AddPostMutation");
+const FacebookManager = require("../SocialMedia/FacebookManager");
 class PostModel extends Backbone.Model {
     constructor() {
         super(...arguments);
@@ -52,10 +54,8 @@ class PostModel extends Backbone.Model {
         }
     }
     addFacebookSharingProvider() {
-        FB.getLoginStatus((response) => {
-            if (response.status !== 'connected') {
-                FB.login((response) => console.log(response));
-            }
+        FacebookManager.ensureLoggedIn()
+            .then((response) => {
             var sharingProvider = this.addNewSharingProvider(SocialProviders_1.default.Facebook);
             sharingProvider.setExpirationDate(response.authResponse.expiresIn);
             sharingProvider.setUserId(response.authResponse.userID);
@@ -94,5 +94,4 @@ class PostModel extends Backbone.Model {
         return json;
     }
 }
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = PostModel;

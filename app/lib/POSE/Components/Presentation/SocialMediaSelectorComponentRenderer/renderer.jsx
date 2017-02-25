@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const SocialMediaOption_1 = require("../SocialMediaOption");
+const styles = require("../../../styles");
+function default_1() {
+    return (<div className={`${styles["list-group"]}`}>
+          <SocialMediaOption_1.default value="facebook" label="Facebook"></SocialMediaOption_1.default>
+
+          <SocialMediaOption_1.default value="linkedin" label="LinkedIn"></SocialMediaOption_1.default>
+      </div>);
+}
+exports.default = default_1;

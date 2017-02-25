@@ -7,6 +7,7 @@ class LinkedInSdk extends React.Component<ILinkedInSdkProps, any>{
             api_key: this.props.apiKey
             authorize: true
         </script>);
+
     }
 }
 

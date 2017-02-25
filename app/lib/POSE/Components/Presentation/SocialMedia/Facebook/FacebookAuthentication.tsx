@@ -1,23 +1,25 @@
-﻿import React = require("react");
-import SocialMediaAuthentiationWrapper = require("../SocialMediaAuthentiationWrapper");
+declare var FB;
+
+import React = require("react");
+import SocialMediaAuthentiationWrapper = require("./../SocialMediaAuthentiationWrapper");
 import FacebookSdk = require("./FacebookSdk");
-import SharingProviderModel = require("../../../../Flux/SharingProviderModel");
+import config from "./../../../../../../config/config";
 import AuthBase from "../AuthBase";
-import * as config from "config";
 
 export default class FacebookAuthentication extends AuthBase {
-    render() {
-        if (!this.props.shouldAuthenticate()) {
-            return null;
-        }
 
-        return (
-            <SocialMediaAuthentiationWrapper  setAuthCallback={this.setAuthCallback}
-                                              shouldAuthenticate={this.props.shouldAuthenticate}
-                                              sharingProvider={null}>
-                <FacebookSdk appId={config.get("FacebookAppId") as string} onLoad={this.ensureLoggedIn}></FacebookSdk>
-            </SocialMediaAuthentiationWrapper>
-        );
+    render() {
+      if (!this.props.shouldAuthenticate()) {
+          return null;
+      }
+
+      return (
+          <SocialMediaAuthentiationWrapper  setAuthCallback={this.setAuthCallback}
+                                            shouldAuthenticate={this.props.shouldAuthenticate}
+                                            sharingProvider={null}>
+              <FacebookSdk appId={config.FacebookAppId as string} onLoad={this.ensureLoggedIn}></FacebookSdk>
+          </SocialMediaAuthentiationWrapper>
+      );
     }
 
     componentDidMount() { }

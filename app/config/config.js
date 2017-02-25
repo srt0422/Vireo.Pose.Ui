@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const react_native_1 = require("react-native");
 let process;
 if (react_native_1.Platform.OS === "ios" || react_native_1.Platform.OS !== "android") {
@@ -11,16 +12,15 @@ if (react_native_1.Platform.OS === "ios" || react_native_1.Platform.OS !== "andr
 else {
     process = require("process");
 }
-let config = {};
+exports.config = {};
 switch (process.env.NODE_ENV) {
     case "production":
         break;
     default:
-        config = {
+        exports.config = {
             SharingUrl: "http://posewebapp.azurewebservices.net/",
             FacebookAppId: "775514852467101"
         };
         break;
 }
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = config;
+exports.default = exports.config;

@@ -1,6 +1,5 @@
 import {Platform} from "react-native";
-
-// const {Platform} = ReactNative;
+import IPoseConfiguration from "./IPoseConfiguration";
 
 let process;
 
@@ -15,7 +14,7 @@ else {
     process = require("process");
 }
 
-let config: IPoseConfiguration = {};
+export var config: IPoseConfiguration = {};
 
 switch (process.env.NODE_ENV) {
     case "production":

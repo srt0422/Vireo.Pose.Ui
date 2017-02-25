@@ -16,6 +16,8 @@ var twitterLoginHelper: ITwitterLoginHelper = new TwitterLoginHelper();
 
 import AddPostMutation = require("../Data/Mutations/AddPostMutation");
 
+import * as FacebookManager from "../SocialMedia/FacebookManager";
+
 export default class PostModel extends Backbone.Model {
 
     public Content: string;
@@ -81,20 +83,15 @@ export default class PostModel extends Backbone.Model {
 
     public addFacebookSharingProvider() {
 
-        FB.getLoginStatus((response) => {
+        FacebookManager.ensureLoggedIn()
+                        .then((response) => {
+                            var sharingProvider = this.addNewSharingProvider(SocialProviders.Facebook)
 
-            if (response.status !== 'connected') {
-                FB.login((response) => console.log(response));
-            }
+                            sharingProvider.setExpirationDate(response.authResponse.expiresIn);
 
-            var sharingProvider = this.addNewSharingProvider(SocialProviders.Facebook)
-
-            sharingProvider.setExpirationDate(response.authResponse.expiresIn);
-
-            sharingProvider.setUserId(response.authResponse.userID);
-            sharingProvider.setAuthToken(response.authResponse.accessToken);
-
-        });
+                            sharingProvider.setUserId(response.authResponse.userID);
+                            sharingProvider.setAuthToken(response.authResponse.accessToken);
+                        });
     }
 
     public addLinkedInSharingProvider() {

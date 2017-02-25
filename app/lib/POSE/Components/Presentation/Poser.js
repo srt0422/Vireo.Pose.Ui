@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 const PostStore = require("../../Flux/Stores/PostStore");
 const renderer_1 = require("./PoserRenderer/renderer");
@@ -50,5 +51,4 @@ class Poser extends React.Component {
         });
     }
 }
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = Poser;
