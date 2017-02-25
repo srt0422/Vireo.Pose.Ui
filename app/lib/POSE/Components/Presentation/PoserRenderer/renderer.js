@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 const SharingContentComponent = require("../SharingContentComponent");
 const styles = require("../../styles");
@@ -14,5 +15,4 @@ function render(props, state) {
     </form>);
 }
 exports.render = render;
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = render;

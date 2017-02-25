@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 const SocialMediaAuthentiationBase = require("../SocialMediaAuthentiationWrapper");
 const SocialProviders_1 = require("../../../SocialProviders");
@@ -21,5 +22,4 @@ class TwitterAuthentication extends React.Component {
         el.value;
     }
 }
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = TwitterAuthentication;

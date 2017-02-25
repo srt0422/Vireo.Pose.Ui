@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 class BootstrapContainerLayout extends React.Component {
     render() {
@@ -11,5 +12,4 @@ class BootstrapContainerLayout extends React.Component {
                 </div>);
     }
 }
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = BootstrapContainerLayout;

@@ -7,8 +7,6 @@ import Poser from "../Presentation/Poser";
 export = function(props) {
   return (
     <Container>
-        <FacebookSdk appId="764673526884567"></FacebookSdk>
-        {/*<LinkedInSdk apiKey="75v5vlraic1sa6"></LinkedInSdk>*/}
         <Header>
             <Title>POSE</Title>
         </Header>

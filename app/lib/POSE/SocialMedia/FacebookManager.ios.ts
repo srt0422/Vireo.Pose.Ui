@@ -1,4 +1,4 @@
-import
+declare var FB;
 
 export async function ensureLoggedIn() {
 

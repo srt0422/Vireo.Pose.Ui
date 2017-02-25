@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const ReactNative = require("react-native");
 const React = require("react");
 const Poser_1 = require("../Presentation/Poser");
@@ -15,5 +16,4 @@ class Navigation extends React.Component {
     }
 }
 exports.Navigation = Navigation;
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = Navigation;

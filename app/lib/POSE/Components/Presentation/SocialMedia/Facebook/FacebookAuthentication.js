@@ -1,17 +1,18 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
-const SocialMediaAuthentiationWrapper = require("../SocialMediaAuthentiationWrapper");
+const SocialMediaAuthentiationWrapper = require("./../SocialMediaAuthentiationWrapper");
 const FacebookSdk = require("./FacebookSdk");
+const config_1 = require("./../../../../../../config/config");
 const AuthBase_1 = require("../AuthBase");
-const config = require("config");
 class FacebookAuthentication extends AuthBase_1.default {
     render() {
         if (!this.props.shouldAuthenticate()) {
             return null;
         }
         return (<SocialMediaAuthentiationWrapper setAuthCallback={this.setAuthCallback} shouldAuthenticate={this.props.shouldAuthenticate} sharingProvider={null}>
-                <FacebookSdk appId={config.get("FacebookAppId")} onLoad={this.ensureLoggedIn}></FacebookSdk>
-            </SocialMediaAuthentiationWrapper>);
+              <FacebookSdk appId={config_1.default.FacebookAppId} onLoad={this.ensureLoggedIn}></FacebookSdk>
+          </SocialMediaAuthentiationWrapper>);
     }
     componentDidMount() { }
     ensureLoggedIn() {
@@ -28,5 +29,4 @@ class FacebookAuthentication extends AuthBase_1.default {
         });
     }
 }
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = FacebookAuthentication;

@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const ReactRouter = require("react-router");
 const Routes = require("./Enums/Routes");
 const React = require("react");
@@ -26,5 +27,4 @@ class AppRouter extends React.Component {
         }
     }
 }
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = AppRouter;

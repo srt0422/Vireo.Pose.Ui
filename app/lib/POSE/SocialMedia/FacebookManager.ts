@@ -4,21 +4,24 @@ export async function ensureLoggedIn() {
 
     return new Promise<any>((fullfilled, rejected) =>
 
-    LoginManager.logInWithPublishPermissions(['publish_actions']).then((result) =>{
+        LoginManager.logInWithPublishPermissions(['publish_actions']).then((result) => {
 
-        if (result.isCancelled) {
-          alert('Login cancelled');
-        }
-        else {
-          alert('Login success with permissions: '
-            +result.grantedPermissions.toString());
+            if (result.isCancelled) {
+                alert('Login cancelled');
+            }
+            else {
+                alert('Login success with permissions: '
+                    + result.grantedPermissions.toString());
 
-            alert("Info: " + result);
-        }
+                alert("Info: " + result);
+            }
 
-      },
-      (error)=> {
-        alert('Login fail with error: ' + error);
-      }
-  ));
+            fullfilled(result);
+
+        },
+            (error) => {
+                alert('Login fail with error: ' + error);
+                rejected(error);
+            }
+        ));
 }

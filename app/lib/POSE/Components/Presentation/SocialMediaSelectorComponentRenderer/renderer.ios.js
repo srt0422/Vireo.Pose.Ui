@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 const SocialMediaOption_1 = require("../SocialMediaOption");
 const native_base_1 = require("native-base");
@@ -12,5 +13,4 @@ function render() {
     </native_base_1.Card>);
 }
 exports.render = render;
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = render;

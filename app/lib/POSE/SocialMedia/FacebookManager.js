@@ -20,8 +20,10 @@ function ensureLoggedIn() {
                     + result.grantedPermissions.toString());
                 alert("Info: " + result);
             }
+            fullfilled(result);
         }, (error) => {
             alert('Login fail with error: ' + error);
+            rejected(error);
         }));
     });
 }

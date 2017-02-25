@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 const native_base_1 = require("native-base");
 const SharingContentComponent = require("../SharingContentComponent");
@@ -24,5 +25,4 @@ const labelMap = {
     Link: "Copy Link",
     Picture: "Choose Picture"
 };
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = render;

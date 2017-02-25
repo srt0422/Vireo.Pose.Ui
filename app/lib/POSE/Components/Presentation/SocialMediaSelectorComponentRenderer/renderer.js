@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const SocialMediaOption_1 = require("../SocialMediaOption");
 const styles = require("../../../styles");
 function default_1() {
@@ -8,5 +9,4 @@ function default_1() {
           <SocialMediaOption_1.default value="linkedin" label="LinkedIn"></SocialMediaOption_1.default>
       </div>);
 }
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = default_1;
