@@ -8,12 +8,20 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+const react_native_fbsdk_1 = require("react-native-fbsdk");
 function ensureLoggedIn() {
     return __awaiter(this, void 0, void 0, function* () {
-        return new Promise((fullfilled, rejected) => FB.getLoginStatus((response) => {
-            if (response.status !== 'connected') {
-                FB.login((response) => fullfilled(response));
+        return new Promise((fullfilled, rejected) => react_native_fbsdk_1.LoginManager.logInWithPublishPermissions(['publish_actions']).then((result) => {
+            if (result.isCancelled) {
+                alert('Login cancelled');
             }
+            else {
+                alert('Login success with permissions: '
+                    + result.grantedPermissions.toString());
+                alert("Info: " + result);
+            }
+        }, (error) => {
+            alert('Login fail with error: ' + error);
         }));
     });
 }
