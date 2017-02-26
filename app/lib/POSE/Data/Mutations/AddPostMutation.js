@@ -1,7 +1,14 @@
+///<reference path="../../../../../../../../typings/index.d.ts" />
 "use strict";
 const Relay = require("react-relay");
 class AddPostMutation extends Relay.Mutation {
+    // Adding a post will not currently affect any other entities
     getFatQuery() {
+        // return Relay.QL`
+        //     fragment on AddPostPayload {
+        //         newPostEdge
+        //     }
+        // `;
     }
     getConfigs() {
         return [{
@@ -9,11 +16,14 @@ class AddPostMutation extends Relay.Mutation {
                 connectionName: 'post',
                 edgeName: 'newPostEdge',
                 rangeBehaviors: {
+                    // When the post connection is not under the influence
+                    // of any call, append the post to the end of the connection
                     '': 'append'
                 }
             }];
     }
     getMutation() {
+        // return Relay.QL`mutation{addPost}`;
     }
     getVariables() {
         return {
@@ -22,5 +32,6 @@ class AddPostMutation extends Relay.Mutation {
         };
     }
 }
+// only the post fragment
 AddPostMutation.fragments = {};
 module.exports = AddPostMutation;

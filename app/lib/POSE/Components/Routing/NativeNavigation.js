@@ -7,6 +7,7 @@ const { Navigator } = ReactNative;
 class Navigation extends React.Component {
     render() {
         return (<Navigator initialRoute={{ title: "poser", id: 'poser' }} renderScene={this.navigatorRenderScene}/>);
+        // style={styles.container}
     }
     navigatorRenderScene(route, navigator) {
         switch (route.id) {

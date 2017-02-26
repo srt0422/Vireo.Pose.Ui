@@ -1,4 +1,6 @@
-﻿import React = require("react");
+declare var FB;
+
+import React = require("react");
 
 class FacebookSdk extends React.Component<IFacebookSdkProps, any>{
 
@@ -57,4 +59,4 @@ class FacebookSdk extends React.Component<IFacebookSdkProps, any>{
     }
 }
 
-export = FacebookSdk;
+export default FacebookSdk;

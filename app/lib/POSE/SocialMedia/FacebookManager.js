@@ -8,22 +8,22 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const react_native_fbsdk_1 = require("react-native-fbsdk");
+let authInfo;
+function fillSharingProviderWithAuthInfo(sharingProvider) {
+    sharingProvider.setExpirationDate(authInfo.expiresIn);
+    sharingProvider.setUserId(authInfo.userID);
+    sharingProvider.setAuthToken(authInfo.accessToken);
+}
+exports.fillSharingProviderWithAuthInfo = fillSharingProviderWithAuthInfo;
 function ensureLoggedIn() {
     return __awaiter(this, void 0, void 0, function* () {
-        return new Promise((fullfilled, rejected) => react_native_fbsdk_1.LoginManager.logInWithPublishPermissions(['publish_actions']).then((result) => {
-            if (result.isCancelled) {
-                alert('Login cancelled');
+        return new Promise((fullfilled, rejected) => FB.getLoginStatus((response) => {
+            if (response.status !== 'connected') {
+                FB.login((response) => {
+                    authInfo = response.authResponse;
+                    fullfilled();
+                });
             }
-            else {
-                alert('Login success with permissions: '
-                    + result.grantedPermissions.toString());
-                alert("Info: " + result);
-            }
-            fullfilled(result);
-        }, (error) => {
-            alert('Login fail with error: ' + error);
-            rejected(error);
         }));
     });
 }

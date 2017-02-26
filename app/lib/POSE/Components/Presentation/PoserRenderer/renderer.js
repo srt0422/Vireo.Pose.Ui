@@ -16,3 +16,4 @@ function render(props, state) {
 }
 exports.render = render;
 exports.default = render;
+// <SocialMediaSelectorComponent options={SocialOptions}></SocialMediaSelectorComponent>

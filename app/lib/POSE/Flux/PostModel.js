@@ -1,9 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+const react_native_1 = require("react-native");
+const WebBackbone = require("backbone");
+const RNBackbone = require("react-native-backbone");
+const Backbone = react_native_1.Platform.OS ? RNBackbone.default : WebBackbone;
 const SharingProviderCollection = require("./SharingProviderCollection");
 const SharingProviderModel = require("./SharingProviderModel");
 const SocialProviders_1 = require("../Components/SocialProviders");
-const Backbone = require("backbone");
 const TwitterLoginHelper = require("../Components/Presentation/SocialMedia/Twitter/TwitterLoginFlow");
 const config = require("../../../config/config");
 var twitterLoginHelper = new TwitterLoginHelper();
@@ -56,10 +59,8 @@ class PostModel extends Backbone.Model {
     addFacebookSharingProvider() {
         FacebookManager.ensureLoggedIn()
             .then((response) => {
-            var sharingProvider = this.addNewSharingProvider(SocialProviders_1.default.Facebook);
-            sharingProvider.setExpirationDate(response.authResponse.expiresIn);
-            sharingProvider.setUserId(response.authResponse.userID);
-            sharingProvider.setAuthToken(response.authResponse.accessToken);
+            let sharingProvider = this.addNewSharingProvider(SocialProviders_1.default.Facebook);
+            FacebookManager.fillSharingProviderWithAuthToken(sharingProvider);
         });
     }
     addLinkedInSharingProvider() {

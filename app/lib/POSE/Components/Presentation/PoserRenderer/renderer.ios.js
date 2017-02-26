@@ -26,3 +26,25 @@ const labelMap = {
     Picture: "Choose Picture"
 };
 exports.default = render;
+//
+// return (
+//   <View className={`${styles["center-block"]} ${styles.clearfix} ${styles['sharing-component']}`} style={formStyle}>
+//     <SharingContentComponent
+//         type={this.state.type}
+//         value={this.contentMap[this.state.value]}
+//         label={this.labelMap[this.state.value]}
+//         onChange={this.typeChanged}
+//         onContentChange={(val) => this.postValue = val}
+//         wrapperClass="form-group" />
+//
+//     <SocialMediaSelectorComponent options={SocialOptions}></SocialMediaSelectorComponent>
+//
+//     <button
+//         onClick={this.onClick}
+//         className={`${styles.btn} ${styles["btn-lg"]} ${styles["btn-success"]} ${styles["btn-block"]}`}
+//         value="Share"
+//         type="button"
+//         children="Share" />
+//
+// </form>
+// );

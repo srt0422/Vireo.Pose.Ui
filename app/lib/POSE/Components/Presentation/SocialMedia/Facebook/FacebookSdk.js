@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 class FacebookSdk extends React.Component {
     constructor() {
@@ -47,4 +48,4 @@ class FacebookSdk extends React.Component {
         console.warn("FB failed to load");
     }
 }
-module.exports = FacebookSdk;
+exports.default = FacebookSdk;

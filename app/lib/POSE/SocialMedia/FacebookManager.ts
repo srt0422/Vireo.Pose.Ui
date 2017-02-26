@@ -1,27 +1,27 @@
-import {LoginManager} from "react-native-fbsdk";
+declare var FB;
+
+let authInfo;
+
+export function fillSharingProviderWithAuthInfo(sharingProvider) {
+
+    sharingProvider.setExpirationDate(authInfo.expiresIn);
+    sharingProvider.setUserId(authInfo.userID);
+    sharingProvider.setAuthToken(authInfo.accessToken);
+}
 
 export async function ensureLoggedIn() {
 
     return new Promise<any>((fullfilled, rejected) =>
 
-        LoginManager.logInWithPublishPermissions(['publish_actions']).then((result) => {
+        FB.getLoginStatus((response) => {
 
-            if (result.isCancelled) {
-                alert('Login cancelled');
+            if (response.status !== 'connected') {
+                FB.login((response) => {
+
+                    authInfo = response.authResponse;
+
+                    fullfilled();
+                });
             }
-            else {
-                alert('Login success with permissions: '
-                    + result.grantedPermissions.toString());
-
-                alert("Info: " + result);
-            }
-
-            fullfilled(result);
-
-        },
-            (error) => {
-                alert('Login fail with error: ' + error);
-                rejected(error);
-            }
-        ));
+        }));
 }

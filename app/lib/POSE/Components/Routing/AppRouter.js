@@ -18,6 +18,7 @@ class AppRouter extends React.Component {
     }
     createRelayContainer(Component, props) {
         if (Relay.isContainer(Component)) {
+            // Construct the RelayQueryConfig from the route and the router props.
             var route = props.route;
             var { params } = props;
             return (<Relay.RootContainer Component={Component} renderFetched={(data) => <Component {...props} {...data}/>} route={{ params, name: route.path, queries: route.queries || {} }}/>);

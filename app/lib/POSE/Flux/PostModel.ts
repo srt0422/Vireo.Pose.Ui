@@ -1,12 +1,17 @@
 ﻿///<reference path="../../../../typings/index.d.ts" />
 
+import {Platform} from "react-native";
+
+import WebBackbone = require("backbone");
+import RNBackbone = require("react-native-backbone");
+
+const Backbone = Platform.OS ? RNBackbone.default : WebBackbone;
+
 import SharingProviderCollection = require("./SharingProviderCollection");
 
 import SharingProviderModel = require("./SharingProviderModel");
 
 import SocialProviders from "../Components/SocialProviders";
-
-import Backbone = require("backbone");
 
 import TwitterLoginHelper = require("../Components/Presentation/SocialMedia/Twitter/TwitterLoginFlow");
 
@@ -84,14 +89,13 @@ export default class PostModel extends Backbone.Model {
     public addFacebookSharingProvider() {
 
         FacebookManager.ensureLoggedIn()
-                        .then((response) => {
-                            var sharingProvider = this.addNewSharingProvider(SocialProviders.Facebook)
+            .then((response) => {
 
-                            sharingProvider.setExpirationDate(response.authResponse.expiresIn);
+                let sharingProvider = this.addNewSharingProvider(SocialProviders.Facebook)
 
-                            sharingProvider.setUserId(response.authResponse.userID);
-                            sharingProvider.setAuthToken(response.authResponse.accessToken);
-                        });
+                FacebookManager.fillSharingProviderWithAuthToken(sharingProvider);
+
+            });
     }
 
     public addLinkedInSharingProvider() {
