@@ -4,6 +4,10 @@ import android.app.Application;
 import android.util.Log;
 
 import com.facebook.react.ReactApplication;
+import io.fullstack.oauth.OAuthManagerPackage;
+import io.fullstack.firestack.FirestackPackage;
+import ga.piroro.rnt.RNTPackage;
+import com.reactlibrary.linkedinsdk.RNLinkedInSessionManagerPackage;
 import com.facebook.reactnative.androidsdk.FBSDKPackage;
 import com.imagepicker.ImagePickerPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
@@ -28,6 +32,10 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new OAuthManagerPackage(),
+            new FirestackPackage(),
+            new RNTPackage(),
+            new RNLinkedInSessionManagerPackage(),
             new FBSDKPackage(),
             new ImagePickerPackage(),
             new VectorIconsPackage()

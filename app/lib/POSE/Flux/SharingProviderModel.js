@@ -17,6 +17,8 @@ class SharingProviderModel extends Backbone.Model {
     setUserId(userId) {
         this.set("UserId", userId);
     }
+    ///TODO: test this to make sure "ExpirationDate" is correct for the
+    ///      ios and web implementations of FacebookManager
     setExpirationDate(expiresIn) {
         var expirationDate = new Date();
         expirationDate.setSeconds(expiresIn);
@@ -24,4 +26,4 @@ class SharingProviderModel extends Backbone.Model {
     }
 }
 module.exports = SharingProviderModel;
-//} 
+//}

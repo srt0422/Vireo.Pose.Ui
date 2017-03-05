@@ -1,13 +1,13 @@
-import {LoginManager, FBAccessToken} from "react-native-fbsdk";
+import {LoginManager, AccessToken as FBAccessToken} from "react-native-fbsdk";
 
 let accessToken;
 
-export function fillSharingProviderWithAuthInfo(sharingProvider){
+export function fillSharingProviderWithAuthInfo(sharingProvider) {
 
-                    sharingProvider.setExpirationDate(response.authResponse.expiresIn);
+    sharingProvider.setExpirationDate(accessToken.expirationTime);
 
-                    sharingProvider.setUserId(response.authResponse.userID);
-                    sharingProvider.setAuthToken(response.authResponse.accessToken);
+    sharingProvider.setUserId(accessToken.userID);
+    sharingProvider.setAuthToken(accessToken.accessToken);
 }
 
 export async function ensureLoggedIn() {
@@ -22,9 +22,9 @@ export async function ensureLoggedIn() {
                 }
                 else {
                     FBAccessToken.getCurrentAccessToken()
-                        .then((accessToken) => {
+                        .then((result) => {
 
-                            accessToken = accessToken;
+                            accessToken = result;
 
                             fullfilled();
                         });

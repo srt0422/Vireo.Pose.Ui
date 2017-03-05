@@ -11,7 +11,7 @@ export function fillSharingProviderWithAuthInfo(sharingProvider) {
 
 export async function ensureLoggedIn() {
 
-    return new Promise<any>((fullfilled, rejected) =>
+    return await new Promise<any>((fullfilled, rejected) =>
 
         FB.getLoginStatus((response) => {
 

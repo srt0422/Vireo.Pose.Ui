@@ -13,6 +13,7 @@
 		00C302E91ABCBA2D00DB3ED1 /* libRCTNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302DC1ABCB9D200DB3ED1 /* libRCTNetwork.a */; };
 		00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302E41ABCB9EE00DB3ED1 /* libRCTVibration.a */; };
 		00E356F31AD99517003FC87E /* PoseUiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* PoseUiTests.m */; };
+		0F096E645112444BD592B4AE /* Pods_PoseUiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF73CF1039922044ABE68030 /* Pods_PoseUiTests.framework */; };
 		133E29F31AD74F7200F7D852 /* libRCTLinking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C398B91ACF4ADC00677621 /* libRCTLinking.a */; };
 		139105C61AF99C1200B5F7CC /* libRCTSettings.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139105C11AF99BAD00B5F7CC /* libRCTSettings.a */; };
 		139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139FDEF41B06529B00C62182 /* libRCTWebSocket.a */; };
@@ -26,16 +27,21 @@
 		59D140D7A1454331A7D389AC /* libRNImagePicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63E20DB79E594EE9888473E7 /* libRNImagePicker.a */; };
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		6E6FA56B676B4F9E8C547C02 /* libRCTFBSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F94E2ADD4407444A95103C39 /* libRCTFBSDK.a */; };
+		6F2BE8671E6AA3DD009B1D9D /* libOAuthManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F2BE80A1E6A9EE1009B1D9D /* libOAuthManager.a */; };
+		6F7FFD831E63BFCD00096D02 /* RNLinkedInSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7FFD811E63BFCD00096D02 /* RNLinkedInSessionManager.swift */; };
+		6F7FFD841E63BFCD00096D02 /* RNLinkedInSessionManagerBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F7FFD821E63BFCD00096D02 /* RNLinkedInSessionManagerBridge.m */; };
 		6FE437ED1E5F5B600076B37A /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FE437E91E5F5B600076B37A /* Bolts.framework */; };
 		6FE437EE1E5F5B600076B37A /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FE437EA1E5F5B600076B37A /* FBSDKCoreKit.framework */; };
 		6FE437EF1E5F5B600076B37A /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FE437EB1E5F5B600076B37A /* FBSDKLoginKit.framework */; };
 		6FE437F01E5F5B600076B37A /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FE437EC1E5F5B600076B37A /* FBSDKShareKit.framework */; };
+		770CB70AF17AAE1305050F27 /* Pods_PoseUi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB4390DAC1B01E3D0CC588AA /* Pods_PoseUi.framework */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		8C475095EF254E4186DAD4E0 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ECE20E0C077E4A45AB2FF61A /* MaterialIcons.ttf */; };
 		90591136760F44BE9CC11055 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E652614C2EC64B26BE4870C3 /* Entypo.ttf */; };
 		963DC4129C264602B48A5AB6 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 110C4141A00E4168815FEC43 /* Ionicons.ttf */; };
 		A3CC7445006C48378BEE2071 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CA23A54BFD0D4D54BA02ED5A /* EvilIcons.ttf */; };
 		AC39057CA6E54FF3B7823E88 /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 992D4F382A1F4BC99E24E1C8 /* libRNVectorIcons.a */; };
+		B521D402BE414D498E47393D /* libFirestack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B67A86C6A724B888836439C /* libFirestack.a */; };
 		B7D6221851DA403FB69D5A94 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0905805E628046E2B4A4D262 /* MaterialCommunityIcons.ttf */; };
 		E0779900C5D6431CB98F42FB /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 93CFC91F45C242C8A44AC341 /* Octicons.ttf */; };
 		EF248CF6FEB740B59849E50F /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 501D0AF3BBFE4BDF84CE388D /* Zocial.ttf */; };
@@ -212,6 +218,20 @@
 			remoteGlobalIDString = 2D2A28201D9B03D100D4039D;
 			remoteInfo = "RCTAnimation-tvOS";
 		};
+		6F2BE77E1E6A9493009B1D9D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B42843205A604325BC47F927 /* Firestack.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = Firestack;
+		};
+		6F2BE8091E6A9EE1009B1D9D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0840EA6CEFE7426CA9F1A187 /* OAuthManager.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D91353961DA7849100AABC96;
+			remoteInfo = OAuthManager;
+		};
 		6F6A90C01E538D25005E0952 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CAB2B8E1F7664E11B091EE92 /* RNImagePicker.xcodeproj */;
@@ -259,6 +279,7 @@
 		00E356EE1AD99517003FC87E /* PoseUiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PoseUiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* PoseUiTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PoseUiTests.m; sourceTree = "<group>"; };
+		0840EA6CEFE7426CA9F1A187 /* OAuthManager.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = OAuthManager.xcodeproj; path = "../node_modules/react-native-oauth/ios/OAuthManager.xcodeproj"; sourceTree = "<group>"; };
 		0905805E628046E2B4A4D262 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
 		110C4141A00E4168815FEC43 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		139105B61AF99BAD00B5F7CC /* RCTSettings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTSettings.xcodeproj; path = "../node_modules/react-native/Libraries/Settings/RCTSettings.xcodeproj"; sourceTree = "<group>"; };
@@ -271,22 +292,34 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = PoseUi/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = PoseUi/main.m; sourceTree = "<group>"; };
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
+		17203A852198B68B494E4F7D /* Pods-PoseUiTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PoseUiTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PoseUiTests/Pods-PoseUiTests.release.xcconfig"; sourceTree = "<group>"; };
 		38C46A006FA649E598FC22EF /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
+		4F2616CFE1B44A5F02ED0507 /* Pods-PoseUi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PoseUi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PoseUi/Pods-PoseUi.debug.xcconfig"; sourceTree = "<group>"; };
 		501D0AF3BBFE4BDF84CE388D /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		63E20DB79E594EE9888473E7 /* libRNImagePicker.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNImagePicker.a; sourceTree = "<group>"; };
+		6F2BE8681E6AA453009B1D9D /* PoseUi.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = PoseUi.entitlements; path = PoseUi/PoseUi.entitlements; sourceTree = "<group>"; };
 		6F30DEEB1E5417DB0098C981 /* ImagePickerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImagePickerManager.m; path = "../node_modules/react-native-image-picker/ios/ImagePickerManager.m"; sourceTree = "<group>"; };
+		6F7FFD811E63BFCD00096D02 /* RNLinkedInSessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RNLinkedInSessionManager.swift; sourceTree = "<group>"; };
+		6F7FFD821E63BFCD00096D02 /* RNLinkedInSessionManagerBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNLinkedInSessionManagerBridge.m; sourceTree = "<group>"; };
 		6FE437E91E5F5B600076B37A /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = ../../../FacebookSDK/Bolts.framework; sourceTree = "<group>"; };
 		6FE437EA1E5F5B600076B37A /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		6FE437EB1E5F5B600076B37A /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../../FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		6FE437EC1E5F5B600076B37A /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../../../FacebookSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
+		6FE437F11E63ACDA0076B37A /* PoseUi-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PoseUi-Bridging-Header.h"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
+		7B67A86C6A724B888836439C /* libFirestack.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libFirestack.a; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		8341317820B34AB4A35CA315 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 		90DB3CAD3EBC4ED29C2ED73F /* RCTFBSDK.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RCTFBSDK.xcodeproj; path = "../node_modules/react-native-fbsdk/ios/RCTFBSDK.xcodeproj"; sourceTree = "<group>"; };
 		93CFC91F45C242C8A44AC341 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
+		94BA41D6CC734B1CF09CF9DB /* Pods-PoseUi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PoseUi.release.xcconfig"; path = "Pods/Target Support Files/Pods-PoseUi/Pods-PoseUi.release.xcconfig"; sourceTree = "<group>"; };
 		992D4F382A1F4BC99E24E1C8 /* libRNVectorIcons.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNVectorIcons.a; sourceTree = "<group>"; };
+		A9F2D5B137824C98E0D57CAA /* Pods-PoseUiTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PoseUiTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PoseUiTests/Pods-PoseUiTests.debug.xcconfig"; sourceTree = "<group>"; };
+		AB4390DAC1B01E3D0CC588AA /* Pods_PoseUi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PoseUi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B42843205A604325BC47F927 /* Firestack.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = Firestack.xcodeproj; path = "../node_modules/react-native-firestack/ios/Firestack.xcodeproj"; sourceTree = "<group>"; };
 		BA34C149A7484EA0ACF41512 /* RNVectorIcons.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNVectorIcons.xcodeproj; path = "../node_modules/react-native-vector-icons/RNVectorIcons.xcodeproj"; sourceTree = "<group>"; };
+		BF73CF1039922044ABE68030 /* Pods_PoseUiTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PoseUiTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9DD956A1F924B4A8026922E /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
 		CA23A54BFD0D4D54BA02ED5A /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
 		CAB2B8E1F7664E11B091EE92 /* RNImagePicker.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNImagePicker.xcodeproj; path = "../node_modules/react-native-image-picker/ios/RNImagePicker.xcodeproj"; sourceTree = "<group>"; };
@@ -301,6 +334,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */,
+				0F096E645112444BD592B4AE /* Pods_PoseUiTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +342,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F2BE8671E6AA3DD009B1D9D /* libOAuthManager.a in Frameworks */,
 				6FE437EF1E5F5B600076B37A /* FBSDKLoginKit.framework in Frameworks */,
 				6FE437ED1E5F5B600076B37A /* Bolts.framework in Frameworks */,
 				5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */,
@@ -326,6 +361,8 @@
 				6FE437EE1E5F5B600076B37A /* FBSDKCoreKit.framework in Frameworks */,
 				59D140D7A1454331A7D389AC /* libRNImagePicker.a in Frameworks */,
 				6E6FA56B676B4F9E8C547C02 /* libRCTFBSDK.a in Frameworks */,
+				770CB70AF17AAE1305050F27 /* Pods_PoseUi.framework in Frameworks */,
+				B521D402BE414D498E47393D /* libFirestack.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +449,7 @@
 		13B07FAE1A68108700A75B9A /* PoseUi */ = {
 			isa = PBXGroup;
 			children = (
+				6F2BE8681E6AA453009B1D9D /* PoseUi.entitlements */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -419,6 +457,7 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				6FE437F11E63ACDA0076B37A /* PoseUi-Bridging-Header.h */,
 			);
 			name = PoseUi;
 			sourceTree = "<group>";
@@ -464,6 +503,22 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		6F2BE77B1E6A9493009B1D9D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6F2BE77F1E6A9493009B1D9D /* libFirestack.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6F2BE8051E6A9EE0009B1D9D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6F2BE80A1E6A9EE1009B1D9D /* libOAuthManager.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		6F6A90A21E538D25005E0952 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -478,6 +533,16 @@
 				6F6A90C41E538D25005E0952 /* libRNVectorIcons.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		6F7FFD801E63BFCD00096D02 /* RNLinkedInSessionManager */ = {
+			isa = PBXGroup;
+			children = (
+				6F7FFD811E63BFCD00096D02 /* RNLinkedInSessionManager.swift */,
+				6F7FFD821E63BFCD00096D02 /* RNLinkedInSessionManagerBridge.m */,
+			);
+			name = RNLinkedInSessionManager;
+			path = "../node_modules/react-native-linkedin-sdk/ios/RNLinkedInSessionManager";
 			sourceTree = "<group>";
 		};
 		6FE437C61E5EA6720076B37A /* Products */ = {
@@ -495,6 +560,8 @@
 				6FE437EA1E5F5B600076B37A /* FBSDKCoreKit.framework */,
 				6FE437EB1E5F5B600076B37A /* FBSDKLoginKit.framework */,
 				6FE437EC1E5F5B600076B37A /* FBSDKShareKit.framework */,
+				AB4390DAC1B01E3D0CC588AA /* Pods_PoseUi.framework */,
+				BF73CF1039922044ABE68030 /* Pods_PoseUiTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -525,6 +592,8 @@
 				BA34C149A7484EA0ACF41512 /* RNVectorIcons.xcodeproj */,
 				CAB2B8E1F7664E11B091EE92 /* RNImagePicker.xcodeproj */,
 				90DB3CAD3EBC4ED29C2ED73F /* RCTFBSDK.xcodeproj */,
+				B42843205A604325BC47F927 /* Firestack.xcodeproj */,
+				0840EA6CEFE7426CA9F1A187 /* OAuthManager.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -541,6 +610,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				6F7FFD801E63BFCD00096D02 /* RNLinkedInSessionManager */,
 				6FE437E81E5F5AE00076B37A /* Frameworks */,
 				6F30DEEB1E5417DB0098C981 /* ImagePickerManager.m */,
 				13B07FAE1A68108700A75B9A /* PoseUi */,
@@ -548,6 +618,7 @@
 				00E356EF1AD99517003FC87E /* PoseUiTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				35E00B3AD7F94597BA0D11EE /* Resources */,
+				A5185E49E2C8AF598CA4E492 /* Pods */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -562,6 +633,17 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		A5185E49E2C8AF598CA4E492 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4F2616CFE1B44A5F02ED0507 /* Pods-PoseUi.debug.xcconfig */,
+				94BA41D6CC734B1CF09CF9DB /* Pods-PoseUi.release.xcconfig */,
+				A9F2D5B137824C98E0D57CAA /* Pods-PoseUiTests.debug.xcconfig */,
+				17203A852198B68B494E4F7D /* Pods-PoseUiTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -569,9 +651,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "PoseUiTests" */;
 			buildPhases = (
+				8DC88642DCFCAB49F8962285 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
+				FC6F630675CF7C226234FC61 /* [CP] Embed Pods Frameworks */,
+				3AB5504E2F642AAF5F9096D3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -587,10 +672,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "PoseUi" */;
 			buildPhases = (
+				A5F0572884D61714B28F1ED6 /* [CP] Check Pods Manifest.lock */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				14552B06F4B9DACCCB6B8CE7 /* [CP] Embed Pods Frameworks */,
+				63CC6D057462AD0040C24E35 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -614,6 +702,15 @@
 						CreatedOnToolsVersion = 6.2;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
+					13B07F861A680F5B00A75B9A = {
+						DevelopmentTeam = 6E4GE5NHPP;
+						LastSwiftMigration = 820;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
+					};
 				};
 			};
 			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "PoseUi" */;
@@ -628,6 +725,14 @@
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
+				{
+					ProductGroup = 6F2BE77B1E6A9493009B1D9D /* Products */;
+					ProjectRef = B42843205A604325BC47F927 /* Firestack.xcodeproj */;
+				},
+				{
+					ProductGroup = 6F2BE8051E6A9EE0009B1D9D /* Products */;
+					ProjectRef = 0840EA6CEFE7426CA9F1A187 /* OAuthManager.xcodeproj */;
+				},
 				{
 					ProductGroup = 00C302A81ABCB8CE00DB3ED1 /* Products */;
 					ProjectRef = 00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */;
@@ -855,6 +960,20 @@
 			remoteRef = 5E9157341DD0AC6500FF2AA8 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		6F2BE77F1E6A9493009B1D9D /* libFirestack.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libFirestack.a;
+			remoteRef = 6F2BE77E1E6A9493009B1D9D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6F2BE80A1E6A9EE1009B1D9D /* libOAuthManager.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libOAuthManager.a;
+			remoteRef = 6F2BE8091E6A9EE1009B1D9D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		6F6A90C11E538D25005E0952 /* libRNImagePicker.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -936,6 +1055,96 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/packager/react-native-xcode.sh";
 		};
+		14552B06F4B9DACCCB6B8CE7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PoseUi/Pods-PoseUi-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3AB5504E2F642AAF5F9096D3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PoseUiTests/Pods-PoseUiTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		63CC6D057462AD0040C24E35 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PoseUi/Pods-PoseUi-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8DC88642DCFCAB49F8962285 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A5F0572884D61714B28F1ED6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FC6F630675CF7C226234FC61 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PoseUiTests/Pods-PoseUiTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -951,7 +1160,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F7FFD831E63BFCD00096D02 /* RNLinkedInSessionManager.swift in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				6F7FFD841E63BFCD00096D02 /* RNLinkedInSessionManagerBridge.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -981,7 +1192,9 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A9F2D5B137824C98E0D57CAA /* Pods-PoseUiTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -995,6 +1208,7 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PoseUi.app/PoseUi";
@@ -1003,7 +1217,9 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 17203A852198B68B494E4F7D /* Pods-PoseUiTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = PoseUiTests/Info.plist;
@@ -1011,6 +1227,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -1022,11 +1239,25 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F2616CFE1B44A5F02ED0507 /* Pods-PoseUi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = PoseUi/PoseUi.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
-				FRAMEWORK_SEARCH_PATHS = "~/Documents/FacebookSDK";
+				DEVELOPMENT_TEAM = 6E4GE5NHPP;
+				FRAMEWORK_SEARCH_PATHS = (
+					"~/Documents/FacebookSDK",
+					"$(inherited)",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/../node_modules/react-native-linkedin-sdk/ios/RNLinkedInSessionManager",
+					"$(SRCROOT)/../node_modules/react-native/Libraries/**",
+					"$(SRCROOT)/../node_modules/react-native-oauth/ios/OAuthManager",
+					"$(SRCROOT)/../node_modules/react-native/Libraries/LinkingIOS",
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = PoseUi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -1039,16 +1270,33 @@
 					"-lc++",
 				);
 				PRODUCT_NAME = PoseUi;
+				SWIFT_OBJC_BRIDGING_HEADER = "PoseUi-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94BA41D6CC734B1CF09CF9DB /* Pods-PoseUi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = PoseUi/PoseUi.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
-				FRAMEWORK_SEARCH_PATHS = "~/Documents/FacebookSDK";
+				DEVELOPMENT_TEAM = 6E4GE5NHPP;
+				FRAMEWORK_SEARCH_PATHS = (
+					"~/Documents/FacebookSDK",
+					"$(inherited)",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/../node_modules/react-native-linkedin-sdk/ios/RNLinkedInSessionManager",
+					"$(SRCROOT)/../node_modules/react-native/Libraries/**",
+					"$(SRCROOT)/../node_modules/react-native-oauth/ios/OAuthManager",
+					"$(SRCROOT)/../node_modules/react-native/Libraries/LinkingIOS",
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = PoseUi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -1061,6 +1309,8 @@
 					"-lc++",
 				);
 				PRODUCT_NAME = PoseUi;
+				SWIFT_OBJC_BRIDGING_HEADER = "PoseUi-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
@@ -1099,10 +1349,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../node_modules/react-native-linkedin-sdk/ios/RNLinkedInSessionManager";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/scottterry/Documents/Projects/PoseUi/ios/PoseUi-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -1134,9 +1386,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../node_modules/react-native-linkedin-sdk/ios/RNLinkedInSessionManager";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/scottterry/Documents/Projects/PoseUi/ios/PoseUi-Bridging-Header.h";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

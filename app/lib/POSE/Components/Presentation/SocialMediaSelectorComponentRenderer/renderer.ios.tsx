@@ -8,8 +8,9 @@ export function render() {
     <List >
           <SocialMediaOption value="facebook" label="Facebook"></SocialMediaOption>
           <SocialMediaOption value="linkedin" label="LinkedIn"></SocialMediaOption>
+          <SocialMediaOption value="twitter" label="Twitter"></SocialMediaOption>
     </List>
-    
+
     </Card>
   );
 }

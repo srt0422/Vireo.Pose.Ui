@@ -8,8 +8,9 @@ function render() {
     <native_base_1.List>
           <SocialMediaOption_1.default value="facebook" label="Facebook"></SocialMediaOption_1.default>
           <SocialMediaOption_1.default value="linkedin" label="LinkedIn"></SocialMediaOption_1.default>
+          <SocialMediaOption_1.default value="twitter" label="Twitter"></SocialMediaOption_1.default>
     </native_base_1.List>
-    
+
     </native_base_1.Card>);
 }
 exports.render = render;

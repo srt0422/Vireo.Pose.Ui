@@ -17,7 +17,7 @@ function fillSharingProviderWithAuthInfo(sharingProvider) {
 exports.fillSharingProviderWithAuthInfo = fillSharingProviderWithAuthInfo;
 function ensureLoggedIn() {
     return __awaiter(this, void 0, void 0, function* () {
-        return new Promise((fullfilled, rejected) => FB.getLoginStatus((response) => {
+        return yield new Promise((fullfilled, rejected) => FB.getLoginStatus((response) => {
             if (response.status !== 'connected') {
                 FB.login((response) => {
                     authInfo = response.authResponse;

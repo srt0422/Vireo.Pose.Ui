@@ -11,9 +11,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const react_native_fbsdk_1 = require("react-native-fbsdk");
 let accessToken;
 function fillSharingProviderWithAuthInfo(sharingProvider) {
-    sharingProvider.setExpirationDate(response.authResponse.expiresIn);
-    sharingProvider.setUserId(response.authResponse.userID);
-    sharingProvider.setAuthToken(response.authResponse.accessToken);
+    sharingProvider.setExpirationDate(accessToken.expirationTime);
+    sharingProvider.setUserId(accessToken.userID);
+    sharingProvider.setAuthToken(accessToken.accessToken);
 }
 exports.fillSharingProviderWithAuthInfo = fillSharingProviderWithAuthInfo;
 function ensureLoggedIn() {
@@ -24,9 +24,9 @@ function ensureLoggedIn() {
                 rejected("login canceled");
             }
             else {
-                react_native_fbsdk_1.FBAccessToken.getCurrentAccessToken()
-                    .then((accessToken) => {
-                    accessToken = accessToken;
+                react_native_fbsdk_1.AccessToken.getCurrentAccessToken()
+                    .then((result) => {
+                    accessToken = result;
                     fullfilled();
                 });
             }
@@ -34,3 +34,12 @@ function ensureLoggedIn() {
     });
 }
 exports.ensureLoggedIn = ensureLoggedIn;
+// declinedPermissions
+// :
+// Array[0]
+// grantedPermissions
+// :
+// Array[1]
+// isCancelled
+// :
+// false
