@@ -5,6 +5,10 @@ const renderer_1 = require("./SocialMediaOptionComponentRenderer/renderer");
 const styles = require("../../styles");
 var postStore = PostStore;
 class SocialMediaOption extends React.Component {
+    constructor() {
+        super();
+        this.onSelected = this.onSelected.bind(this);
+    }
     render() {
         return renderer_1.default.call(this);
     }
@@ -12,6 +16,7 @@ class SocialMediaOption extends React.Component {
         this.setState({ selected: false });
     }
     componentWillUpdate(nextProps, nextState) {
+        // update flux store to track selected sharingProviders
         if (nextState.selected) {
             postStore.tryAddSharingProvider(this.props.value);
         }
@@ -22,10 +27,7 @@ class SocialMediaOption extends React.Component {
     onSelected(e) {
         this.setState({ selected: !this.state.selected });
     }
-    constructor() {
-        super();
-        this.onSelected = this.onSelected.bind(this);
-    }
 }
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = SocialMediaOption;
+//# sourceMappingURL=SocialMediaOption.js.map

@@ -7,3 +7,4 @@ var POSE;
         });
     })(Tests = POSE.Tests || (POSE.Tests = {}));
 })(POSE || (POSE = {}));
+//# sourceMappingURL=TestsMain.js.map

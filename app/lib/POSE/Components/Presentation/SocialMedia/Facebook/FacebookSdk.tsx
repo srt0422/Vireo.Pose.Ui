@@ -57,4 +57,6 @@ class FacebookSdk extends React.Component<IFacebookSdkProps, any>{
     }
 }
 
-export = FacebookSdk;
+export FacebookSdk;
+
+export default FacebookSdk;

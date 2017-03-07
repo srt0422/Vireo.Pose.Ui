@@ -1,32 +1,36 @@
 const path = require("path");
+const fs = require("fs");
 const webpack = require("webpack");
-const {Platform} = require("react-native");
+//const {Platform} = require("react-native");
 
 module.exports = {
-    context: path.resolve(__dirname, '../../'),
+    context: fs.realpathSync (__dirname + '/../../'),
     entry: [
         "babel-polyfill",
-        path.join(__dirname, "../../app/web/public/js/lib/Main")
+        fs.realpathSync(__dirname+ "/../../app/lib/Main.tsx")
     ],
     output: {
-        path: path.resolve(__dirname, '../public'),
+        path: fs.realpathSync(__dirname+ '/../public'),
         filename: 'bundle.js',
         publicPath: '/'
     },
+    devtool: 'source-map',
+    debug: true,
     resolve: {
-        extensions: ["", ".js", ".css"]
+        extensions: ["", ".webpack.js", ".web.js", ".ts", ".tsx", ".js", ".jsx", ".css"]
     },
     module: {
         loaders: [
-            {
-                test: /\.js$/,
-                exclude: "node_modules",
-                loader: 'babel-loader',
-                query: {
-                    presets: ["es2015"],
-                    plugins:[]
-                }
-            },
+            // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
+            { test: /\.tsx?$/, loader: "awesome-typescript-loader" },
+            //{
+            //    test: /.jsx?$/,
+            //    loader: 'babel-loader',
+            //    exclude: /node_modules/,
+            //    query: {
+            //        presets: ['es2015', 'react']
+            //    }
+            //},
             {
                 test: /\.json$/,
                 loader: 'json-loader'
@@ -35,6 +39,16 @@ module.exports = {
                 test: /\.css/,
                 loader: "style-loader!css-loader?modules"
             }
+            //{
+            //    test: /\.jsx?$/,
+            //    loader: "source-map-loader",
+            //    enforce: "pre"
+            //},
+        ],
+
+        preLoaders: [
+            // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
+            { test: /\.js$/, loader: "source-map-loader" }
         ]
     },
     node: {
@@ -49,7 +63,8 @@ module.exports = {
         this: true
     },
     externals: {
-        "crypto": "crypto"
+        "crypto": "crypto",
+        "react-native": "react-native"
     },
     devServer: {
         contentBase: path.join(__dirname, "../public"),
@@ -58,9 +73,9 @@ module.exports = {
     },
     target: "web",
     plugins: [new webpack.DefinePlugin({
-            'process.env': {
-                NODE_ENV: JSON.stringify('development'),
-                PLATFORM_ENV: JSON.stringify('web')
-            }
-        })]
+        'process.env': {
+            NODE_ENV: JSON.stringify('development'),
+            PLATFORM_ENV: JSON.stringify('web')
+        }
+    })]
 }

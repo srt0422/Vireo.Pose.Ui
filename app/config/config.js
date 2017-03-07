@@ -1,15 +1,22 @@
 "use strict";
-const react_native_1 = require("react-native");
-let process;
-if (react_native_1.Platform.OS === "ios" || react_native_1.Platform.OS !== "android") {
-    process = {
-        env: {
-            NODE_ENV: "development"
-        }
-    };
+let Platform, process;
+try {
+    Platform = require("react-native");
 }
-else {
-    process = require("process");
+catch (e) {
+}
+finally {
+    // const {Platform} = ReactNative;
+    if (Platform && (Platform.OS === "ios" || Platform.OS !== "android")) {
+        process = {
+            env: {
+                NODE_ENV: "development"
+            }
+        };
+    }
+    else {
+        process = require("process");
+    }
 }
 let config = {};
 switch (process.env.NODE_ENV) {
@@ -24,3 +31,4 @@ switch (process.env.NODE_ENV) {
 }
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = config;
+//# sourceMappingURL=config.js.map

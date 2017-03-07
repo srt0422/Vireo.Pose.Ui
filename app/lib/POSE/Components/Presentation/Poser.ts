@@ -6,9 +6,8 @@ import SocialOptions = require("../SocialProviders");
 import ReactRouter = require("react-router");
 import Relay = require("react-relay");
 import renderer from "./PoserRenderer/renderer";
-import {Navigator} from "react-native";
 
-const styles = require("../../styles/styles");
+import styles = require("../../styles/styles");
 
 var formStyle = {
     marginTop: "15px",

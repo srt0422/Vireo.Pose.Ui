@@ -10,8 +10,8 @@
     "android-bundle": "react-native bundle --dev false --entry-file index.android.js --platform android --bundle-output android/app/src/main/assets/index.android.bundle",
     "android-dev-bundle": "react-native bundle --entry-file index.android.js --platform android --bundle-output android/app/src/main/assets/index.android.bundle",
     "start-ios": "react-native run-ios",
-    "web-dev": "webpack-dev-server --config web/webpack/webpack.config.babel.js --progress --colors --open",
-    "web-bundle": "webpack --config web/webpack/web.prod.config.js --progress --colors",
+    "web-dev": "webpack-dev-server --config web/webpack/webpack.config.babel.js --progress --colors --open --hot",
+    "web-bundle": "webpack --config web/webpack/webpack.config.babel.js --progress --colors",
     "clear-cache": "gulp clear-cache"
   },
   "dependencies": {
@@ -43,6 +43,7 @@
     "@types/core-js": "^0.9.35",
     "autoprefixer": "^6.3.1",
     "autoprefixer-loader": "^3.2.0",
+    "awesome-typescript-loader": "^3.1.1",
     "babel-core": "^6.4.5",
     "babel-jest": "18.0.0",
     "babel-loader": "^6.2.1",
@@ -65,7 +66,9 @@
     "redux-devtools-dock-monitor": "^1.1.1",
     "redux-devtools-log-monitor": "^1.0.11",
     "redux-logger": "^2.4.0",
+    "source-map-loader": "^0.1.6",
     "style-loader": "^0.13.0",
+    "typescript": "^2.2.1",
     "webpack": "^1.12.12",
     "webpack-dev-middleware": "^1.5.1",
     "webpack-dev-server": "^1.14.1",

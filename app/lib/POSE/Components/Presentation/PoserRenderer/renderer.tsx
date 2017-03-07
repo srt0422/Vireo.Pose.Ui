@@ -3,7 +3,7 @@ import SharingContentComponent = require("../SharingContentComponent");
 import SocialMediaSelectorComponent = require("../SocialMediaSelectorComponent");
 import SocialOptions = require("../../SocialProviders");
 
-const styles = require("../../styles");
+import styles from "../../../styles";
 
 export  function render(props, state) {
     return (<form className={`${styles["center-block"]} ${styles.clearfix} ${styles['sharing-component']}`}>

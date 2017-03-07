@@ -1,5 +1,6 @@
 "use strict";
 const Backbone = require("backbone");
+//module POSE.Flux {
 class SharingProviderModel extends Backbone.Model {
     constructor(attributes, options) {
         super(attributes, options);
@@ -23,3 +24,5 @@ class SharingProviderModel extends Backbone.Model {
     }
 }
 module.exports = SharingProviderModel;
+//} 
+//# sourceMappingURL=SharingProviderModel.js.map

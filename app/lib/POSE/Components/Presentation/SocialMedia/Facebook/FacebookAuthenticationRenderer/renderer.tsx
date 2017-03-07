@@ -1,4 +1,5 @@
 declare var FB;
+import * as React from "react";
 
 export function renderer(){
 

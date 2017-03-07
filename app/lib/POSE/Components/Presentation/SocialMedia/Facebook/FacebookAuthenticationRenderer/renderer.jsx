@@ -1,4 +1,5 @@
 "use strict";
+const React = require("react");
 function renderer() {
     if (!this.props.shouldAuthenticate()) {
         return null;
@@ -27,3 +28,4 @@ function initializeFBSdk() {
 }
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = renderer;
+//# sourceMappingURL=renderer.jsx.map

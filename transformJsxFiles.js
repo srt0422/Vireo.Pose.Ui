@@ -1,5 +1,5 @@
 "use strict";
-const fs = require("fs");
+const fs = require('fs');
 const path = require("path");
 let jsxPath = path.join(__dirname, "app/lib");
 transformJsxFiles(jsxPath);
@@ -18,3 +18,4 @@ function transformJsxFiles(pathName) {
 }
 exports.transformJsxFiles = transformJsxFiles;
 ;
+//# sourceMappingURL=transformJsxFiles.js.map

@@ -1,11 +1,11 @@
 ﻿
 import React = require("react");
 
-import BootstrapContainerLayout from "../../HTML/Components/BootstrapContainerLayout";
+import renderer from "./AppRenderer/renderer";
 
 export default class App extends React.Component<any, any>{
 
     public render() {
-        return require("./AppRenderer/renderer")(this.props);
+        return renderer(this.props);
     }
 }

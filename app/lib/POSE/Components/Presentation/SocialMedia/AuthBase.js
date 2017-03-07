@@ -7,3 +7,4 @@ class AuthBase extends React.Component {
 }
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = AuthBase;
+//# sourceMappingURL=AuthBase.js.map

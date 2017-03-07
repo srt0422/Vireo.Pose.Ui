@@ -6,3 +6,4 @@ var POSE;
         Tests.Specs = new TestSpecRunner("pose");
     })(Tests = POSE.Tests || (POSE.Tests = {}));
 })(POSE || (POSE = {}));
+//# sourceMappingURL=Specs.js.map

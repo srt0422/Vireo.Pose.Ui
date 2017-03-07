@@ -1,4 +1,5 @@
 "use strict";
+// ﻿import {OAuth as OAuthHelper} from "oauth";
 const Backbone = require("backbone");
 let OAuth;
 class TwitterLoginFlow extends Backbone.Model {
@@ -18,6 +19,14 @@ class TwitterLoginFlow extends Backbone.Model {
 }
 class OAuthRequestHelper {
     constructor() {
+        // this.oauthProvider = new OAuthHelper(
+        //     'https://api.twitter.com/oauth/request_token',
+        //     'https://api.twitter.com/oauth/access_token',
+        //     '4jtgZPwRFMtCXXjuWadM2MqNC',
+        //     '3BWXE5somBM2AZAjNDA1t2m4IEc5fxLoH25xwCXLqHGjgN9qdS',
+        //     '1.0A',
+        //     null,
+        //     'HMAC-SHA1');
     }
     getAuthorizationToken(data) {
         return this.oauthProvider.getOAuthRequestToken(function () {
@@ -26,3 +35,5 @@ class OAuthRequestHelper {
     }
 }
 module.exports = TwitterLoginFlow;
+//}
+//# sourceMappingURL=TwitterLoginFlow.js.map

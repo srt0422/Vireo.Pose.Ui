@@ -1,18 +1,26 @@
-import {Platform} from "react-native";
+declare function require(moduleName);
 
-// const {Platform} = ReactNative;
+let Platform, process;
 
-let process;
-
-if (Platform.OS === "ios" || Platform.OS !== "android") {
-    process = {
-        env: {
-            NODE_ENV: "development"
-        }
-    };
+try {
+    Platform = require("react-native");
 }
-else {
-    process = require("process");
+catch (e) {
+}
+finally {
+    // const {Platform} = ReactNative;
+
+
+    if (Platform && (Platform.OS === "ios" || Platform.OS !== "android")) {
+        process = {
+            env: {
+                NODE_ENV: "development"
+            }
+        };
+    }
+    else {
+        process = require("process");
+    }
 }
 
 let config: IPoseConfiguration = {};

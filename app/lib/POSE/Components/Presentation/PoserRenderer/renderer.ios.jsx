@@ -1,6 +1,6 @@
 "use strict";
-const React = require("react");
-const native_base_1 = require("native-base");
+const React = require('react');
+const native_base_1 = require('native-base');
 const SharingContentComponent = require("../SharingContentComponent");
 const SocialMediaSelectorComponent = require("../SocialMediaSelectorComponent");
 const SocialOptions = require("../../SocialProviders");
@@ -26,3 +26,26 @@ const labelMap = {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = render;
+//
+// return (
+//   <View className={`${styles["center-block"]} ${styles.clearfix} ${styles['sharing-component']}`} style={formStyle}>
+//     <SharingContentComponent
+//         type={this.state.type}
+//         value={this.contentMap[this.state.value]}
+//         label={this.labelMap[this.state.value]}
+//         onChange={this.typeChanged}
+//         onContentChange={(val) => this.postValue = val}
+//         wrapperClass="form-group" />
+//
+//     <SocialMediaSelectorComponent options={SocialOptions}></SocialMediaSelectorComponent>
+//
+//     <button
+//         onClick={this.onClick}
+//         className={`${styles.btn} ${styles["btn-lg"]} ${styles["btn-success"]} ${styles["btn-block"]}`}
+//         value="Share"
+//         type="button"
+//         children="Share" />
+//
+// </form>
+// );
+//# sourceMappingURL=renderer.ios.jsx.map

@@ -26,3 +26,4 @@ var POSE;
         Tests.TestSpecRunners = [];
     })(Tests = POSE.Tests || (POSE.Tests = {}));
 })(POSE || (POSE = {}));
+//# sourceMappingURL=TestSpecRunner.js.map

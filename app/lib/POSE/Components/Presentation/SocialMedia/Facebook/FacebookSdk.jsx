@@ -47,4 +47,7 @@ class FacebookSdk extends React.Component {
         console.warn("FB failed to load");
     }
 }
-module.exports = FacebookSdk;
+FacebookSdk;
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = FacebookSdk;
+//# sourceMappingURL=FacebookSdk.jsx.map

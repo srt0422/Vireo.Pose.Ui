@@ -1,3 +1,4 @@
+///<reference path="../../../../typings/index.d.ts" />
 "use strict";
 const SharingProviderCollection = require("./SharingProviderCollection");
 const SharingProviderModel = require("./SharingProviderModel");
@@ -8,8 +9,8 @@ const config = require("../../../config/config");
 var twitterLoginHelper = new TwitterLoginHelper();
 const AddPostMutation = require("../Data/Mutations/AddPostMutation");
 class PostModel extends Backbone.Model {
-    constructor() {
-        super(...arguments);
+    constructor(...args) {
+        super(...args);
         this.SharingProviders = new SharingProviderCollection();
         this.url = config.SharingUrl + "Sharing/api/Post";
     }
@@ -66,6 +67,17 @@ class PostModel extends Backbone.Model {
         IN.User.authorize((optios) => {
             var sharingProvider = this.addNewSharingProvider(SocialProviders_1.default.LinkedIn);
             sharingProvider.setAuthToken(IN.ENV.auth.oauth_token);
+            //IN.API.Raw("/people/~/shares?format=json")
+            //    .method("POST")
+            //    .body(JSON.stringify({
+            //        "comment": "Check out developer.linkedin.com! http://linkd.in/1FC2PyG",
+            //        "visibility": {
+            //            "code": "anyone"
+            //        }
+            //    }))
+            //    .result((options) => console.log(options))
+            //    .error((options) => console.log(options));
+            //console.log(sharingProvider);
         }, this);
     }
     addNewSharingProvider(name) {
@@ -96,3 +108,4 @@ class PostModel extends Backbone.Model {
 }
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = PostModel;
+//# sourceMappingURL=PostModel.js.map
