@@ -1,4 +1,12 @@
 rootProject.name = 'PoseUi'
+include ':react-native-oauth'
+project(':react-native-oauth').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-oauth/android')
+include ':react-native-firestack'
+project(':react-native-firestack').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-firestack/android')
+include ':react-native-twitter'
+project(':react-native-twitter').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-twitter/android')
+include ':react-native-linkedin-sdk'
+project(':react-native-linkedin-sdk').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-linkedin-sdk/android')
 include ':react-native-fbsdk'
 project(':react-native-fbsdk').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-fbsdk/android')
 include ':react-native-image-picker'

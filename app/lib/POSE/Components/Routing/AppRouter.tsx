@@ -4,7 +4,6 @@ import React = require("react");
 import Relay = require("react-relay");
 import App from "../App";
 import Poser from "../Presentation/Poser";
-//import SocialAuth = require("SocialAuth");
 
 var Router = ReactRouter.Router;
 var Route = ReactRouter.Route;

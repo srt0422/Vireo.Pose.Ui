@@ -12,6 +12,9 @@ function showImagePicker() {
             return;
         }
         if (response.uri != null && response.uri != "") {
+            // You can also display the image using data:
+            // let source = { uri: 'data:image/jpeg;base64,' + response.data };
+            // TODO: look into how I'm dealing with images right now.
             this.onContentChange(response.uri);
         }
     });

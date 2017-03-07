@@ -1,4 +1,5 @@
 declare function require(moduleName);
+import IPoseConfiguration from "./IPoseConfiguration";
 
 let Platform, process;
 
@@ -23,7 +24,7 @@ finally {
     }
 }
 
-let config: IPoseConfiguration = {};
+export var config: IPoseConfiguration = {};
 
 switch (process.env.NODE_ENV) {
     case "production":
@@ -33,8 +34,12 @@ switch (process.env.NODE_ENV) {
     default:
 
         config = {
-            SharingUrl: "http://posewebapp.azurewebservices.net/",
-            FacebookAppId: "775514852467101"
+            SharingUrl: "https://pose-web-app.azurewebsites.net/",
+            FacebookAppId: "775514852467101",
+            Twitter: {
+                consumerKey: "4jtgZPwRFMtCXXjuWadM2MqNC",
+                consumerSecret: "3BWXE5somBM2AZAjNDA1t2m4IEc5fxLoH25xwCXLqHGjgN9qdS"
+            }
         };
 
         break;

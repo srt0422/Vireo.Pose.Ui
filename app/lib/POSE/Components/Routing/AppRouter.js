@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const ReactRouter = require("react-router");
 const Routes = require("./Enums/Routes");
 const React = require("react");
@@ -17,6 +18,7 @@ class AppRouter extends React.Component {
     }
     createRelayContainer(Component, props) {
         if (Relay.isContainer(Component)) {
+            // Construct the RelayQueryConfig from the route and the router props.
             var route = props.route;
             var { params } = props;
             return (<Relay.RootContainer Component={Component} renderFetched={(data) => <Component {...props} {...data}/>} route={{ params, name: route.path, queries: route.queries || {} }}/>);
@@ -26,5 +28,4 @@ class AppRouter extends React.Component {
         }
     }
 }
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = AppRouter;

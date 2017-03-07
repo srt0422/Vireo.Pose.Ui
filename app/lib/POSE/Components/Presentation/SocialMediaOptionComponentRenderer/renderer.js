@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const react_1 = require("react");
 const styles = require("../../../styles");
 function render() {
@@ -12,5 +13,4 @@ function render() {
           </button>);
 }
 exports.render = render;
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = render;

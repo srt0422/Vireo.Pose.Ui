@@ -19,6 +19,7 @@ var POSE;
                 expect(true).toBe(true);
             });
         });
+        //});
     })(Tests = POSE.Tests || (POSE.Tests = {}));
 })(POSE || (POSE = {}));
 //# sourceMappingURL=TwitterLoginFlowTests.js.map

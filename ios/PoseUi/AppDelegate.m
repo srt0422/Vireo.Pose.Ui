@@ -14,15 +14,25 @@
 
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 
+#import <React/RCTLinkingManager.h>
+
+#import "OAuthManager.h"
+
+@import Firebase;
+
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-  
-  
+
+  [FIRApp configure];
+    
+  [OAuthManager setupOAuthHandler:application];
+
   [[FBSDKApplicationDelegate sharedInstance] application:application
                            didFinishLaunchingWithOptions:launchOptions];
-  
+
   NSURL *jsCodeLocation;
 
   jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index.ios" fallbackResource:nil];
@@ -40,11 +50,11 @@
   [self.window makeKeyAndVisible];
   return YES;
 }
-  
+
 - (BOOL)application:(UIApplication *)application
             openURL:(NSURL *)url
             options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
-  
+
   BOOL handled = [[FBSDKApplicationDelegate sharedInstance] application:application
                                                                 openURL:url
                                                       sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey]
@@ -53,9 +63,35 @@
   // Add any custom logic here.
   return handled;
 }
-  
+
 - (void)applicationDidBecomeActive:(UIApplication *)application {
   [FBSDKAppEvents activateApp];
+}
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+  
+  if ([LinkedinSwiftHelper shouldHandleUrl:url]) {
+    return [LinkedinSwiftHelper application:application openURL:url sourceApplication:sourceApplication annotation:annotation];
+  }
+  else {
+    return [OAuthManager handleOpenUrl:application
+                               openURL:url
+                     sourceApplication:sourceApplication
+                            annotation:annotation];
+  }
+
+  return YES;
+}
+
+- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity
+ restorationHandler:(void (^)(NSArray * _Nullable))restorationHandler
+{
+  return [RCTLinkingManager application:application
+                   continueUserActivity:userActivity
+                     restorationHandler:restorationHandler];
 }
 
 @end
