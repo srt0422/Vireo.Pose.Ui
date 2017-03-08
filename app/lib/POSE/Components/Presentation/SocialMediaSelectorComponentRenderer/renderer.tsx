@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import SocialMediaOption from "../SocialMediaOption";
-import styles = require("../../../styles");
+import styles from "../../../styles";
 
 export default function(){
   return (

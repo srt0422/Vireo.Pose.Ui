@@ -1,4 +1,3 @@
-"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -7,13 +6,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-Object.defineProperty(exports, "__esModule", { value: true });
 let authInfo;
-function fillSharingProviderWithAuthInfo(sharingProvider) {
+export function fillSharingProviderWithAuthInfo(sharingProvider) {
     sharingProvider.setAuthToken(authInfo.accessToken);
 }
-exports.fillSharingProviderWithAuthInfo = fillSharingProviderWithAuthInfo;
-function ensureLoggedIn() {
+export function ensureLoggedIn() {
     return __awaiter(this, void 0, void 0, function* () {
         return new Promise((fullfill, reject) => {
             try {
@@ -28,4 +25,3 @@ function ensureLoggedIn() {
         });
     });
 }
-exports.ensureLoggedIn = ensureLoggedIn;

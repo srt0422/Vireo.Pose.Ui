@@ -1,8 +1,8 @@
-import React = require("react");
-
+import * as React from "react";
+import IUnorderedListComponentProps from "../Interfaces/IUnorderedListComponentProps";
 const styles = require("../../POSE/styles");
 
-class UnorderedListComponent extends React.Component<IUnorderedListComponentProps, any> {
+export class UnorderedListComponent extends React.Component<IUnorderedListComponentProps, any> {
     public render() {
         return (
             <ul className={`${styles["dropdown-menu"]} ${styles["dropdown-menu-right"]}`}>
@@ -18,4 +18,4 @@ class UnorderedListComponent extends React.Component<IUnorderedListComponentProp
     }
 }
 
-export = UnorderedListComponent;
+export default  UnorderedListComponent;

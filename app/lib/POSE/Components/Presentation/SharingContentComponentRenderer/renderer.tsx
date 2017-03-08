@@ -1,8 +1,8 @@
 import * as React from "react";
-import SharingInputTypeComponent = require("../SharingInputTypeComponent");
+import SharingInputTypeComponent from "../SharingInputTypeComponent";
 import styles from "../../../styles";
 
-export = function(props, state) {
+export function renderer(props, state) {
     return (<div className={this.props.wrapperClass}>
 
               <div className={`${styles["form-group"]}`}>
@@ -24,4 +24,6 @@ export = function(props, state) {
 
               </div>
           </div>);
-}
+};
+
+export default renderer;

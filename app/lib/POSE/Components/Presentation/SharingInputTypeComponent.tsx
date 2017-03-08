@@ -1,14 +1,15 @@
 
-import React = require("react");
-import renderer = require("./SharingInputTypeComponentRenderer/renderer");
+import * as React from "react";
+
+import renderer from "./SharingInputTypeComponentRenderer/renderer";
 
 const styles = require("../../styles");
 
-class SharingInputTypeComponent extends React.Component<any, any>
+export class SharingInputTypeComponent extends React.Component<any, any>
 {
     public render() {
         return renderer.call(this);
     }
 }
 
-export = SharingInputTypeComponent;
+export default SharingInputTypeComponent;

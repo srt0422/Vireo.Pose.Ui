@@ -1,9 +1,9 @@
 import * as React from "react";
-import UnorderedListComponent = require("../../../../HTML/Components/UnorderedListComponent");
+import UnorderedListComponent from "../../../../HTML/Components/UnorderedListComponent";
 
 import styles from "../../../styles";
 
-export = function(){
+export  function renderer(){
   return (
           <div className={`${styles.dropdown}`}>
 
@@ -25,3 +25,5 @@ export = function(){
               </div>
       );
 }
+
+export default renderer;

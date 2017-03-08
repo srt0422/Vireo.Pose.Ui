@@ -1,4 +1,3 @@
-"use strict";
-const styles = require("./styles/styles");
-styles;
-//# sourceMappingURL=styles.js.map
+import * as stylesModule from "./styles/styles";
+export var styles = stylesModule;
+export default styles;

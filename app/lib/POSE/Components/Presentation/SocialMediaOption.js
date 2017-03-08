@@ -1,17 +1,11 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const React = require("react");
-const PostStore = require("../../Flux/Stores/PostStore");
-const renderer_1 = require("./SocialMediaOptionComponentRenderer/renderer");
+import * as React from "react";
+import PostStore from "../../Flux/Stores/PostStore";
+import renderer from "./SocialMediaOptionComponentRenderer/renderer";
 const styles = require("../../styles");
 var postStore = PostStore;
-class SocialMediaOption extends React.Component {
-    constructor() {
-        super();
-        this.onSelected = this.onSelected.bind(this);
-    }
+export default class SocialMediaOption extends React.Component {
     render() {
-        return renderer_1.default.call(this);
+        return renderer.call(this);
     }
     componentWillMount() {
         this.setState({ selected: false });
@@ -28,6 +22,8 @@ class SocialMediaOption extends React.Component {
     onSelected(e) {
         this.setState({ selected: !this.state.selected });
     }
+    constructor() {
+        super();
+        this.onSelected = this.onSelected.bind(this);
+    }
 }
-exports.default = SocialMediaOption;
-//# sourceMappingURL=SocialMediaOption.js.map

@@ -1,4 +1,4 @@
-import React = require("react");
+import * as React from "react";
 import SocialMediaOption from "../SocialMediaOption";
 import {List, ListItem, Card, CardItem} from "native-base";
 

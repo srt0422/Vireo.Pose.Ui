@@ -1,5 +1,4 @@
-"use strict";
-const React = require("react");
+import * as React from "react";
 class LinkedInSdk extends React.Component {
     render() {
         return (<script type="text/javascript" src="//platform.linkedin.com/in.js">
@@ -8,5 +7,3 @@ class LinkedInSdk extends React.Component {
         </script>);
     }
 }
-module.exports = LinkedInSdk;
-//# sourceMappingURL=LinkedInSdk.jsx.map

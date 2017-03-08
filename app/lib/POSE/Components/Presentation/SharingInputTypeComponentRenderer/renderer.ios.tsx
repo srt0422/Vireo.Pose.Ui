@@ -12,7 +12,7 @@ const {Modal, StyleSheet} = ReactNative;
    test:{}
  };
 
-export = function() {
+export function renderer() {
   if(this.state == null){
       this.state = {
         showModal: false
@@ -50,3 +50,5 @@ export = function() {
 function setModalVisible (visible) {
     this.setState({showModal: visible});
 };
+
+export default renderer;

@@ -1,18 +1,17 @@
-"use strict";
-const React = require("react");
-const UnorderedListComponent = require("../../../../HTML/Components/UnorderedListComponent");
-const styles_1 = require("../../../styles");
-module.exports = function () {
-    return (<div className={`${styles_1.default.dropdown}`}>
+import * as React from "react";
+import UnorderedListComponent from "../../../../HTML/Components/UnorderedListComponent";
+import styles from "../../../styles";
+export function renderer() {
+    return (<div className={`${styles.dropdown}`}>
 
-                  <button type="button" className={`${styles_1.default.btn} ${styles_1.default["btn-lg"]} ${styles_1.default["btn-info"]} ${styles_1.default["dropdown-toggle"]} ${styles_1.default["btn-block"]}`} data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ref="button">
+                  <button type="button" className={`${styles.btn} ${styles["btn-lg"]} ${styles["btn-info"]} ${styles["dropdown-toggle"]} ${styles["btn-block"]}`} data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ref="button">
 
-                      {this.props.value} <span className={styles_1.default.caret}></span>
+                      {this.props.value} <span className={styles.caret}></span>
 
                       </button>
 
                   <UnorderedListComponent onItemClick={this.props.onTypeChanged} types={this.props.types}/>
 
               </div>);
-};
-//# sourceMappingURL=renderer.jsx.map
+}
+export default renderer;

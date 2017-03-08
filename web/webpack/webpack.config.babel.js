@@ -7,30 +7,30 @@ module.exports = {
     context: fs.realpathSync (__dirname + '/../../'),
     entry: [
         "babel-polyfill",
-        fs.realpathSync(__dirname+ "/../../app/lib/Main.tsx")
+        fs.realpathSync(__dirname+ "/../../app/lib/Main.jsx")
     ],
     output: {
         path: fs.realpathSync(__dirname+ '/../public'),
         filename: 'bundle.js',
         publicPath: '/'
     },
-    devtool: 'source-map',
+    devtool: 'cheap-source-map',
     debug: true,
     resolve: {
-        extensions: ["", ".webpack.js", ".web.js", ".ts", ".tsx", ".js", ".jsx", ".css"]
+        extensions: ["", ".js", ".jsx", ".css"]
     },
     module: {
         loaders: [
             // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
-            { test: /\.tsx?$/, loader: "awesome-typescript-loader" },
-            //{
-            //    test: /.jsx?$/,
-            //    loader: 'babel-loader',
-            //    exclude: /node_modules/,
-            //    query: {
-            //        presets: ['es2015', 'react']
-            //    }
-            //},
+            //{ test: /\.tsx?$/, loader: "awesome-typescript-loader" },
+            {
+                test: /.jsx?$/,
+                loader: 'babel-loader',
+                exclude: /node_modules/,
+                query: {
+                    presets: ['es2015', 'react']
+                }
+            },
             {
                 test: /\.json$/,
                 loader: 'json-loader'
@@ -39,16 +39,11 @@ module.exports = {
                 test: /\.css/,
                 loader: "style-loader!css-loader?modules"
             }
-            //{
-            //    test: /\.jsx?$/,
-            //    loader: "source-map-loader",
-            //    enforce: "pre"
-            //},
         ],
 
         preLoaders: [
             // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
-            { test: /\.js$/, loader: "source-map-loader" }
+            { test: /\.jsx?$/, loader: "source-map-loader" }
         ]
     },
     node: {
@@ -77,5 +72,8 @@ module.exports = {
             NODE_ENV: JSON.stringify('development'),
             PLATFORM_ENV: JSON.stringify('web')
         }
+    }),
+    new webpack.ProvidePlugin({
+        "React": "react",
     })]
 }

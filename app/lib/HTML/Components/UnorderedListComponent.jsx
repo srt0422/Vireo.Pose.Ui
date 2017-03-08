@@ -1,7 +1,6 @@
-"use strict";
-const React = require("react");
+import * as React from "react";
 const styles = require("../../POSE/styles");
-class UnorderedListComponent extends React.Component {
+export class UnorderedListComponent extends React.Component {
     render() {
         return (<ul className={`${styles["dropdown-menu"]} ${styles["dropdown-menu-right"]}`}>
                     {this.props.types.map((type, i, col) => {
@@ -12,5 +11,4 @@ class UnorderedListComponent extends React.Component {
                 </ul>);
     }
 }
-module.exports = UnorderedListComponent;
-//# sourceMappingURL=UnorderedListComponent.jsx.map
+export default UnorderedListComponent;

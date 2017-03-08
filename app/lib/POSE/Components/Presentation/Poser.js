@@ -1,7 +1,6 @@
-"use strict";
-const React = require("react");
-const PostStore = require("../../Flux/Stores/PostStore");
-const renderer_1 = require("./PoserRenderer/renderer");
+import * as React from "react";
+import PostStore from "../../Flux/Stores/PostStore";
+import renderer from "./PoserRenderer/renderer";
 var formStyle = {
     marginTop: "15px",
     width: "40%",
@@ -9,7 +8,7 @@ var formStyle = {
 };
 var postStore = PostStore;
 //set this up as a relay container
-class Poser extends React.Component {
+export default class Poser extends React.Component {
     constructor(props, context) {
         super(props, context);
         this.typeMap = {
@@ -31,7 +30,7 @@ class Poser extends React.Component {
         this.onClick = this.onClick.bind(this);
     }
     render() {
-        return renderer_1.default.call(this);
+        return renderer.call(this);
     }
     onClick() {
         postStore.setContent(this.postValue);
@@ -51,11 +50,8 @@ class Poser extends React.Component {
         });
     }
 }
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = Poser;
 //export default Relay.createContainer<any>(Poser, {
 //    fragments: {
 //        post: () => postStore.getFragment()
 //    }
 //});
-//# sourceMappingURL=Poser.js.map

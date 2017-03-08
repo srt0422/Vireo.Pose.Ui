@@ -1,4 +1,3 @@
-"use strict";
 // import re = require("rewire");
 //export class Poser extends React.Component<any, any>{
 //    render() {
@@ -50,4 +49,3 @@
 //     var jasmineEnv = jasmine.getEnv();
 //     jasmineEnv.execute();
 // });
-//# sourceMappingURL=PoserTests.jsx.map

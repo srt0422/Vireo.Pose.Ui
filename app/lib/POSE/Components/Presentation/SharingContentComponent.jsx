@@ -1,10 +1,8 @@
-"use strict";
-const React = require("react");
-const renderer = require("./SharingContentComponentRenderer/renderer");
-class SharingContentComponent extends React.Component {
+import * as React from "react";
+import renderer from "./SharingContentComponentRenderer/renderer";
+export class SharingContentComponent extends React.Component {
     render() {
         return renderer.call(this);
     }
 }
-module.exports = SharingContentComponent;
-//# sourceMappingURL=SharingContentComponent.jsx.map
+export default SharingContentComponent;

@@ -1,4 +1,4 @@
-import React = require("react");
+import * as React from "react";
 declare class SocialMediaSelectorComponent extends React.Component<ISocialMediaSelectorComponent, any> {
     render(): JSX.Element;
 }

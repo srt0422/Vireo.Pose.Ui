@@ -1,7 +1,7 @@
-﻿import React = require("react");
+﻿import * as React from "react";
 import Routes = require("../Routing/Enums/Routes");
-import PostStore = require("../../Flux/Stores/PostStore");
 import PostModel from "../../Flux/PostModel";
+import PostStore from "../../Flux/Stores/PostStore";
 import SocialOptions = require("../SocialProviders");
 import ReactRouter = require("react-router");
 import Relay = require("react-relay");

@@ -1,13 +1,16 @@
-﻿import React = require("react");
-import SharingInputTypeComponent = require("./SharingInputTypeComponent");
-import {IPOSESharingContentComponentProps} from "./Interfaces/IPOSESharingContentComponentProps";
-import renderer = require("./SharingContentComponentRenderer/renderer");
+﻿import * as React from "react";
 
-class SharingContentComponent extends React.Component<IPOSESharingContentComponentProps, IPOSESharingContentComponentState>
+import { IPOSESharingContentComponentProps } from "./Interfaces/IPOSESharingContentComponentProps";
+
+import { IPOSESharingContentComponentState } from "./Interfaces/IPOSESharingContentComponentState";
+
+import renderer from "./SharingContentComponentRenderer/renderer";
+
+export class SharingContentComponent extends React.Component<IPOSESharingContentComponentProps, IPOSESharingContentComponentState>
 {
     public render() {
         return renderer.call(this)
     }
 }
 
-export = SharingContentComponent;
+export default SharingContentComponent;

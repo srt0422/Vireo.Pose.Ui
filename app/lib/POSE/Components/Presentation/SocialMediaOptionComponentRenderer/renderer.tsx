@@ -1,20 +1,19 @@
-import React from "react";
+import * as React from "react";
 const styles = require("../../../styles");
 
 export function render(){
-  return (
-      <button
-          onClick={this.onSelected}
-          type="button"
-          className={styles["list-group-item"] + " "
-          + (this.state.selected
-              ? styles["list-group-item-danger"]
-              : "") }>
+    return (
+        <button
+            onClick={this.onSelected}
+            type="button"
+            className={styles["list-group-item"] + " "
+                + (this.state.selected
+                    ? styles["list-group-item-danger"]
+                    : "")}>
 
-              {this.props.label}
-
-          </button>
-  )
+            {this.props.label}
+        </button>
+    );
 }
 
 export default render;

@@ -1,4 +1,4 @@
-import React = require("react");
+import * as React from "react";
 declare class FacebookSdk extends React.Component<IFacebookSdkProps, any> {
     constructor();
     render(): any;

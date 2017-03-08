@@ -1,14 +1,12 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const React = require("react");
-require("../Authentication/authenticationManager");
-class App extends React.Component {
+import * as React from "react";
+import "../Authentication/authenticationManager";
+import renderer from "./AppRenderer/renderer";
+export default class App extends React.Component {
     render() {
-        return require("./AppRenderer/renderer")(this.props);
+        return renderer.call(this);
     }
     componentDidMount() {
     }
     componentWillUnmount() {
     }
 }
-exports.default = App;

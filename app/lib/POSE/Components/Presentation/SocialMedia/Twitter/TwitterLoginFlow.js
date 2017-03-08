@@ -1,6 +1,3 @@
-"use strict";
-// ﻿import {OAuth as OAuthHelper} from "oauth";
-const Backbone = require("backbone");
 let OAuth;
 class TwitterLoginFlow extends Backbone.Model {
     constructor() {
@@ -34,6 +31,4 @@ class OAuthRequestHelper {
         });
     }
 }
-module.exports = TwitterLoginFlow;
 //}
-//# sourceMappingURL=TwitterLoginFlow.js.map

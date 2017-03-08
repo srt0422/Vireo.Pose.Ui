@@ -9,3 +9,5 @@ export interface IPOSESharingContentComponentProps {
     onContentChange: (val: string) => void;
     style?: any;
 }
+
+export default IPOSESharingContentComponentProps;

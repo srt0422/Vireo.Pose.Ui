@@ -1,6 +1,6 @@
 import {StyleSheet, NavigatorIOS as Navigator} from "react-native";
 import {View, Text} from "native-base";
-import React = require("react");
+import * as React from "react";
 import Poser from "../Presentation/Poser";
 
 export class Navigation extends React.Component<any, any>{

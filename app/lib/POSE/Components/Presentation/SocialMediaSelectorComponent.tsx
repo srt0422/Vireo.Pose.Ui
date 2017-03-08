@@ -1,12 +1,13 @@
 import renderer from "./SocialMediaSelectorComponentRenderer/renderer";
-import React = require("react");
+import * as React from "react";
+import ISocialMediaSelectorComponent from "./Interfaces/ISocialMediaSelectorComponent";
 
 const styles = require("../../styles");
 
-class SocialMediaSelectorComponent extends React.Component<ISocialMediaSelectorComponent, any>{
+export class SocialMediaSelectorComponent extends React.Component<ISocialMediaSelectorComponent, any>{
     public render() {
         return renderer.call(this);
     }
 }
 
-export = SocialMediaSelectorComponent;
+export default SocialMediaSelectorComponent;

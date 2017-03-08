@@ -1,5 +1,5 @@
 
-import React = require("react");
+import * as React from "react";
 import renderer = require("./SharingInputComponentRenderer/renderer");
 
 class SharingInputComponent extends React.Component<any, any>

@@ -1,16 +1,20 @@
 ///<reference path="../../../../typings/index.d.ts" />
-"use strict";
-const SharingProviderCollection = require("./SharingProviderCollection");
-const SharingProviderModel = require("./SharingProviderModel");
-const SocialProviders_1 = require("../Components/SocialProviders");
-const Backbone = require("backbone");
-const TwitterLoginHelper = require("../Components/Presentation/SocialMedia/Twitter/TwitterLoginFlow");
-const config = require("../../../config/config");
-var twitterLoginHelper = new TwitterLoginHelper();
-const AddPostMutation = require("../Data/Mutations/AddPostMutation");
-class PostModel extends Backbone.Model {
-    constructor(...args) {
-        super(...args);
+let Platform;
+try {
+    Platform = require("react-native");
+}
+catch (e) { }
+import WebBackbone from "backbone";
+const Backbone = Platform && Platform.OS ? RNBackbone.default : WebBackbone;
+import SharingProviderCollection from "./SharingProviderCollection";
+import SocialProviders from "../Components/SocialProviders";
+import config from "../../../config/config";
+import * as FacebookManager from "../SocialMedia/FacebookManager";
+import * as LinkedinManager from "../SocialMedia/LinkedinManager";
+import * as TwitterManager from "../SocialMedia/TwitterManager";
+export default class PostModel extends Backbone.Model {
+    constructor() {
+        super(...arguments);
         this.SharingProviders = new SharingProviderCollection();
         this.url = config.SharingUrl + "Sharing/api/Post";
     }
@@ -32,53 +36,46 @@ class PostModel extends Backbone.Model {
         if (this.sharingProviderExists(name))
             return;
         switch (name) {
-            case SocialProviders_1.default.Facebook:
+            case SocialProviders.Facebook:
                 this.addFacebookSharingProvider();
                 break;
-            case SocialProviders_1.default.LinkedIn:
+            case SocialProviders.LinkedIn:
                 this.addLinkedInSharingProvider();
                 break;
-            case SocialProviders_1.default.Twitter:
+            case SocialProviders.Twitter:
                 this.addTwitterSharingProvider();
                 break;
         }
     }
     addTwitterSharingProvider() {
-        if (twitterLoginHelper.getOAuthToken() == null) {
-            twitterLoginHelper.login("addTwitterSharingProvider");
-        }
-        else {
-            var sharingProvider = this.addNewSharingProvider(SocialProviders_1.default.Twitter);
-            sharingProvider.setAuthToken(twitterLoginHelper.getOAuthToken());
-        }
+        TwitterManager.ensureLoggedIn()
+            .then(() => {
+            var sharingProvider = this.addNewSharingProvider(SocialProviders.Twitter);
+            TwitterManager.fillSharingProviderWithAuthInfo(sharingProvider);
+        })
+            .catch((err) => {
+            console.log(arguments);
+        });
     }
     addFacebookSharingProvider() {
-        FB.getLoginStatus((response) => {
-            if (response.status !== 'connected') {
-                FB.login((response) => console.log(response));
-            }
-            var sharingProvider = this.addNewSharingProvider(SocialProviders_1.default.Facebook);
-            sharingProvider.setExpirationDate(response.authResponse.expiresIn);
-            sharingProvider.setUserId(response.authResponse.userID);
-            sharingProvider.setAuthToken(response.authResponse.accessToken);
+        FacebookManager.ensureLoggedIn()
+            .then((response) => {
+            let sharingProvider = this.addNewSharingProvider(SocialProviders.Facebook);
+            FacebookManager.fillSharingProviderWithAuthInfo(sharingProvider);
+        })
+            .catch((err) => {
+            throw err;
         });
     }
     addLinkedInSharingProvider() {
-        IN.User.authorize((optios) => {
-            var sharingProvider = this.addNewSharingProvider(SocialProviders_1.default.LinkedIn);
-            sharingProvider.setAuthToken(IN.ENV.auth.oauth_token);
-            //IN.API.Raw("/people/~/shares?format=json")
-            //    .method("POST")
-            //    .body(JSON.stringify({
-            //        "comment": "Check out developer.linkedin.com! http://linkd.in/1FC2PyG",
-            //        "visibility": {
-            //            "code": "anyone"
-            //        }
-            //    }))
-            //    .result((options) => console.log(options))
-            //    .error((options) => console.log(options));
-            //console.log(sharingProvider);
-        }, this);
+        LinkedinManager.ensureLoggedIn()
+            .then(() => {
+            var sharingProvider = this.addNewSharingProvider(SocialProviders.LinkedIn);
+            LinkedinManager.fillSharingProviderWithAuthInfo(sharingProvider);
+        })
+            .catch((err) => {
+            throw err;
+        });
     }
     addNewSharingProvider(name) {
         return this.SharingProviders.add(new SharingProviderModel({ Name: name }, null), null);
@@ -106,6 +103,3 @@ class PostModel extends Backbone.Model {
         return json;
     }
 }
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = PostModel;
-//# sourceMappingURL=PostModel.js.map

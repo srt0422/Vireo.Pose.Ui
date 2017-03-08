@@ -1,13 +1,17 @@
 ﻿///<reference path="../../../../typings/index.d.ts" />
 
-import {Platform, Linking} from "react-native";
+let Platform;
+try {
+    Platform = require("react-native");
+}
+catch (e) { }
 
-import WebBackbone = require("backbone");
+import WebBackbone from "backbone";
 import RNBackbone = require("react-native-backbone");
 
-const Backbone: Function = Platform.OS ? RNBackbone.default : WebBackbone;
+const Backbone: Function = Platform && Platform.OS ? RNBackbone.default : WebBackbone;
 
-import SharingProviderCollection = require("./SharingProviderCollection");
+import SharingProviderCollection from "./SharingProviderCollection";
 
 import SharingProviderModel = require("./SharingProviderModel");
 

@@ -1,9 +1,8 @@
 //module POSE {
-"use strict";
-exports.App = "/";
-exports.Post = "post";
-exports.Pose = "pose";
-exports.Auth = "auth";
+//module POSE {
+export const App = "/";
+export const Post = "post";
+export const Pose = "pose";
+export const Auth = "auth";
 //export = Routes;
 //} 
-//# sourceMappingURL=Routes.js.map

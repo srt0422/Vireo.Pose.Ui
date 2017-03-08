@@ -1,14 +1,10 @@
-"use strict";
-const React = require("react");
-const SocialMediaOption_1 = require("../SocialMediaOption");
-const styles = require("../../../styles");
-function default_1() {
+import * as React from "react";
+import SocialMediaOption from "../SocialMediaOption";
+import styles from "../../../styles";
+export default function () {
     return (<div className={`${styles["list-group"]}`}>
-          <SocialMediaOption_1.default value="facebook" label="Facebook"></SocialMediaOption_1.default>
+          <SocialMediaOption value="facebook" label="Facebook"></SocialMediaOption>
 
-          <SocialMediaOption_1.default value="linkedin" label="LinkedIn"></SocialMediaOption_1.default>
+          <SocialMediaOption value="linkedin" label="LinkedIn"></SocialMediaOption>
       </div>);
 }
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = default_1;
-//# sourceMappingURL=renderer.jsx.map

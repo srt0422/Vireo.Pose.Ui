@@ -4,8 +4,8 @@ import { Col, Row, Grid } from 'react-native-easy-grid';
 ​
 import SharingInputComponent = require("../SharingInputComponent");
 import SharingInputTypeComponent = require("../SharingInputTypeComponent");
-
-export = function() {
+export default renderer;
+export function renderer() {
     return (<Card>
                 <CardItem>
                     <Grid>

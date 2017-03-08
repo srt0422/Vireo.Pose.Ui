@@ -1,6 +1,5 @@
 ///<reference path="../../../../../../../../typings/index.d.ts" />
-"use strict";
-const Relay = require("react-relay");
+import * as Relay from "react-relay";
 class AddPostMutation extends Relay.Mutation {
     // Adding a post will not currently affect any other entities
     getFatQuery() {
@@ -34,5 +33,3 @@ class AddPostMutation extends Relay.Mutation {
 }
 // only the post fragment
 AddPostMutation.fragments = {};
-module.exports = AddPostMutation;
-//# sourceMappingURL=AddPostMutation.js.map

@@ -1,6 +1,6 @@
 import {IPOSESharingContentComponentProps} from "./Interfaces/IPOSESharingContentComponentProps";
 
-import React = require("react");
+import * as React from "react";
 declare class SharingContentComponent extends React.Component<IPOSESharingContentComponentProps, IPOSESharingContentComponentState> {
     render(): JSX.Element;
 }

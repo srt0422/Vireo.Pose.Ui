@@ -1,5 +1,5 @@
 ﻿//module POSE.Html {
-import React = require("react");
+import * as React from "react";
 
 export default class BootstrapContainerLayout extends React.Component<any, any>{
     public render() {

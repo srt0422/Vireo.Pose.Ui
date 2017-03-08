@@ -3,6 +3,6 @@ import * as ReactDOM from "react-dom";
 import AppRouter from "./POSE/Components/Routing/AppRouter";
 
 export default ReactDOM.render(
-        <AppRouter></AppRouter>,
+        (<AppRouter></AppRouter>),
         document.getElementById("sharing_container")
 );

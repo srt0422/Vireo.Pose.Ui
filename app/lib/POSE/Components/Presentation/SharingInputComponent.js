@@ -1,10 +1,6 @@
-"use strict";
-const React = require("react");
-const renderer = require("./SharingInputComponentRenderer/renderer");
+import * as React from "react";
 class SharingInputComponent extends React.Component {
     render() {
         return renderer.call(this);
     }
 }
-module.exports = SharingInputComponent;
-//# sourceMappingURL=SharingInputComponent.js.map

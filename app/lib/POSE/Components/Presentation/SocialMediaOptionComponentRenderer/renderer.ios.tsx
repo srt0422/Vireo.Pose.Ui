@@ -1,4 +1,4 @@
-import React = require("react");
+import * as React from "react";
 import {Button,ListItem, Text, CheckBox, View} from "native-base";
 
 export function render(){

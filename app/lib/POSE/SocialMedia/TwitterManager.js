@@ -1,4 +1,3 @@
-"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -7,19 +6,15 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-const TwitterLoginHelper = require("../Components/Presentation/SocialMedia/Twitter/TwitterLoginFlow");
-const authManager = require("../Authentication/authenticationManager");
-const twitterLoginHelper = new TwitterLoginHelper();
+//const twitterLoginHelper: ITwitterLoginHelper = new TwitterLoginHelper();
 let accessInfo = {};
-function fillSharingProviderWithAuthInfo(sharingProvider) {
-    sharingProvider.setAuthToken(twitterLoginHelper.getOAuthToken());
+export function fillSharingProviderWithAuthInfo(sharingProvider) {
+    sharingProvider.setAuthToken();
 }
-exports.fillSharingProviderWithAuthInfo = fillSharingProviderWithAuthInfo;
-function ensureLoggedIn() {
+export function ensureLoggedIn() {
     return __awaiter(this, void 0, void 0, function* () {
-        yield authManager.signInToTwitter()
-            .then(() => console.log(arguments));
+        //await authManager.signInToTwitter()
+        //                 .then(() => console.log(arguments));
         // return new Promise<any>((fullfill, reject) => {
         //
         //     try {
@@ -33,4 +28,3 @@ function ensureLoggedIn() {
         // });
     });
 }
-exports.ensureLoggedIn = ensureLoggedIn;

@@ -1,17 +1,14 @@
-"use strict";
-const React = require("react");
-const BootstrapContainerLayout_1 = require("../../../HTML/Components/BootstrapContainerLayout");
-const FacebookSdk_1 = require("../Presentation/SocialMedia/Facebook/FacebookSdk");
-function renderer(props) {
+import * as React from "react";
+import BootstrapContainerLayout from "../../../HTML/Components/BootstrapContainerLayout";
+import FacebookSdk from "../Presentation/SocialMedia/Facebook/FacebookSdk";
+import Poser from "../Presentation/Poser";
+export function renderer() {
     return (<div>
-            <FacebookSdk_1.default appId="764673526884567"></FacebookSdk_1.default>
+            <FacebookSdk appId="764673526884567"></FacebookSdk>
 
-            <BootstrapContainerLayout_1.default>
-                {props.children}
-            </BootstrapContainerLayout_1.default>
+            <BootstrapContainerLayout>
+                {this.props.children || (<Poser></Poser>)}
+            </BootstrapContainerLayout>
         </div>);
 }
-exports.renderer = renderer;
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = renderer;
-//# sourceMappingURL=renderer.jsx.map
+export default renderer;

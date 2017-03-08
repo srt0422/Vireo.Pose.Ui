@@ -3,7 +3,8 @@ const {Component} = React;
 import {InputGroup, Input, Button, Text, Card, CardItem, View} from 'native-base';
 import ImagePicker = require("react-native-image-picker");
 
-export = function(){
+export default renderer;
+export function renderer(){
 
             if(this.props.value == "Picture"){
                         return (

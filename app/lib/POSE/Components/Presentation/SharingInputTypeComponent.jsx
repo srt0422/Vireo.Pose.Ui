@@ -1,11 +1,9 @@
-"use strict";
-const React = require("react");
-const renderer = require("./SharingInputTypeComponentRenderer/renderer");
+import * as React from "react";
+import renderer from "./SharingInputTypeComponentRenderer/renderer";
 const styles = require("../../styles");
-class SharingInputTypeComponent extends React.Component {
+export class SharingInputTypeComponent extends React.Component {
     render() {
         return renderer.call(this);
     }
 }
-module.exports = SharingInputTypeComponent;
-//# sourceMappingURL=SharingInputTypeComponent.jsx.map
+export default SharingInputTypeComponent;

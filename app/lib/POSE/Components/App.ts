@@ -1,13 +1,14 @@
 
-import React = require("react");
+import * as React from "react";
 import BootstrapContainerLayout from "../../HTML/Components/BootstrapContainerLayout";
 
 import "../Authentication/authenticationManager";
+import renderer from "./AppRenderer/renderer";
 
 export default class App extends React.Component<any, any>{
 
     public render() {
-        return require("./AppRenderer/renderer")(this.props);
+        return renderer.call(this);
     }
 
     public componentDidMount() {

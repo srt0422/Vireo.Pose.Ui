@@ -1,7 +1,9 @@
-import React = require("react");
-import PostStore = require("../../Flux/Stores/PostStore");
+import * as React from "react";
+import PostStore from "../../Flux/Stores/PostStore";
 import PostModel from "../../Flux/PostModel";
 import renderer from "./SocialMediaOptionComponentRenderer/renderer";
+import IPOSESocialMediaOptionProps from "./Interfaces/IPOSESocialMediaOptionProps";
+
 const styles = require("../../styles");
 
 var postStore: PostModel = PostStore;

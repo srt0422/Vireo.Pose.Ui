@@ -2,4 +2,6 @@
 
 var postModel = new PostModel();
 
-export = postModel;
+export  postModel;
+
+export default postModel;
