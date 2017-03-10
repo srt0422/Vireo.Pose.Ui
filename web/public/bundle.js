@@ -60783,7 +60783,7 @@
 /* 843 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(console) {"use strict";
+	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
@@ -60897,14 +60897,13 @@
 	    }, {
 	        key: "addTwitterSharingProvider",
 	        value: function addTwitterSharingProvider() {
-	            var _this2 = this,
-	                _arguments = arguments;
+	            var _this2 = this;
 
 	            TwitterManager.ensureLoggedIn().then(function () {
 	                var sharingProvider = _this2.addNewSharingProvider(_SocialProviders2.default.Twitter);
 	                TwitterManager.fillSharingProviderWithAuthInfo(sharingProvider);
 	            }).catch(function (err) {
-	                console.log(_arguments);
+	                throw err;
 	            });
 	        }
 	    }, {
@@ -60912,8 +60911,7 @@
 	        value: function addFacebookSharingProvider() {
 	            var _this3 = this;
 
-	            FacebookManager.ensur;
-	            eLoggedIn().then(function (response) {
+	            FacebookManager.ensureLoggedIn().then(function (response) {
 	                var sharingProvider = _this3.addNewSharingProvider(_SocialProviders2.default.Facebook);
 	                FacebookManager.fillSharingProviderWithAuthInfo(sharingProvider);
 	            }).catch(function (err) {
@@ -60977,7 +60975,6 @@
 	}(Backbone.Model);
 
 	exports.default = PostModel;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(309)))
 
 /***/ },
 /* 844 */
@@ -75016,7 +75013,7 @@
 /* 854 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(console) {"use strict";
+	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
@@ -75065,7 +75062,7 @@
 	}
 	function ensureLoggedIn() {
 	    return __awaiter(this, void 0, void 0, regeneratorRuntime.mark(function _callee() {
-	        var provider, result, errorCode, errorMessage, email, credential;
+	        var provider, result;
 	        return regeneratorRuntime.wrap(function _callee$(_context) {
 	            while (1) {
 	                switch (_context.prev = _context.next) {
@@ -75078,42 +75075,25 @@
 	                    case 4:
 	                        result = _context.sent;
 
-	                        console.log(result);
 	                        accessInfo.accessToken = result.credential.accessToken;
 	                        accessInfo.userID = result.user.uid;
 	                        accessInfo.secret = result.credential.secret;
-	                        //var token = result.credential.accessToken;
-	                        //var secret = result.credential.secret;
-	                        //var userId = result.user.uid;
-	                        _context.next = 18;
+	                        _context.next = 13;
 	                        break;
 
-	                    case 11:
-	                        _context.prev = 11;
+	                    case 10:
+	                        _context.prev = 10;
 	                        _context.t0 = _context["catch"](1);
+	                        throw _context.t0;
 
-	                        // Handle Errors here.
-	                        errorCode = _context.t0.code;
-	                        errorMessage = _context.t0.message;
-	                        // The email of the user's account used.
-
-	                        email = _context.t0.email;
-	                        // The firebase.auth.AuthCredential type that was used.
-
-	                        credential = _context.t0.credential;
-	                        // ...
-
-	                        throw errorMessage;
-
-	                    case 18:
+	                    case 13:
 	                    case "end":
 	                        return _context.stop();
 	                }
 	            }
-	        }, _callee, this, [[1, 11]]);
+	        }, _callee, this, [[1, 10]]);
 	    }));
 	}
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(309)))
 
 /***/ },
 /* 855 */

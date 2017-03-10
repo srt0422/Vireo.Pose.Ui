@@ -20,37 +20,12 @@ export function ensureLoggedIn() {
         let provider = new firebase.auth.TwitterAuthProvider();
         try {
             let result = yield firebase.auth().signInWithPopup(provider);
-            console.log(result);
             accessInfo.accessToken = result.credential.accessToken;
             accessInfo.userID = result.user.uid;
             accessInfo.secret = result.credential.secret;
-            //var token = result.credential.accessToken;
-            //var secret = result.credential.secret;
-            //var userId = result.user.uid;
         }
         catch (error) {
-            // Handle Errors here.
-            var errorCode = error.code;
-            var errorMessage = error.message;
-            // The email of the user's account used.
-            var email = error.email;
-            // The firebase.auth.AuthCredential type that was used.
-            var credential = error.credential;
-            // ...
-            throw errorMessage;
+            throw error;
         }
-        //await authManager.signInToTwitter()
-        //                 .then(() => console.log(arguments));
-        // return new Promise<any>((fullfill, reject) => {
-        //
-        //     try {
-        //         if (twitterLoginHelper.getOAuthToken() == null) {
-        //             twitterLoginHelper.login("addTwitterSharingProvider");
-        //         }
-        //     }
-        //     catch (e) { reject(e); }
-        //
-        //     fullfill();
-        // });
     });
 }

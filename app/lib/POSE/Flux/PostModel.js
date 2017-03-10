@@ -55,12 +55,11 @@ export default class PostModel extends Backbone.Model {
             TwitterManager.fillSharingProviderWithAuthInfo(sharingProvider);
         })
             .catch((err) => {
-            console.log(arguments);
+            throw err;
         });
     }
     addFacebookSharingProvider() {
-        FacebookManager.ensur;
-        eLoggedIn()
+        FacebookManager.ensureLoggedIn()
             .then((response) => {
             let sharingProvider = this.addNewSharingProvider(SocialProviders.Facebook);
             FacebookManager.fillSharingProviderWithAuthInfo(sharingProvider);
