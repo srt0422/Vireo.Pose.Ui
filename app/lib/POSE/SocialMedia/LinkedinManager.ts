@@ -14,6 +14,7 @@ export async function ensureLoggedIn() {
     return new Promise<any>((fullfill, reject) => {
 
         try {
+            IN.User.refresh();
             IN.User.authorize((options) => {
 
                 authInfo = { accessToken: IN.ENV.auth.oauth_token };

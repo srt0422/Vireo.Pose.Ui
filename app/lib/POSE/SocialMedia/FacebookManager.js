@@ -14,13 +14,17 @@ export function fillSharingProviderWithAuthInfo(sharingProvider) {
 }
 export function ensureLoggedIn() {
     return __awaiter(this, void 0, void 0, function* () {
-        return yield new Promise((fullfilled, rejected) => FB.getLoginStatus((response) => {
+        return yield new Promise((fullfill, rejected) => FB.getLoginStatus((response) => {
             if (response.status !== 'connected') {
-                FB.login((response) => {
-                    authInfo = response.authResponse;
-                    fullfilled();
-                });
+                FB.login(fullfillLogginPromise.bind(this, fullfill));
+            }
+            else {
+                fullfillLogginPromise(fullfill, response);
             }
         }));
     });
+}
+function fullfillLogginPromise(fullfill, response) {
+    authInfo = response.authResponse;
+    fullfill();
 }

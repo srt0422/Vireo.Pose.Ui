@@ -7,6 +7,7 @@ catch (e) { }
 import WebBackbone from "backbone";
 const Backbone = Platform && Platform.OS ? RNBackbone.default : WebBackbone;
 import SharingProviderCollection from "./SharingProviderCollection";
+import SharingProviderModel from "./SharingProviderModel";
 import SocialProviders from "../Components/SocialProviders";
 import config from "../../../config/config";
 import * as FacebookManager from "../SocialMedia/FacebookManager";
@@ -58,7 +59,8 @@ export default class PostModel extends Backbone.Model {
         });
     }
     addFacebookSharingProvider() {
-        FacebookManager.ensureLoggedIn()
+        FacebookManager.ensur;
+        eLoggedIn()
             .then((response) => {
             let sharingProvider = this.addNewSharingProvider(SocialProviders.Facebook);
             FacebookManager.fillSharingProviderWithAuthInfo(sharingProvider);

@@ -1,4 +1,3 @@
-"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -7,19 +6,17 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-const react_native_twitter_1 = require("react-native-twitter");
+import { auth } from 'react-native-twitter';
 let accessInfo = {};
-function fillSharingProviderWithAuthInfo(sharingProvider) {
+export function fillSharingProviderWithAuthInfo(sharingProvider) {
     sharingProvider.setAuthToken(accessInfo.accessToken);
     sharingProvider.setUserId(accessInfo.userId);
 }
-exports.fillSharingProviderWithAuthInfo = fillSharingProviderWithAuthInfo;
-function ensureLoggedIn() {
+export function ensureLoggedIn() {
     return __awaiter(this, void 0, void 0, function* () {
         return yield new Promise((fullfill, reject) => {
             try {
-                react_native_twitter_1.auth({
+                auth({
                     consumerKey: "4jtgZPwRFMtCXXjuWadM2MqNC",
                     consumerSecret: "3BWXE5somBM2AZAjNDA1t2m4IEc5fxLoH25xwCXLqHGjgN9qdS"
                 }, "deeplink://home")
@@ -37,4 +34,3 @@ function ensureLoggedIn() {
         });
     });
 }
-exports.ensureLoggedIn = ensureLoggedIn;

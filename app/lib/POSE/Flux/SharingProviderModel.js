@@ -1,5 +1,6 @@
+import * as Backbone from "backbone";
 //module POSE.Flux {
-class SharingProviderModel extends Backbone.Model {
+export class SharingProviderModel extends Backbone.Model {
     constructor(attributes, options) {
         super(attributes, options);
         for (var key in attributes) {
@@ -15,6 +16,9 @@ class SharingProviderModel extends Backbone.Model {
     setUserId(userId) {
         this.set("UserId", userId);
     }
+    setAuthSecret(authSecret) {
+        this.set("AuthSecret", authSecret);
+    }
     ///TODO: test this to make sure "ExpirationDate" is correct for the
     ///      ios and web implementations of FacebookManager
     setExpirationDate(expiresIn) {
@@ -23,4 +27,5 @@ class SharingProviderModel extends Backbone.Model {
         this.set("ExpirationDate", expirationDate);
     }
 }
+export default SharingProviderModel;
 //}

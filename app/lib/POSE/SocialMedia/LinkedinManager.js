@@ -14,6 +14,7 @@ export function ensureLoggedIn() {
     return __awaiter(this, void 0, void 0, function* () {
         return new Promise((fullfill, reject) => {
             try {
+                IN.User.refresh();
                 IN.User.authorize((options) => {
                     authInfo = { accessToken: IN.ENV.auth.oauth_token };
                     fullfill();

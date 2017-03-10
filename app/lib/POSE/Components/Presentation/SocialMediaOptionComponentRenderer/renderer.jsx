@@ -1,5 +1,5 @@
 import * as React from "react";
-const styles = require("../../../styles");
+import styles from "../../../styles";
 export function render() {
     return (<button onClick={this.onSelected} type="button" className={styles["list-group-item"] + " "
         + (this.state.selected

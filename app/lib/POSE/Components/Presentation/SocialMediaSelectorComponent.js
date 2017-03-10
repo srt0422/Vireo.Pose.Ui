@@ -1,10 +1,9 @@
-"use strict";
-const renderer_1 = require("./SocialMediaSelectorComponentRenderer/renderer");
-const React = require("react");
+import renderer from "./SocialMediaSelectorComponentRenderer/renderer";
+import * as React from "react";
 const styles = require("../../styles");
-class SocialMediaSelectorComponent extends React.Component {
+export class SocialMediaSelectorComponent extends React.Component {
     render() {
-        return renderer_1.default.call(this);
+        return renderer.call(this);
     }
 }
-module.exports = SocialMediaSelectorComponent;
+export default SocialMediaSelectorComponent;

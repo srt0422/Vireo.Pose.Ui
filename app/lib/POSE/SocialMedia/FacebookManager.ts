@@ -11,17 +11,21 @@ export function fillSharingProviderWithAuthInfo(sharingProvider) {
 
 export async function ensureLoggedIn() {
 
-    return await new Promise<any>((fullfilled, rejected) =>
+    return await new Promise<any>((fullfill, rejected) =>
 
         FB.getLoginStatus((response) => {
 
             if (response.status !== 'connected') {
-                FB.login((response) => {
-
-                    authInfo = response.authResponse;
-
-                    fullfilled();
-                });
+                FB.login(fullfillLogginPromise.bind(this, fullfill));
+            }
+            else {
+                fullfillLogginPromise(fullfill, response);
             }
         }));
+}
+
+function fullfillLogginPromise(fullfill, response) {
+    authInfo = response.authResponse;
+
+    fullfill();
 }

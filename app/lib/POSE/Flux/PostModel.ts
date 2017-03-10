@@ -13,7 +13,7 @@ const Backbone: Function = Platform && Platform.OS ? RNBackbone.default : WebBac
 
 import SharingProviderCollection from "./SharingProviderCollection";
 
-import SharingProviderModel = require("./SharingProviderModel");
+import SharingProviderModel from "./SharingProviderModel";
 
 import SocialProviders from "../Components/SocialProviders";
 
@@ -92,7 +92,7 @@ export default class PostModel extends Backbone.Model {
 
     public addFacebookSharingProvider() {
 
-        FacebookManager.ensureLoggedIn()
+        FacebookManager.ensur eLoggedIn()
             .then((response) => {
 
                 let sharingProvider = this.addNewSharingProvider(SocialProviders.Facebook)

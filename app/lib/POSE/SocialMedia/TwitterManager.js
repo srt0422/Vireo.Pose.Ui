@@ -6,13 +6,39 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+import * as firebaseImport from "firebase";
 //const twitterLoginHelper: ITwitterLoginHelper = new TwitterLoginHelper();
-let accessInfo = {};
+const firebase = firebaseImport;
+const accessInfo = {};
 export function fillSharingProviderWithAuthInfo(sharingProvider) {
-    sharingProvider.setAuthToken();
+    sharingProvider.setAuthToken(accessInfo.accessToken);
+    sharingProvider.setUserId(accessInfo.userID);
+    sharingProvider.setAuthSecret(accessInfo.secret);
 }
 export function ensureLoggedIn() {
     return __awaiter(this, void 0, void 0, function* () {
+        let provider = new firebase.auth.TwitterAuthProvider();
+        try {
+            let result = yield firebase.auth().signInWithPopup(provider);
+            console.log(result);
+            accessInfo.accessToken = result.credential.accessToken;
+            accessInfo.userID = result.user.uid;
+            accessInfo.secret = result.credential.secret;
+            //var token = result.credential.accessToken;
+            //var secret = result.credential.secret;
+            //var userId = result.user.uid;
+        }
+        catch (error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // The email of the user's account used.
+            var email = error.email;
+            // The firebase.auth.AuthCredential type that was used.
+            var credential = error.credential;
+            // ...
+            throw errorMessage;
+        }
         //await authManager.signInToTwitter()
         //                 .then(() => console.log(arguments));
         // return new Promise<any>((fullfill, reject) => {
