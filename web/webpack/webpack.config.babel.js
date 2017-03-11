@@ -4,13 +4,13 @@ const webpack = require("webpack");
 //const {Platform} = require("react-native");
 
 module.exports = {
-    context: fs.realpathSync (__dirname + '/../../'),
+    context: fs.realpathSync(__dirname + '/../../'),
     entry: [
         "babel-polyfill",
-        fs.realpathSync(__dirname+ "/../../app/lib/Main.jsx")
+        fs.realpathSync(__dirname + "/../../app/lib/Main.jsx")
     ],
     output: {
-        path: fs.realpathSync(__dirname+ '/../public'),
+        path: fs.realpathSync(__dirname + '/../public'),
         filename: 'bundle.js',
         publicPath: '/'
     },
@@ -28,7 +28,7 @@ module.exports = {
                 loader: 'babel-loader',
                 exclude: /node_modules/,
                 query: {
-                    presets: ['es2015', 'react']
+                    presets: ['react', 'es2015']
                 }
             },
             {
