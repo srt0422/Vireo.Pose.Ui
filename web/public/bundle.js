@@ -75832,12 +75832,17 @@
 
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
+	var formStyle = {
+	    marginTop: "15px",
+	    width: "40%",
+	    minWidth: "250px"
+	};
 	function render(props, state) {
 	    var _this = this;
 
 	    return React.createElement(
 	        "form",
-	        { className: _styles2.default["center-block"] + " " + _styles2.default.clearfix + " " + _styles2.default.sharingComponent },
+	        { className: _styles2.default["center-block"] + " " + _styles2.default.clearfix + " " + _styles2.default.sharingComponent, style: formStyle },
 	        React.createElement(_SharingContentComponent2.default, { type: this.state.type, value: this.contentMap[this.state.value], label: this.labelMap[this.state.value], onChange: function onChange(e) {
 	                return _this.typeChanged({
 	                    value: e.target.innerText,
