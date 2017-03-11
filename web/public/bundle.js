@@ -60515,6 +60515,12 @@
 
 	var React = _interopRequireWildcard(_react);
 
+	var _styles = __webpack_require__(867);
+
+	var _styles2 = _interopRequireDefault(_styles);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -60538,13 +60544,13 @@
 	        value: function render() {
 	            return React.createElement(
 	                "div",
-	                { className: "container" },
+	                { className: _styles2.default.container },
 	                React.createElement(
 	                    "div",
-	                    { className: "row" },
+	                    { className: _styles2.default.row },
 	                    React.createElement(
 	                        "div",
-	                        { className: "col-sm-12" },
+	                        { className: _styles2.default["col-sm-12"] },
 	                        this.props.children
 	                    )
 	                )
@@ -60555,7 +60561,7 @@
 	    return BootstrapContainerLayout;
 	}(React.Component);
 	//export = BootstrapContainerLayout;
-	//}
+	//} 
 
 
 	exports.default = BootstrapContainerLayout;
@@ -75831,7 +75837,7 @@
 
 	    return React.createElement(
 	        "form",
-	        { className: _styles2.default["center-block"] + " " + _styles2.default.clearfix + " " + _styles2.default['sharing-component'] },
+	        { className: _styles2.default["center-block"] + " " + _styles2.default.clearfix + " " + _styles2.default.sharingComponent },
 	        React.createElement(_SharingContentComponent2.default, { type: this.state.type, value: this.contentMap[this.state.value], label: this.labelMap[this.state.value], onChange: function onChange(e) {
 	                return _this.typeChanged({
 	                    value: e.target.innerText,

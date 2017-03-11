@@ -6,7 +6,7 @@ import SocialOptions from "../../SocialProviders";
 import styles from "../../../styles";
 
 export function render(props, state) {
-    return (<form className={`${styles["center-block"]} ${styles.clearfix} ${styles['sharing-component']}`}>
+    return (<form className={`${styles["center-block"]} ${styles.clearfix} ${styles.sharingComponent}`}>
         <SharingContentComponent
             type={this.state.type}
             value={this.contentMap[this.state.value]}
