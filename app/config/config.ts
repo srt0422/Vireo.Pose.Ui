@@ -35,7 +35,7 @@ export var config: IPoseConfiguration = {
 switch (process.env.NODE_ENV) {
     case "production":
 
-        config.SharingUrl = "https://pose-web-app.azurewebsites.net/";
+        config.SharingUrl = "https://poseapi.cloudvireo.com/";
 
         break;
 
