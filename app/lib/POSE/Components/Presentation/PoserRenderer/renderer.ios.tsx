@@ -1,7 +1,7 @@
 import React = require('react');
 import {List, ListItem, Text, Button, View, Card, CardItem} from 'native-base';
-import SharingContentComponent = require("../SharingContentComponent");
-import SocialMediaSelectorComponent = require("../SocialMediaSelectorComponent");
+import SharingContentComponent from "../SharingContentComponent";
+import SocialMediaSelectorComponent from "../SocialMediaSelectorComponent";
 import SocialOptions = require("../../SocialProviders");
 
 import style from "../../../styles";

@@ -1,12 +1,10 @@
-﻿///<reference path="../../../../typings/index.d.ts" />
-
-let Platform;
+﻿let Platform;
 try {
-    Platform = require("react-native");
+    Platform = require("react-native").Platform;
 }
 catch (e) { }
 
-import WebBackbone from "backbone";
+import * as WebBackbone from "backbone";
 import RNBackbone = require("react-native-backbone");
 
 const Backbone: Function = Platform && Platform.OS ? RNBackbone.default : WebBackbone;

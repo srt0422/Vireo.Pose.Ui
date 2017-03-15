@@ -1,4 +1,3 @@
-///<reference path="../../../../../../../../typings/index.d.ts" />
 import * as Relay from "react-relay";
 class AddPostMutation extends Relay.Mutation {
     // Adding a post will not currently affect any other entities

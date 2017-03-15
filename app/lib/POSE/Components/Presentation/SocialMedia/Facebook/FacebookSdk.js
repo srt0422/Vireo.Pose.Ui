@@ -1,6 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const React = require("react");
+import * as React from "react";
 class FacebookSdk extends React.Component {
     constructor() {
         super();
@@ -48,4 +46,5 @@ class FacebookSdk extends React.Component {
         console.warn("FB failed to load");
     }
 }
-exports.default = FacebookSdk;
+FacebookSdk;
+export default FacebookSdk;

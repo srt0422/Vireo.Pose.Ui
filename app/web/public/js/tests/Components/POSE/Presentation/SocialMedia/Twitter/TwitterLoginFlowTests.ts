@@ -1,6 +1,4 @@
-﻿/// <reference path="../../../../../../../../../../../scripts/typings/jasmine/jasmine.d.ts" />
-
-module POSE.Tests {
+﻿module POSE.Tests {
     //import TwitterLoginFlow = require("");// POSE.Social.Authentication.TwitterLoginFlow;
 
     //import testSpecRunner = POSE.Tests.Specs;

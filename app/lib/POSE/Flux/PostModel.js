@@ -1,10 +1,9 @@
-///<reference path="../../../../typings/index.d.ts" />
 let Platform;
 try {
-    Platform = require("react-native");
+    Platform = require("react-native").Platform;
 }
 catch (e) { }
-import WebBackbone from "backbone";
+import * as WebBackbone from "backbone";
 const Backbone = Platform && Platform.OS ? RNBackbone.default : WebBackbone;
 import SharingProviderCollection from "./SharingProviderCollection";
 import SharingProviderModel from "./SharingProviderModel";

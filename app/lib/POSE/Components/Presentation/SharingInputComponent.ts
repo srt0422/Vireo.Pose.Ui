@@ -2,11 +2,11 @@
 import * as React from "react";
 import renderer from "./SharingInputComponentRenderer/renderer";
 
-class SharingInputComponent extends React.Component<any, any>
+export class SharingInputComponent extends React.Component<any, any>
 {
     public render() {
         return renderer.call(this);
     }
 }
 
-export = SharingInputComponent;
+export default SharingInputComponent;

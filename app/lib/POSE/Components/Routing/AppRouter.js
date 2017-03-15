@@ -1,19 +1,11 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const ReactRouter = require("react-router");
-const Routes = require("./Enums/Routes");
-const React = require("react");
-const Relay = require("react-relay");
-const App_1 = require("../App");
-const Poser_1 = require("../Presentation/Poser");
+import * as React from "react";
+import App from "../App";
 var Router = ReactRouter.Router;
 var Route = ReactRouter.Route;
-class AppRouter extends React.Component {
+export default class AppRouter extends React.Component {
     render() {
         return (<Router history={ReactRouter.hashHistory}>
-                <Route path={Routes.App} component={App_1.default}>
-                    <Route path={Routes.Pose} component={Poser_1.default}></Route>
-                </Route>
+                <Route path={Routes.App} component={App}></Route>
             </Router>);
     }
     createRelayContainer(Component, props) {
@@ -28,4 +20,3 @@ class AppRouter extends React.Component {
         }
     }
 }
-exports.default = AppRouter;

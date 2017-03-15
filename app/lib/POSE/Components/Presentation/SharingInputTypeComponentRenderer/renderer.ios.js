@@ -1,20 +1,16 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
-const ReactNative = require("react-native");
+const react_native_1 = require("react-native");
 const native_base_1 = require("native-base");
 const FontAwesome_1 = require("react-native-vector-icons/FontAwesome");
-const { Modal, StyleSheet } = ReactNative;
 const styles = {
     buttonText: {
         fontSize: 16
     },
     test: {}
 };
-function setModalVisible(visible) {
-    this.setState({ showModal: visible });
-}
-;
-module.exports = function () {
+function renderer() {
     if (this.state == null) {
         this.state = {
             showModal: false
@@ -26,7 +22,7 @@ module.exports = function () {
         <FontAwesome_1.default name="chevron-down" color="white"/>
       </native_base_1.Button>
 
-      <Modal visible={this.state.showModal}>
+      <react_native_1.Modal visible={this.state.showModal}>
         <native_base_1.Card>
           {Object.keys(this.props.types).map((key, i, col) => {
         return (<native_base_1.CardItem key={key} button onPress={() => {
@@ -37,6 +33,13 @@ module.exports = function () {
                 </native_base_1.CardItem>);
     })}
         </native_base_1.Card>
-      </Modal>
+      </react_native_1.Modal>
       </native_base_1.View>);
-};
+}
+exports.renderer = renderer;
+function setModalVisible(visible) {
+    this.setState({ showModal: visible });
+}
+;
+exports.default = renderer;
+//# sourceMappingURL=renderer.ios.jsx.map

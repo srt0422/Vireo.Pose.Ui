@@ -1,15 +1,16 @@
-"use strict";
-const React = require("react");
-const native_base_1 = require("native-base");
-const Poser_1 = require("../Presentation/Poser");
-module.exports = function (props) {
-    return (<native_base_1.Container>
-      <native_base_1.Header>
-          <native_base_1.Title>POSE</native_base_1.Title>
-      </native_base_1.Header>
-      <native_base_1.Content>
-          <Poser_1.default></Poser_1.default>
-           </native_base_1.Content>
-  </native_base_1.Container>);
+import * as React from "react";
+import { Container, Header, Content, Title } from "native-base";
+import Poser from "../Presentation/Poser";
+export default renderer;
+export function renderer(props) {
+    return (<Container>
+      <Header>
+          <Title>POSE</Title>
+      </Header>
+      <Content>
+          <Poser></Poser>
+           </Content>
+  </Container>);
     // <Navigation></Navigation>
-};
+}
+;

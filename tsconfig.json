@@ -10,7 +10,6 @@
     "./*.ts",
     "./app/**/*.ts",
     "./app/**/*.tsx",
-    "./typings/**/*.ts",
     "./node_modules/@types/**/*.ts"
   ],
   "filesGlob": [

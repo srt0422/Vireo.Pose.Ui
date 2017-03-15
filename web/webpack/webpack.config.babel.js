@@ -14,13 +14,12 @@ module.exports = {
         filename: 'bundle.js',
         publicPath: '/'
     },
-    devtool: 'cheap-source-map',
-    debug: true,
+    devtool: 'source-map',
     resolve: {
-        extensions: ["", ".js", ".jsx", ".css"]
+        extensions: [".js", ".jsx", ".css"]
     },
     module: {
-        loaders: [
+        rules: [
             // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
             //{ test: /\.tsx?$/, loader: "awesome-typescript-loader" },
             {
@@ -30,20 +29,18 @@ module.exports = {
                 query: {
                     presets: ['react', 'es2015']
                 }
-            },
-            {
+            }, {
                 test: /\.json$/,
                 loader: 'json-loader'
-            },
-            {
+            }, {
                 test: /\.css/,
                 loader: "style-loader!css-loader?modules"
-            }
-        ],
-
-        preLoaders: [
+            },
             // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
-            { test: /\.jsx?$/, loader: "source-map-loader" }
+            {
+                test: /\.jsx?$/,
+                loader: "source-map-loader"
+            }
         ]
     },
     node: {
@@ -67,13 +64,13 @@ module.exports = {
         port: 9000
     },
     target: "web",
-    plugins: [new webpack.DefinePlugin({
-        'process.env': {
-            NODE_ENV: JSON.stringify('development'),
-            PLATFORM_ENV: JSON.stringify('web')
-        }
-    }),
-    new webpack.ProvidePlugin({
-        "React": "react",
-    })]
+    plugins: [
+        new webpack.DefinePlugin({
+            'process.env': {
+                NODE_ENV: JSON.stringify('development'),
+                PLATFORM_ENV: JSON.stringify('web')
+            }
+        }),
+        new webpack.ProvidePlugin({"React": "react"})
+    ]
 }

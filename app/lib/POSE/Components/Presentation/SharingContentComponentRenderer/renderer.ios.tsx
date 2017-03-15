@@ -1,10 +1,10 @@
-import React = require('react');
+import * as React from 'react';
 import {View, Text, Button, List, ListItem, Card, CardItem }  from 'native-base';
 import { Col, Row, Grid } from 'react-native-easy-grid';
 ​
-import SharingInputComponent = require("../SharingInputComponent");
-import SharingInputTypeComponent = require("../SharingInputTypeComponent");
-export default renderer;
+import SharingInputComponent from "../SharingInputComponent";
+import SharingInputTypeComponent from "../SharingInputTypeComponent";
+
 export function renderer() {
     return (<Card>
                 <CardItem>
@@ -29,3 +29,5 @@ export function renderer() {
                 </CardItem>
             </Card>);
 }
+
+export default renderer;

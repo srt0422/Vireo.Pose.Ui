@@ -1,12 +1,11 @@
-import * as React from "react";
-import "../Authentication/authenticationManager";
-import renderer from "./AppRenderer/renderer";
-export default class App extends React.Component {
+"use strict";
+const React = require("react");
+const renderer_1 = require("./AppRenderer/renderer");
+class App extends React.Component {
     render() {
-        return renderer.call(this);
-    }
-    componentDidMount() {
-    }
-    componentWillUnmount() {
+        return renderer_1.default(this.props);
     }
 }
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = App;
+//# sourceMappingURL=App.jsx.map

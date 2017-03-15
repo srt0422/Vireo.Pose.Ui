@@ -1,5 +1,3 @@
-///<reference path="../../../../../../../../typings/index.d.ts" />
-
 import * as Relay from "react-relay";
 
 class AddPostMutation extends Relay.Mutation<any, any> {
