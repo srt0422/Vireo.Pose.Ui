@@ -7,14 +7,6 @@ import ReactRouter = require("react-router");
 import Relay = require("react-relay");
 import renderer from "./PoserRenderer/renderer";
 
-import styles = require("../../styles/styles");
-
-var formStyle = {
-    marginTop: "15px",
-    width: "40%",
-    minWidth: "250px"
-};
-
 var postStore: PostModel = PostStore;
 
 //set this up as a relay container

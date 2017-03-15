@@ -1,11 +1,6 @@
 import * as React from "react";
 import PostStore from "../../Flux/Stores/PostStore";
 import renderer from "./PoserRenderer/renderer";
-var formStyle = {
-    marginTop: "15px",
-    width: "40%",
-    minWidth: "250px"
-};
 var postStore = PostStore;
 //set this up as a relay container
 export default class Poser extends React.Component {

@@ -5,14 +5,8 @@ import SocialOptions from "../../SocialProviders";
 
 import styles from "../../../styles";
 
-const formStyle = {
-    marginTop: "15px",
-    width: "40%",
-    minWidth: "250px"
-};
-
 export function render(props, state) {
-    return (<form className={`${styles["center-block"]} ${styles.clearfix} ${styles.sharingComponent}`} style={formStyle}>
+    return (<form className={`${styles["center-block"]} ${styles.clearfix} ${styles.sharingComponent}`}>
         <SharingContentComponent
             type={this.state.type}
             value={this.contentMap[this.state.value]}
