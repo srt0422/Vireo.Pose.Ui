@@ -31219,25 +31219,48 @@ exports.default = SharingInputTypeComponent;
 "use strict";
 
 
-Object.defineProperty(exports, "__esModule", { value: true });
-var React = __webpack_require__(5);
-var UnorderedListComponent_1 = __webpack_require__(238);
-var styles_1 = __webpack_require__(34);
-function renderer() {
-                  return React.createElement(
-                                    "div",
-                                    { className: "" + styles_1.default.dropdown },
-                                    React.createElement(
-                                                      "button",
-                                                      { type: "button", className: styles_1.default.btn + " " + styles_1.default["btn-lg"] + " " + styles_1.default["btn-info"] + " " + styles_1.default["dropdown-toggle"] + " " + styles_1.default["btn-block"], "data-toggle": "dropdown", "aria-haspopup": "true", "aria-expanded": "false", ref: "button" },
-                                                      this.props.value,
-                                                      " ",
-                                                      React.createElement("span", { className: styles_1.default.caret })
-                                    ),
-                                    React.createElement(UnorderedListComponent_1.default, { onItemClick: this.props.onTypeChanged, types: this.props.types })
-                  );
-}
+Object.defineProperty(exports, "__esModule", {
+            value: true
+});
 exports.renderer = renderer;
+
+var _react = __webpack_require__(5);
+
+var React = _interopRequireWildcard(_react);
+
+var _UnorderedListComponent = __webpack_require__(238);
+
+var _UnorderedListComponent2 = _interopRequireDefault(_UnorderedListComponent);
+
+var _styles = __webpack_require__(34);
+
+var _styles2 = _interopRequireDefault(_styles);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+function renderer() {
+            var _this = this;
+
+            if (!this.state) {
+                        this.state = { open: false };
+            }
+            return React.createElement(
+                        "div",
+                        { className: _styles2.default.dropdown + " " + (this.state.open ? _styles2.default.open : "") },
+                        React.createElement(
+                                    "button",
+                                    { type: "button", className: _styles2.default.btn + " " + _styles2.default["btn-lg"] + " " + _styles2.default["btn-info"] + " " + _styles2.default["dropdown-toggle"] + " " + _styles2.default["btn-block"], "data-toggle": "dropdown", "aria-haspopup": "true", "aria-expanded": "false", ref: "button", onClick: function onClick() {
+                                                            return _this.setState({ open: !_this.state.open });
+                                                } },
+                                    this.props.value,
+                                    " ",
+                                    React.createElement("span", { className: _styles2.default.caret })
+                        ),
+                        React.createElement(_UnorderedListComponent2.default, { onItemClick: this.props.onTypeChanged, types: this.props.types })
+            );
+}
 exports.default = renderer;
 
 /***/ }),
