@@ -6,9 +6,8 @@ import App from "./app/lib/POSE/Components/App";
 import {Container, Header, Title, Content} from 'native-base';
 
 export default class PoseUi extends Component {
-    render = () => (
-        <App></App>
-    );
+
+    render(){return <App></App>;}
 
     componentDidMount() {
         Linking.addEventListener('url', this.handleDeepLink);

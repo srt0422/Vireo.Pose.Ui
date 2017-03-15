@@ -28,6 +28,7 @@
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		6E6FA56B676B4F9E8C547C02 /* libRCTFBSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F94E2ADD4407444A95103C39 /* libRCTFBSDK.a */; };
 		6F2BE8671E6AA3DD009B1D9D /* libOAuthManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F2BE80A1E6A9EE1009B1D9D /* libOAuthManager.a */; };
+		6F6773151E766621002CB78E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6F6773141E766621002CB78E /* GoogleService-Info.plist */; };
 		6F7FFD831E63BFCD00096D02 /* RNLinkedInSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7FFD811E63BFCD00096D02 /* RNLinkedInSessionManager.swift */; };
 		6F7FFD841E63BFCD00096D02 /* RNLinkedInSessionManagerBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F7FFD821E63BFCD00096D02 /* RNLinkedInSessionManagerBridge.m */; };
 		6FE437ED1E5F5B600076B37A /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FE437E91E5F5B600076B37A /* Bolts.framework */; };
@@ -300,6 +301,7 @@
 		63E20DB79E594EE9888473E7 /* libRNImagePicker.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNImagePicker.a; sourceTree = "<group>"; };
 		6F2BE8681E6AA453009B1D9D /* PoseUi.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = PoseUi.entitlements; path = PoseUi/PoseUi.entitlements; sourceTree = "<group>"; };
 		6F30DEEB1E5417DB0098C981 /* ImagePickerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImagePickerManager.m; path = "../node_modules/react-native-image-picker/ios/ImagePickerManager.m"; sourceTree = "<group>"; };
+		6F6773141E766621002CB78E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6F7FFD811E63BFCD00096D02 /* RNLinkedInSessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RNLinkedInSessionManager.swift; sourceTree = "<group>"; };
 		6F7FFD821E63BFCD00096D02 /* RNLinkedInSessionManagerBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNLinkedInSessionManagerBridge.m; sourceTree = "<group>"; };
 		6FE437E91E5F5B600076B37A /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = ../../../FacebookSDK/Bolts.framework; sourceTree = "<group>"; };
@@ -449,6 +451,7 @@
 		13B07FAE1A68108700A75B9A /* PoseUi */ = {
 			isa = PBXGroup;
 			children = (
+				6F6773141E766621002CB78E /* GoogleService-Info.plist */,
 				6F2BE8681E6AA453009B1D9D /* PoseUi.entitlements */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
@@ -1023,6 +1026,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F6773151E766621002CB78E /* GoogleService-Info.plist in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 				90591136760F44BE9CC11055 /* Entypo.ttf in Resources */,
@@ -1252,7 +1256,14 @@
 					"$(inherited)",
 				);
 				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../node_modules/react-native-linkedin-sdk/ios/RNLinkedInSessionManager",
+					"$(SRCROOT)/../node_modules/react-native-linkedin-sdk/ios/RNLinkedInSessionManager/**",
+					"$(SRCROOT)/../node_modules/react-native/Libraries/**",
+					"$(SRCROOT)/../node_modules/react-native-oauth/ios/OAuthManager",
+					"$(SRCROOT)/../node_modules/react-native/Libraries/LinkingIOS",
+					"$(inherited)",
+				);
+				"HEADER_SEARCH_PATHS[arch=*]" = (
+					"$(SRCROOT)/../node_modules/react-native-linkedin-sdk/ios/RNLinkedInSessionManager/**",
 					"$(SRCROOT)/../node_modules/react-native/Libraries/**",
 					"$(SRCROOT)/../node_modules/react-native-oauth/ios/OAuthManager",
 					"$(SRCROOT)/../node_modules/react-native/Libraries/LinkingIOS",

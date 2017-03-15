@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 let Platform, process;
 try {
     Platform = require("react-native");
@@ -5,11 +7,10 @@ try {
 catch (e) {
 }
 finally {
-    // const {Platform} = ReactNative;
     if (Platform && (Platform.OS === "ios" || Platform.OS !== "android")) {
         process = {
             env: {
-                NODE_ENV: "development"
+                NODE_ENV: "production"
             }
         };
     }
@@ -32,5 +33,6 @@ switch (process.env.NODE_ENV) {
         configuration.SharingUrl = "https://localhost:44317/";
         break;
 }
-export var config = configuration;
-export default configuration;
+exports.config = configuration;
+exports.default = configuration;
+//# sourceMappingURL=config.js.map

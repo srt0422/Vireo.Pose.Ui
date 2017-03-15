@@ -1,17 +1,14 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const React = require("react");
-const SocialMediaOption_1 = require("../SocialMediaOption");
-const native_base_1 = require("native-base");
-function render() {
-    return (<native_base_1.Card>
-    <native_base_1.List>
-          <SocialMediaOption_1.default value="facebook" label="Facebook"></SocialMediaOption_1.default>
-          <SocialMediaOption_1.default value="linkedin" label="LinkedIn"></SocialMediaOption_1.default>
-          <SocialMediaOption_1.default value="twitter" label="Twitter"></SocialMediaOption_1.default>
-    </native_base_1.List>
+import * as React from "react";
+import SocialMediaOption from "../SocialMediaOption";
+import { List, Card } from "native-base";
+export function render() {
+    return (<Card>
+    <List>
+          <SocialMediaOption value="facebook" label="Facebook"></SocialMediaOption>
+          <SocialMediaOption value="linkedin" label="LinkedIn"></SocialMediaOption>
+          <SocialMediaOption value="twitter" label="Twitter"></SocialMediaOption>
+    </List>
 
-    </native_base_1.Card>);
+    </Card>);
 }
-exports.render = render;
-exports.default = render;
+export default render;

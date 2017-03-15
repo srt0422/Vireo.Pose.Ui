@@ -1,9 +1,8 @@
-import React = require('react');
+import * as React from 'react';
 const {Component} = React;
 import {InputGroup, Input, Button, Text, Card, CardItem, View} from 'native-base';
 import ImagePicker = require("react-native-image-picker");
 
-export default renderer;
 export function renderer(){
 
             if(this.props.value == "Picture"){
@@ -45,3 +44,5 @@ function showImagePicker(){
                 }
             });
 }
+
+export default renderer;

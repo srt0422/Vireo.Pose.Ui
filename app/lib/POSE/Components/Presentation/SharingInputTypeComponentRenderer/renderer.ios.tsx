@@ -1,9 +1,7 @@
 import * as React from "react";
-import ReactNative = require("react-native");
+import  {Modal, StyleSheet} from "react-native";
 import { Text, View, Button, List, ListItem, Card, CardItem } from "native-base";
 import Icon from 'react-native-vector-icons/FontAwesome';
-
-const {Modal, StyleSheet} = ReactNative;
 
  const styles = {
    buttonText: {

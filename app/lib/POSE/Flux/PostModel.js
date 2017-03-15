@@ -1,23 +1,26 @@
-///<reference path="../../../../typings/index.d.ts" />
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 let Platform;
 try {
-    Platform = require("react-native");
+    Platform = require("react-native").Platform;
 }
 catch (e) { }
-import WebBackbone from "backbone";
+const WebBackbone = require("backbone");
+const RNBackbone = require("react-native-backbone");
 const Backbone = Platform && Platform.OS ? RNBackbone.default : WebBackbone;
-import SharingProviderCollection from "./SharingProviderCollection";
-import SharingProviderModel from "./SharingProviderModel";
-import SocialProviders from "../Components/SocialProviders";
-import config from "../../../config/config";
-import * as FacebookManager from "../SocialMedia/FacebookManager";
-import * as LinkedinManager from "../SocialMedia/LinkedinManager";
-import * as TwitterManager from "../SocialMedia/TwitterManager";
-export default class PostModel extends Backbone.Model {
+const SharingProviderCollection_1 = require("./SharingProviderCollection");
+const SharingProviderModel_1 = require("./SharingProviderModel");
+const SocialProviders_1 = require("../Components/SocialProviders");
+const config_1 = require("../../../config/config");
+const AddPostMutation = require("../Data/Mutations/AddPostMutation");
+const FacebookManager = require("../SocialMedia/FacebookManager");
+const LinkedinManager = require("../SocialMedia/LinkedinManager");
+const TwitterManager = require("../SocialMedia/TwitterManager");
+class PostModel extends Backbone.Model {
     constructor() {
         super(...arguments);
-        this.SharingProviders = new SharingProviderCollection();
-        this.url = config.SharingUrl + "Sharing/api/Post";
+        this.SharingProviders = new SharingProviderCollection_1.default();
+        this.url = config_1.default.SharingUrl + "Sharing/api/Post";
     }
     initialize() {
         this.on("change", this.onChange);
@@ -37,13 +40,13 @@ export default class PostModel extends Backbone.Model {
         if (this.sharingProviderExists(name))
             return;
         switch (name) {
-            case SocialProviders.Facebook:
+            case SocialProviders_1.default.Facebook:
                 this.addFacebookSharingProvider();
                 break;
-            case SocialProviders.LinkedIn:
+            case SocialProviders_1.default.LinkedIn:
                 this.addLinkedInSharingProvider();
                 break;
-            case SocialProviders.Twitter:
+            case SocialProviders_1.default.Twitter:
                 this.addTwitterSharingProvider();
                 break;
         }
@@ -51,7 +54,7 @@ export default class PostModel extends Backbone.Model {
     addTwitterSharingProvider() {
         TwitterManager.ensureLoggedIn()
             .then(() => {
-            var sharingProvider = this.addNewSharingProvider(SocialProviders.Twitter);
+            var sharingProvider = this.addNewSharingProvider(SocialProviders_1.default.Twitter);
             TwitterManager.fillSharingProviderWithAuthInfo(sharingProvider);
         })
             .catch((err) => {
@@ -61,7 +64,7 @@ export default class PostModel extends Backbone.Model {
     addFacebookSharingProvider() {
         FacebookManager.ensureLoggedIn()
             .then((response) => {
-            let sharingProvider = this.addNewSharingProvider(SocialProviders.Facebook);
+            let sharingProvider = this.addNewSharingProvider(SocialProviders_1.default.Facebook);
             FacebookManager.fillSharingProviderWithAuthInfo(sharingProvider);
         })
             .catch((err) => {
@@ -71,7 +74,7 @@ export default class PostModel extends Backbone.Model {
     addLinkedInSharingProvider() {
         LinkedinManager.ensureLoggedIn()
             .then(() => {
-            var sharingProvider = this.addNewSharingProvider(SocialProviders.LinkedIn);
+            var sharingProvider = this.addNewSharingProvider(SocialProviders_1.default.LinkedIn);
             LinkedinManager.fillSharingProviderWithAuthInfo(sharingProvider);
         })
             .catch((err) => {
@@ -79,7 +82,7 @@ export default class PostModel extends Backbone.Model {
         });
     }
     addNewSharingProvider(name) {
-        return this.SharingProviders.add(new SharingProviderModel({ Name: name }, null), null);
+        return this.SharingProviders.add(new SharingProviderModel_1.default({ Name: name }, null), null);
     }
     removeSharingProvider(sharingProviderName) {
         var provider = this.getSharingProvider(sharingProviderName);
@@ -104,3 +107,5 @@ export default class PostModel extends Backbone.Model {
         return json;
     }
 }
+exports.default = PostModel;
+//# sourceMappingURL=PostModel.js.map
