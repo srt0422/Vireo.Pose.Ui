@@ -9,6 +9,6 @@
 
 @import "global";
 
-@media only screen and (min-device-width: 320px) {
-    @import "greater-than-320";
+@media only screen and (min-device-width: 415px) {
+    @import "greater-than-414";
 }

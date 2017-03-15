@@ -8793,8 +8793,8 @@ button.close {
   z-index: 9;
 }
 
-@media only screen and (min-device-width: 320px) {
-  /* line 1, ../../../web/scss/greater-than-320/_sharing-component.scss */
+@media only screen and (min-device-width: 415px) {
+  /* line 1, ../../../web/scss/greater-than-414/_sharing-component.scss */
   .sharingComponent {
     margin-top: 15px;
     width: 40%;
