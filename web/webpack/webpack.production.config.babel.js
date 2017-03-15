@@ -7,6 +7,7 @@ let config = {
     context: fs.realpathSync(__dirname + '/../../'),
     entry: [
         "babel-polyfill",
+        'bootstrap/dist/js/bootstrap',
         fs.realpathSync(__dirname + "/prod-init.js"),
         fs.realpathSync(__dirname + "/../../app/lib/Main.jsx")
     ],
@@ -66,6 +67,9 @@ let config = {
     plugins: [
         new webpack.ProvidePlugin({
             "React": "react",
+            jQuery: 'jquery',
+            $: 'jquery',
+            jquery: 'jquery'
         }),
         new webpack.LoaderOptionsPlugin({
             minimize: true,

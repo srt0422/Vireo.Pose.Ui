@@ -6,6 +6,7 @@ const webpack = require("webpack");
 module.exports = {
     context: fs.realpathSync(__dirname + '/../../'),
     entry: [
+        "bootstrap/dist/js/bootstrap",
         "babel-polyfill",
         fs.realpathSync(__dirname + "/../../app/lib/Main.jsx")
     ],
@@ -73,6 +74,11 @@ module.exports = {
                 PLATFORM_ENV: JSON.stringify('web')
             }
         }),
-        new webpack.ProvidePlugin({ "React": "react" })
+        new webpack.ProvidePlugin({
+            "React": "react",
+            jQuery: 'jquery',
+            $: 'jquery',
+            jquery: 'jquery'
+        })
     ]
 }
