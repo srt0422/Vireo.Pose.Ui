@@ -12,7 +12,7 @@
     "start-ios": "NODE_ENV=production; react-native run-ios",
     "web-dev": "webpack-dev-server --config web/webpack/webpack.config.babel.js --progress --colors --open --hot",
     "web-dev-bundle": "webpack --config web/webpack/webpack.config.babel.js --progress --colors",
-    "web-bundle": "set NODE_ENV=production webpack -p --config web/webpack/webpack.production.config.babel.js --progress --colors",
+    "web-bundle": "set NODE_ENV=production&& webpack -p --config web/webpack/webpack.production.config.babel.js --progress --colors",
     "clear-cache": "gulp clear-cache"
   },
   "dependencies": {

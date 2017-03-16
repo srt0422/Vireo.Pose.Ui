@@ -6,8 +6,8 @@ const prod = process.argv.indexOf('-p') !== -1;
 let config = {
     context: fs.realpathSync(__dirname + '/../../'),
     entry: [
-        "babel-polyfill",
         'bootstrap/dist/js/bootstrap',
+        "babel-polyfill",
         fs.realpathSync(__dirname + "/prod-init.js"),
         fs.realpathSync(__dirname + "/../../app/lib/Main.jsx")
     ],
