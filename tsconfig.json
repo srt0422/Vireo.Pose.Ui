@@ -10,12 +10,16 @@
     "./*.ts",
     "./app/**/*.ts",
     "./app/**/*.tsx",
-    "./node_modules/@types/**/*.ts"
+    "./node_modules/@types/**/*.ts",
+    "./__tests__/*.ts",
+    "./__tests__/*.tsx"
   ],
   "filesGlob": [
     "./app/**/*.ts",
     "./app/**/*.tsx",
-    "./node_modules/@types/**/*.ts"
+    "./node_modules/@types/**/*.ts",
+    "./__tests__/*.ts",
+    "./__tests__/*.tsx"
   ],
   "typeRoots": [ "node_modules/@types" ]
 }

@@ -1,0 +1,1 @@
+//# sourceMappingURL=IPoseConfiguration.js.map

@@ -1,6 +1,8 @@
 import * as fs from 'fs';
 import * as path from "path";
+import * as process from "process";
 
+console.log(process);
 let jsxPath = path.join(__dirname, "app/lib");
 
 transformJsxFiles(jsxPath);
