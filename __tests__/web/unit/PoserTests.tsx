@@ -6,16 +6,16 @@
 
 import "mocha";
 import { assert } from "chai";
-import { shallow } from 'enzyme';
+import { ShallowWrapper, shallow } from 'enzyme';
 import * as React from "react";
-import LoadingScreen from "../app/lib/POSE/Components/Presentation/LoadingScreen";
 
-describe("Loading Screen Test Suite", () => {
-     
-    let testLoadingScreen = null;
+import Poser from "../../../app/lib/POSE/Components/Presentation/Poser";
+
+describe("Poser Screen Test Suite", () => {
+
+    let testLoadingScreen: ShallowWrapper<any, any> = null;
 
     beforeEach(() => {
-        testLoadingScreen = shallow(<LoadingScreen />);
     });
 
     afterEach(() => {
@@ -23,10 +23,14 @@ describe("Loading Screen Test Suite", () => {
     });
 
     it("Should not be loading", () => {
-        assert.strictEqual(testLoadingScreen.props.loading, false);
+        testLoadingScreen = shallow(<Poser />);
+
+        assert.strictEqual(testLoadingScreen.children().length, 0);
     });
 
     it("Should be loading", () => {
-        assert.strictEqual(testLoadingScreen.props.loading, true);
+        testLoadingScreen = shallow(<Poser />);
+
+        assert.strictEqual(testLoadingScreen.children.length, 1);
     });
 });

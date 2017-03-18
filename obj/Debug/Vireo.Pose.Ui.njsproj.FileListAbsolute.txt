@@ -1,0 +1,1 @@
+C:\Workspace\Vireo.Pose.Ui\Vireo.Pose.Ui\bin\Microsoft.NodejsTools.WebRole.dll

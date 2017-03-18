@@ -4,7 +4,12 @@
 import * as React from "react";
 
 class LoadingScreen extends React.Component<any, any>{
-
+    render() {
+        if (this.props.loading) {
+            return (<div></div>);
+        }
+        else return null
+    }
 }
 
 export default LoadingScreen;
