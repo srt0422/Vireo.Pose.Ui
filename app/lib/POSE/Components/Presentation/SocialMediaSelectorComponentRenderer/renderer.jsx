@@ -8,3 +8,4 @@ export default function () {
           <SocialMediaOption value="linkedin" label="LinkedIn"></SocialMediaOption>
       </div>);
 }
+//# sourceMappingURL=renderer.jsx.map

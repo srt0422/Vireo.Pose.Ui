@@ -2,8 +2,8 @@ import "mocha";
 import { assert } from "chai";
 import { shallow } from 'enzyme';
 import * as React from "react";
-import LoadingScreen from "../../../app/lib/POSE/Components/Presentation/LoadingScreen";
-describe("Loading Screen Test Suite", () => {
+import Poser from "../../../app/lib/POSE/Components/Presentation/Poser";
+describe("Poser Screen Test Suite", () => {
     let testLoadingScreen = null;
     beforeEach(() => {
     });
@@ -11,12 +11,12 @@ describe("Loading Screen Test Suite", () => {
         testLoadingScreen = null;
     });
     it("Should not be loading", () => {
-        testLoadingScreen = shallow(<LoadingScreen loading={false}/>);
+        testLoadingScreen = shallow(<Poser />);
         assert.strictEqual(testLoadingScreen.children().length, 0);
     });
     it("Should be loading", () => {
-        testLoadingScreen = shallow(<LoadingScreen loading={true}/>);
+        testLoadingScreen = shallow(<Poser />);
         assert.strictEqual(testLoadingScreen.children.length, 1);
     });
 });
-//# sourceMappingURL=LoadingScreen.web.jsx.map
+//# sourceMappingURL=PoserTests.web.jsx.map

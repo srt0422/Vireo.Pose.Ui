@@ -12,3 +12,4 @@ export function renderer() {
         </div>);
 }
 export default renderer;
+//# sourceMappingURL=renderer.jsx.map

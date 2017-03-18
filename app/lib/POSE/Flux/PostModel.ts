@@ -17,7 +17,7 @@ import SocialProviders from "../Components/SocialProviders";
 
 import config from "../../../config/config";
 
-import AddPostMutation = require("../Data/Mutations/AddPostMutation");
+//import AddPostMutation = require("../Data/Mutations/AddPostMutation");
 
 import * as FacebookManager from "../SocialMedia/FacebookManager";
 import * as LinkedinManager from "../SocialMedia/LinkedinManager";

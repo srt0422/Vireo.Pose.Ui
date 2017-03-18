@@ -2,7 +2,6 @@ import * as React from "react";
 import PostStore from "../../Flux/Stores/PostStore";
 import renderer from "./PoserRenderer/renderer";
 var postStore = PostStore;
-//set this up as a relay container
 export default class Poser extends React.Component {
     constructor(props, context) {
         super(props, context);
@@ -31,7 +30,6 @@ export default class Poser extends React.Component {
         postStore.setContent(this.postValue);
         postStore.save();
     }
-    //TODO: find out why ios picker always resets to devault value
     componentWillMount() {
         this.setState({
             type: "text",
@@ -45,8 +43,4 @@ export default class Poser extends React.Component {
         });
     }
 }
-//export default Relay.createContainer<any>(Poser, {
-//    fragments: {
-//        post: () => postStore.getFragment()
-//    }
-//});
+//# sourceMappingURL=Poser.js.map

@@ -103,3 +103,4 @@ export default class PostModel extends Backbone.Model {
         return json;
     }
 }
+//# sourceMappingURL=PostModel.js.map
