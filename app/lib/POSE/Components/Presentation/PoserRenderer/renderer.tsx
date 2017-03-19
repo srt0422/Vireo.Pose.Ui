@@ -3,10 +3,8 @@ import SharingContentComponent from "../SharingContentComponent";
 import SocialMediaSelectorComponent from "../SocialMediaSelectorComponent";
 import SocialOptions from "../../SocialProviders";
 
-import styles from "../../../styles";
-
 export function render(props, state) {
-    return (<form className={`${styles["center-block"]} ${styles.clearfix} ${styles.sharingComponent}`}>
+    return (<form className={`${this.props.styles["center-block"]} ${this.props.styles.clearfix} ${this.props.styles.sharingComponent}`}>
         <SharingContentComponent
             type={this.state.type}
             value={this.contentMap[this.state.value]}
@@ -21,7 +19,7 @@ export function render(props, state) {
 
         <button
             onClick={this.onClick}
-            className={`${styles.btn} ${styles["btn-lg"]} ${styles["btn-success"]} ${styles["btn-block"]}`}
+            className={`${this.props.styles.btn} ${this.props.styles["btn-lg"]} ${this.props.styles["btn-success"]} ${this.props.styles["btn-block"]}`}
             value="Share"
             type="button"
             children="Share" />

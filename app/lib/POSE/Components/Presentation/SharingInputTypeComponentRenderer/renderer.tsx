@@ -1,8 +1,6 @@
 import * as React from "react";
 import UnorderedListComponent from "../../../../HTML/Components/UnorderedListComponent";
 
-import styles from "../../../styles";
-
 export function renderer() {
     if (!this.state) {
         this.state = { open: false };

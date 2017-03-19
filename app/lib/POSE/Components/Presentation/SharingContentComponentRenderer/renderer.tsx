@@ -1,6 +1,5 @@
 import * as React from "react";
 import SharingInputTypeComponent from "../SharingInputTypeComponent";
-import styles from "../../../styles";
 
 export function renderer(props, state) {
     return (<div className={this.props.wrapperClass}>

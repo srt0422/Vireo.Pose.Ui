@@ -1,5 +1,4 @@
 import * as React from "react";
-import styles from "../../../styles";
 
 export function render(){
     return (

@@ -1,6 +1,5 @@
 import * as React from "react";
 import SharingInputTypeComponent from "../SharingInputTypeComponent";
-import styles from "../../../styles";
 export function renderer(props, state) {
     return (<div className={this.props.wrapperClass}>
 
@@ -19,3 +18,4 @@ export function renderer(props, state) {
 }
 ;
 export default renderer;
+//# sourceMappingURL=renderer.jsx.map

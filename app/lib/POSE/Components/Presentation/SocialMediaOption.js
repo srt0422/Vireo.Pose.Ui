@@ -1,7 +1,6 @@
 import * as React from "react";
 import PostStore from "../../Flux/Stores/PostStore";
 import renderer from "./SocialMediaOptionComponentRenderer/renderer";
-const styles = require("../../styles");
 var postStore = PostStore;
 export default class SocialMediaOption extends React.Component {
     render() {

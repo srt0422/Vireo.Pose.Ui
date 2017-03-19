@@ -1,5 +1,4 @@
 import * as React from "react";
-import styles from "../../../styles";
 export function render() {
     return (<button onClick={this.onSelected} type="button" className={styles["list-group-item"] + " "
         + (this.state.selected
@@ -10,3 +9,4 @@ export function render() {
         </button>);
 }
 export default render;
+//# sourceMappingURL=renderer.jsx.map
