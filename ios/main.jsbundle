@@ -142512,18 +142512,19 @@ SocialProviders.Twitter="twitter";
 SocialProviders.LinkedIn="linkedin";
 SocialProviders.Google_Plus="google_plus";
 }, 742, null, "PoseUi/app/lib/POSE/Components/SocialProviders.js");
-__d(/* PoseUi/app/config/config.js */function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var Platform=void 0,process=void 0;
+__d(/* PoseUi/app/config/config.js */function(global, require, module, exports) {"use strict";
+Object.defineProperty(exports,"__esModule",{value:true});
+var Platform=void 0,process=void 0;
 try{
 Platform=require(42 /* react-native */);
 }
 catch(e){
 }finally
 {
-
 if(Platform&&(Platform.OS==="ios"||Platform.OS!=="android")){
 process={
 env:{
-NODE_ENV:"development"}};
+NODE_ENV:"production"}};
 
 
 }else
@@ -142546,8 +142547,8 @@ default:
 configuration.SharingUrl="https://localhost:44317/";
 break;}
 
-var config=exports.config=configuration;exports.default=
-configuration;
+exports.config=configuration;
+exports.default=configuration;
 }, 743, null, "PoseUi/app/config/config.js");
 __d(/* process/browser.js */function(global, require, module, exports) {
 var process=module.exports={};
@@ -165264,20 +165265,16 @@ sharingProvider.setAuthToken(accessToken.accessToken);
 }
 exports.fillSharingProviderWithAuthInfo=fillSharingProviderWithAuthInfo;
 function ensureLoggedIn(){
-return __awaiter(this,void 0,void 0,regeneratorRuntime.mark(function _callee(){return regeneratorRuntime.wrap(function _callee$(_context){while(1){switch(_context.prev=_context.next){case 0:return _context.abrupt("return",
-new Promise(function(fullfilled,rejected){return react_native_fbsdk_1.LoginManager.logInWithPublishPermissions(['publish_actions']).
-then(function(result){
-if(result.isCancelled){
-rejected("login canceled");
-}else
-{
-react_native_fbsdk_1.AccessToken.getCurrentAccessToken().
-then(function(result){
-accessToken=result;
-fullfilled();
-});
-}
-},function(error){return rejected(error);});}));case 1:case"end":return _context.stop();}}},_callee,this);}));
+return __awaiter(this,void 0,void 0,regeneratorRuntime.mark(function _callee(){var refreshResult,result;return regeneratorRuntime.wrap(function _callee$(_context){while(1){switch(_context.prev=_context.next){case 0:_context.next=2;return(
+react_native_fbsdk_1.AccessToken.refreshCurrentAccessTokenAsync());case 2:refreshResult=_context.sent;
+console.log(refreshResult);_context.next=6;return(
+react_native_fbsdk_1.LoginManager.logInWithPublishPermissions(['publish_actions']));case 6:result=_context.sent;if(!
+result.isCancelled){_context.next=11;break;}throw(
+"login canceled");case 11:_context.next=13;return(
+
+
+react_native_fbsdk_1.AccessToken.getCurrentAccessToken());case 13:accessToken=_context.sent;case 14:case"end":return _context.stop();}}},_callee,this);}));
+
 
 }
 exports.ensureLoggedIn=ensureLoggedIn;

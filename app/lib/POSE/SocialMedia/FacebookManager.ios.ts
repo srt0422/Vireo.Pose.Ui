@@ -12,33 +12,14 @@ export function fillSharingProviderWithAuthInfo(sharingProvider) {
 
 export async function ensureLoggedIn() {
 
-    return new Promise<any>((fullfilled, rejected) =>
+    let refreshResult = await FBAccessToken.refreshCurrentAccessTokenAsync();
+    console.log(refreshResult);
+    let result = await LoginManager.logInWithPublishPermissions(['publish_actions']);
 
-        LoginManager.logInWithPublishPermissions(['publish_actions'])
-            .then((result) => {
-
-                if (result.isCancelled) {
-                    rejected("login canceled");
-                }
-                else {
-                    FBAccessToken.getCurrentAccessToken()
-                        .then((result) => {
-
-                            accessToken = result;
-
-                            fullfilled();
-                        });
-                }
-
-            },
-            (error) => rejected(error)));
+    if (result.isCancelled) {
+        throw "login canceled";
+    }
+    else {
+        accessToken = await FBAccessToken.getCurrentAccessToken();
+    }
 }
-// declinedPermissions
-// :
-// Array[0]
-// grantedPermissions
-// :
-// Array[1]
-// isCancelled
-// :
-// false

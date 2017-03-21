@@ -18,28 +18,16 @@ function fillSharingProviderWithAuthInfo(sharingProvider) {
 exports.fillSharingProviderWithAuthInfo = fillSharingProviderWithAuthInfo;
 function ensureLoggedIn() {
     return __awaiter(this, void 0, void 0, function* () {
-        return new Promise((fullfilled, rejected) => react_native_fbsdk_1.LoginManager.logInWithPublishPermissions(['publish_actions'])
-            .then((result) => {
-            if (result.isCancelled) {
-                rejected("login canceled");
-            }
-            else {
-                react_native_fbsdk_1.AccessToken.getCurrentAccessToken()
-                    .then((result) => {
-                    accessToken = result;
-                    fullfilled();
-                });
-            }
-        }, (error) => rejected(error)));
+        let refreshResult = yield react_native_fbsdk_1.AccessToken.refreshCurrentAccessTokenAsync();
+        console.log(refreshResult);
+        let result = yield react_native_fbsdk_1.LoginManager.logInWithPublishPermissions(['publish_actions']);
+        if (result.isCancelled) {
+            throw "login canceled";
+        }
+        else {
+            accessToken = yield react_native_fbsdk_1.AccessToken.getCurrentAccessToken();
+        }
     });
 }
 exports.ensureLoggedIn = ensureLoggedIn;
-// declinedPermissions
-// :
-// Array[0]
-// grantedPermissions
-// :
-// Array[1]
-// isCancelled
-// :
-// false
+//# sourceMappingURL=FacebookManager.ios.js.map
