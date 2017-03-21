@@ -1,6 +1,7 @@
 import * as React from "react";
 
-export function render(){
+export function render() {
+    const styles = this.props.styles;
     return (
         <button
             onClick={this.onSelected}

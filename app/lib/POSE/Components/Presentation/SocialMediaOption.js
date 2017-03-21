@@ -10,6 +10,7 @@ export default class SocialMediaOption extends React.Component {
         this.setState({ selected: false });
     }
     componentWillUpdate(nextProps, nextState) {
+        // update flux store to track selected sharingProviders
         if (nextState.selected) {
             postStore.tryAddSharingProvider(this.props.value);
         }
@@ -25,4 +26,3 @@ export default class SocialMediaOption extends React.Component {
         this.onSelected = this.onSelected.bind(this);
     }
 }
-//# sourceMappingURL=SocialMediaOption.js.map

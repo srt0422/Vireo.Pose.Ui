@@ -7,17 +7,17 @@ export function renderer() {
     }
 
     return (
-        <div className={`${styles.dropdown} ${this.state.open ? styles.open : ""}`}>
+        <div className={`${this.props.styles.dropdown} ${this.state.open ? styles.open : ""}`}>
 
             <button type="button"
-                className={`${styles.btn} ${styles["btn-lg"]} ${styles["btn-info"]} ${styles["dropdown-toggle"]} ${styles["btn-block"]}`}
+                className={`${this.props.styles.btn} ${this.props.styles["btn-lg"]} ${this.props.styles["btn-info"]} ${this.props.styles["dropdown-toggle"]} ${this.props.styles["btn-block"]}`}
                 data-toggle="dropdown"
                 aria-haspopup="true"
                 aria-expanded="false"
                 ref="button"
                 onClick={() =>this.setState({ open: !this.state.open })}>
 
-                {this.props.value} <span className={styles.caret}></span>
+                {this.props.value} <span className={this.props.styles.caret}></span>
 
             </button>
 

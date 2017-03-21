@@ -1,4 +1,3 @@
-"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -7,24 +6,22 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-const react_native_fbsdk_1 = require("react-native-fbsdk");
+import { LoginManager, AccessToken as FBAccessToken } from "react-native-fbsdk";
 let accessToken;
-function fillSharingProviderWithAuthInfo(sharingProvider) {
+export function fillSharingProviderWithAuthInfo(sharingProvider) {
     sharingProvider.setExpirationDate(accessToken.expirationTime);
     sharingProvider.setUserId(accessToken.userID);
     sharingProvider.setAuthToken(accessToken.accessToken);
 }
-exports.fillSharingProviderWithAuthInfo = fillSharingProviderWithAuthInfo;
-function ensureLoggedIn() {
+export function ensureLoggedIn() {
     return __awaiter(this, void 0, void 0, function* () {
-        return new Promise((fullfilled, rejected) => react_native_fbsdk_1.LoginManager.logInWithPublishPermissions(['publish_actions'])
+        return new Promise((fullfilled, rejected) => LoginManager.logInWithPublishPermissions(['publish_actions'])
             .then((result) => {
             if (result.isCancelled) {
                 rejected("login canceled");
             }
             else {
-                react_native_fbsdk_1.AccessToken.getCurrentAccessToken()
+                FBAccessToken.getCurrentAccessToken()
                     .then((result) => {
                     accessToken = result;
                     fullfilled();
@@ -33,13 +30,4 @@ function ensureLoggedIn() {
         }, (error) => rejected(error)));
     });
 }
-exports.ensureLoggedIn = ensureLoggedIn;
-// declinedPermissions
-// :
-// Array[0]
-// grantedPermissions
-// :
-// Array[1]
-// isCancelled
-// :
-// false
+//# sourceMappingURL=FacebookManager.ios.js.map

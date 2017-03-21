@@ -2,13 +2,18 @@ import * as React from "react";
 import BootstrapContainerLayout from "../../../HTML/Components/BootstrapContainerLayout";
 import FacebookSdk from "../Presentation/SocialMedia/Facebook/FacebookSdk";
 import Poser from "../Presentation/Poser";
-export function renderer() {
+import LoadingScreen from "../Presentation/LoadingScreen";
+const fn = function () {
     return (<div>
             <FacebookSdk appId="764673526884567"></FacebookSdk>
 
             <BootstrapContainerLayout>
                 {this.props.children || (<Poser></Poser>)}
             </BootstrapContainerLayout>
+            
+            {this.Store.Loading ? (<LoadingScreen />) : null}
+
         </div>);
-}
-export default renderer;
+};
+export var renderer = fn;
+export default fn;

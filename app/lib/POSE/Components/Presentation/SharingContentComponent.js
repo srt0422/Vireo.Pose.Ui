@@ -6,4 +6,3 @@ export class SharingContentComponent extends React.Component {
     }
 }
 export default SharingContentComponent;
-//# sourceMappingURL=SharingContentComponent.js.map

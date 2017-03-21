@@ -7,6 +7,10 @@ export function StartLoading() {
     store.Loading = true;
 }
 
+export function StopLoading() {
+    store.Loading = false;
+}
+
 export interface ILoadingActions {
     StartLoading();
 }

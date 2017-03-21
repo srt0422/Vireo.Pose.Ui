@@ -1,1 +1,1 @@
-{"version":3,"file":"SocialProviders.js","sourceRoot":"","sources":["SocialProviders.ts"],"names":[],"mappings":";AAAA,2BAA2B;AAC3B;AAKA,CAAC;AAJiB,wBAAQ,GAAG,UAAU,CAAC;AACtB,uBAAO,GAAG,SAAS,CAAC;AACpB,wBAAQ,GAAG,UAAU,CAAC;AACtB,2BAAW,GAAG,aAAa,CAAC;AAJ9C;iCAKC,CAAA;AACD,GAAG"}
+{"version":3,"file":"SocialProviders.js","sourceRoot":"","sources":["SocialProviders.ts"],"names":[],"mappings":"AACA,MAAM,CAAC,OAAO;;AACI,wBAAQ,GAAG,UAAU,CAAC;AACtB,uBAAO,GAAG,SAAS,CAAC;AACpB,wBAAQ,GAAG,UAAU,CAAC;AACtB,2BAAW,GAAG,aAAa,CAAC"}

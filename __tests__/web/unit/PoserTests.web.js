@@ -4,19 +4,20 @@ import { shallow } from 'enzyme';
 import * as React from "react";
 import Poser from "../../../app/lib/POSE/Components/Presentation/Poser";
 describe("Poser Screen Test Suite", () => {
-    let testLoadingScreen = null;
+    let testPoser = null;
     beforeEach(() => {
     });
     afterEach(() => {
-        testLoadingScreen = null;
+        testPoser = null;
     });
-    it("Should not be loading", () => {
-        testLoadingScreen = shallow(<Poser />);
-        assert.strictEqual(testLoadingScreen.children().length, 0);
+    it("Should render", () => {
+        testPoser = shallow(<Poser styles={{}}/>);
+        assert.strictEqual(testPoser.children().length, 3);
     });
-    it("Should be loading", () => {
-        testLoadingScreen = shallow(<Poser />);
-        assert.strictEqual(testLoadingScreen.children.length, 1);
+    it("Should handle click", () => {
+        testPoser = shallow(<Poser styles={{}}/>);
+        testPose.instance;
+        assert.strictEqual(testPoser.children().length, 3);
     });
 });
 //# sourceMappingURL=PoserTests.web.jsx.map

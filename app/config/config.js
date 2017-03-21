@@ -34,4 +34,3 @@ switch (process.env.NODE_ENV) {
 }
 export var config = configuration;
 export default configuration;
-//# sourceMappingURL=config.js.map

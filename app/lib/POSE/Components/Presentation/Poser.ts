@@ -6,7 +6,7 @@ import SocialOptions = require("../SocialProviders");
 import ReactRouter = require("react-router");
 import Relay = require("react-relay");
 import renderer from "./PoserRenderer/renderer";
-
+import LoadingActions from "../../Flux/Actions/LoadingActions";
 var postStore: PostModel = PostStore;
 
 //set this up as a relay container
@@ -23,6 +23,7 @@ export default class Poser extends React.Component<PoserProps, any>
 
         postStore.save();
     }
+
     //TODO: find out why ios picker always resets to devault value
     public componentWillMount() {
         this.setState({
@@ -66,6 +67,7 @@ export default class Poser extends React.Component<PoserProps, any>
 
 export interface PoserProps extends React.Props<Poser> {
     navigator?: Navigator;
+    styles?: { "center-block"?: string, clearfix?: "string", sharingComponent? : string };
 }
 
 //export default Relay.createContainer<any>(Poser, {

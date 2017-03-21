@@ -9,28 +9,31 @@ import { assert } from "chai";
 import { ShallowWrapper, shallow } from 'enzyme';
 import * as React from "react";
 
+import LoadingScreen from "../../../app/lib/POSE/Components/Presentation/LoadingScreen";
 import Poser from "../../../app/lib/POSE/Components/Presentation/Poser";
 
 describe("Poser Screen Test Suite", () => {
 
-    let testLoadingScreen: ShallowWrapper<any, any> = null;
+    let testPoser: ShallowWrapper<any, any> = null;
 
     beforeEach(() => {
     });
 
     afterEach(() => {
-        testLoadingScreen = null;
+        testPoser = null;
     });
 
-    it("Should not be loading", () => {
-        testLoadingScreen = shallow(<Poser />);
+    it("Should render", () => {
+        testPoser = shallow(<Poser styles={{}} />);
 
-        assert.strictEqual(testLoadingScreen.children().length, 0);
+        assert.strictEqual(testPoser.children().length, 3);
     });
 
-    it("Should be loading", () => {
-        testLoadingScreen = shallow(<Poser />);
+    it("Should handle click", () => {
+        testPoser = shallow(<Poser styles={{}} />);
 
-        assert.strictEqual(testLoadingScreen.children.length, 1);
+        testPose.instance as Poser;
+
+        assert.strictEqual(testPoser.children().length, 3);
     });
 });

@@ -8,7 +8,7 @@ import "mocha";
 import { assert } from "chai";
 import * as sinon from 'sinon';
 import * as React from "react";
-import * as rewire from "rewire";
+import rewire from "rewire";
 import * as loadingActions from "../app/lib/POSE/Flux/Actions/LoadingActions";
 
 describe("LoadingActions Test Suite", () => {
@@ -16,7 +16,7 @@ describe("LoadingActions Test Suite", () => {
     let loadingActionsRewired;
 
     beforeEach(() => {
-       loadingActionsRewired = rewire("../app/lib/POSE/Flux/Actions/LoadingActions");
+        loadingActionsRewired = rewire("../app/lib/POSE/Flux/Actions/LoadingActions");
     });
 
     afterEach(() => {
@@ -27,5 +27,11 @@ describe("LoadingActions Test Suite", () => {
         loadingActions.StartLoading();
 
         assert.isTrue(loadingActionsRewired.__get__("store.Loading"));
+    });
+
+    it("should stop loading", () => {
+        loadingActions.StopLoading();
+
+        assert.isFalse(loadingActionsRewired.__get__("store.Loading"));
     });
 });

@@ -23,9 +23,6 @@ export function ensureLoggedIn() {
                     .then(() => {
                     console.log(arguments);
                     fullfill(Object.assign({}, arguments));
-                    // accessToken, accessTokenSecret, id, name
-                    // accessInfo.accessToken = accessToken;
-                    // accessInfo.userId = id;
                 });
             }
             catch (e) {
@@ -34,3 +31,4 @@ export function ensureLoggedIn() {
         });
     });
 }
+//# sourceMappingURL=TwitterManager.ios.js.map

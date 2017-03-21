@@ -1,1 +1,1 @@
-{"version":3,"file":"styles.ios.js","sourceRoot":"","sources":["styles.ios.js"],"names":[],"mappings":"AAAA,YAAY,CAAC;AACb,MAAM,CAAC,OAAO,GAAG;IACb,KAAK,EAAE,EAAE;IACT,uBAAuB,EAAE;QACrB,gBAAgB,EAAE,EAAE;KACvB;IACD,WAAW,EAAE,EAAE;CAClB,CAAC;AACF,sCAAsC"}
+{"version":3,"file":"styles.ios.js","sourceRoot":"","sources":["styles.ios.ts"],"names":[],"mappings":""}
