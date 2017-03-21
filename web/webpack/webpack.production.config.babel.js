@@ -2,10 +2,10 @@ const path = require("path");
 const fs = require("fs");
 const webpack = require("webpack");
 const prod = process.argv.indexOf('-p') !== -1;
-
 let config = {
     context: fs.realpathSync(__dirname + '/../../'),
     entry: [
+        'bootstrap/dist/js/bootstrap',
         "babel-polyfill",
         fs.realpathSync(__dirname + "/prod-init.js"),
         fs.realpathSync(__dirname + "/../../app/lib/Main.jsx")
@@ -39,12 +39,6 @@ let config = {
                 test: /\.css/,
                 loader: "style-loader!css-loader?modules"
             },
-            // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
-            //{
-            //    test: /\.jsx?$/,
-            //    loader: "source-map-loader",
-            //    enforce: "pre"
-            //}
         ]
     },
     node: {
@@ -66,6 +60,9 @@ let config = {
     plugins: [
         new webpack.ProvidePlugin({
             "React": "react",
+            jQuery: 'jquery',
+            $: 'jquery',
+            jquery: 'jquery'
         }),
         new webpack.LoaderOptionsPlugin({
             minimize: true,
@@ -74,6 +71,6 @@ let config = {
         new webpack.optimize.UglifyJsPlugin(),
         new webpack.EnvironmentPlugin(['NODE_ENV'])
     ]
-}
-
+};
 module.exports = config;
+//# sourceMappingURL=webpack.production.config.babel.js.map

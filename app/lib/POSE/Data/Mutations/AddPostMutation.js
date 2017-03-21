@@ -1,5 +1,4 @@
-"use strict";
-const Relay = require("react-relay");
+import * as Relay from "react-relay";
 class AddPostMutation extends Relay.Mutation {
     getFatQuery() {
     }
@@ -23,5 +22,4 @@ class AddPostMutation extends Relay.Mutation {
     }
 }
 AddPostMutation.fragments = {};
-module.exports = AddPostMutation;
 //# sourceMappingURL=AddPostMutation.js.map

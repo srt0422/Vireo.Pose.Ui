@@ -4,18 +4,24 @@
     "module": "commonjs",
     "target": "es6",
     "jsx": "preserve",
-    "sourceMap": true
+    "sourceMap": true,
+    "experimentalDecorators": true
   },
   "files": [
     "./*.ts",
     "./app/**/*.ts",
     "./app/**/*.tsx",
-    "./node_modules/@types/**/*.ts"
+    "./node_modules/@types/**/*.ts",
+    "./__tests__/*.ts",
+    "./__tests__/*.tsx"
   ],
   "filesGlob": [
+    "./*.ts",
     "./app/**/*.ts",
     "./app/**/*.tsx",
-    "./node_modules/@types/**/*.ts"
+    "./node_modules/@types/**/*.ts",
+    "./__tests__/*.ts",
+    "./__tests__/*.tsx"
   ],
   "typeRoots": [ "node_modules/@types" ]
 }

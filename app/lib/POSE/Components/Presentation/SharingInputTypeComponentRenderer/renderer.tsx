@@ -1,29 +1,32 @@
 import * as React from "react";
 import UnorderedListComponent from "../../../../HTML/Components/UnorderedListComponent";
 
-import styles from "../../../styles";
+export function renderer() {
+    if (!this.state) {
+        this.state = { open: false };
+    }
 
-export  function renderer(){
-  return (
-          <div className={`${styles.dropdown}`}>
+    return (
+        <div className={`${this.props.styles.dropdown} ${this.state.open ? styles.open : ""}`}>
 
-                  <button type="button"
-                      className={`${styles.btn} ${styles["btn-lg"]} ${styles["btn-info"]} ${styles["dropdown-toggle"]} ${styles["btn-block"]}`}
-                      data-toggle="dropdown"
-                      aria-haspopup="true"
-                      aria-expanded="false"
-                      ref="button">
+            <button type="button"
+                className={`${this.props.styles.btn} ${this.props.styles["btn-lg"]} ${this.props.styles["btn-info"]} ${this.props.styles["dropdown-toggle"]} ${this.props.styles["btn-block"]}`}
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+                ref="button"
+                onClick={() =>this.setState({ open: !this.state.open })}>
 
-                      {this.props.value} <span className={styles.caret}></span>
+                {this.props.value} <span className={this.props.styles.caret}></span>
 
-                      </button>
+            </button>
 
-                  <UnorderedListComponent
-                      onItemClick={this.props.onTypeChanged}
-                      types={this.props.types} />
+            <UnorderedListComponent
+                onItemClick={this.props.onTypeChanged}
+                types={this.props.types} />
 
-              </div>
-      );
+        </div>
+    );
 }
 
 export default renderer;

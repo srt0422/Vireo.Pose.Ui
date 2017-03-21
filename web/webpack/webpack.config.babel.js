@@ -2,10 +2,10 @@ const path = require("path");
 const fs = require("fs");
 const webpack = require("webpack");
 //const {Platform} = require("react-native");
-
 module.exports = {
     context: fs.realpathSync(__dirname + '/../../'),
     entry: [
+        "bootstrap/dist/js/bootstrap",
         "babel-polyfill",
         fs.realpathSync(__dirname + "/../../app/lib/Main.jsx")
     ],
@@ -14,14 +14,14 @@ module.exports = {
         filename: 'bundle.js',
         publicPath: '/'
     },
-    devtool: 'source-map',
+    devtool: 'cheap-source-map',
     resolve: {
-        extensions: [".js", ".jsx", ".css"]
+        extensions: [".webpack.js", ".web.js", ".js", ".jsx", ".css"]
     },
     module: {
         rules: [
             // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
-            //{ test: /\.tsx?$/, loader: "awesome-typescript-loader" },
+            { test: /\.tsx?$/, loader: "awesome-typescript-loader" },
             {
                 test: /.jsx?$/,
                 loader: 'babel-loader',
@@ -29,7 +29,8 @@ module.exports = {
                 query: {
                     presets: ['react', 'es2015']
                 }
-            }, {
+            },
+            {
                 test: /\.json$/,
                 loader: 'json-loader'
             }, {
@@ -39,7 +40,8 @@ module.exports = {
             // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
             {
                 test: /\.jsx?$/,
-                loader: "source-map-loader"
+                loader: "source-map-loader",
+                enforce: "pre"
             }
         ]
     },
@@ -71,6 +73,13 @@ module.exports = {
                 PLATFORM_ENV: JSON.stringify('web')
             }
         }),
-        new webpack.ProvidePlugin({"React": "react"})
+        new webpack.ProvidePlugin({
+
+            "React": "react",
+            jQuery: 'jquery',
+            $: 'jquery',
+            jquery: 'jquery'
+        })
     ]
-}
+};
+//# sourceMappingURL=webpack.config.babel.js.map

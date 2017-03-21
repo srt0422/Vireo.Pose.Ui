@@ -34,7 +34,7 @@ let configuration: IPoseConfiguration = {
 
 switch (process.env.NODE_ENV) {
     case "production":
-
+        
         configuration.SharingUrl = "http://poseapi.cloudvireo.com/";
 
         break;

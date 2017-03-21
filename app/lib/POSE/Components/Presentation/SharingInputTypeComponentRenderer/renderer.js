@@ -1,21 +1,19 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const React = require("react");
-const UnorderedListComponent_1 = require("../../../../HTML/Components/UnorderedListComponent");
-const styles_1 = require("../../../styles");
-function renderer() {
-    return (<div className={`${styles_1.default.dropdown}`}>
+import * as React from "react";
+import UnorderedListComponent from "../../../../HTML/Components/UnorderedListComponent";
+export function renderer() {
+    if (!this.state) {
+        this.state = { open: false };
+    }
+    return (<div className={`${this.props.styles.dropdown} ${this.state.open ? styles.open : ""}`}>
 
-                  <button type="button" className={`${styles_1.default.btn} ${styles_1.default["btn-lg"]} ${styles_1.default["btn-info"]} ${styles_1.default["dropdown-toggle"]} ${styles_1.default["btn-block"]}`} data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ref="button">
+            <button type="button" className={`${this.props.styles.btn} ${this.props.styles["btn-lg"]} ${this.props.styles["btn-info"]} ${this.props.styles["dropdown-toggle"]} ${this.props.styles["btn-block"]}`} data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ref="button" onClick={() => this.setState({ open: !this.state.open })}>
 
-                      {this.props.value} <span className={styles_1.default.caret}></span>
+                {this.props.value} <span className={this.props.styles.caret}></span>
 
-                      </button>
+            </button>
 
-                  <UnorderedListComponent_1.default onItemClick={this.props.onTypeChanged} types={this.props.types}/>
+            <UnorderedListComponent onItemClick={this.props.onTypeChanged} types={this.props.types}/>
 
-              </div>);
+        </div>);
 }
-exports.renderer = renderer;
-exports.default = renderer;
-//# sourceMappingURL=renderer.jsx.map
+export default renderer;

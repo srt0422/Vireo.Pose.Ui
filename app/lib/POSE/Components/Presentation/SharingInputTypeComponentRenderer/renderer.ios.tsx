@@ -16,8 +16,8 @@ export function renderer() {
         showModal: false
       };
   }
-
-  return (
+  const styles = this.props.styles;
+  return (      
     <View>
       <Button
         rounded

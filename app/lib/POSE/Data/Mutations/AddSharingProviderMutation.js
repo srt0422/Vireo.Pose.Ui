@@ -1,8 +1,4 @@
-"use strict";
-const Relay = require("react-relay");
 class AddSharingProviderMutation extends Relay.Mutation {
-    // Adding a sharingProvider will add it to a user's sharingProviders, so we
-    // specify the user's sharingProviders connection as part of the fat query.
     getFatQuery() {
         return Relay.QL `fragment on AddSharingProviderPayload {
                                 user { sharingProviders },
@@ -17,8 +13,6 @@ class AddSharingProviderMutation extends Relay.Mutation {
                 connectionName: 'sharingProviders',
                 edgeName: 'newSharingProviderEdge',
                 rangeBehaviors: {
-                    // When the sharingProviders connection is not under the influence
-                    // of any call, append the sharringProvider to the end of the connection
                     '': 'append'
                 }
             }];
@@ -32,8 +26,6 @@ class AddSharingProviderMutation extends Relay.Mutation {
         };
     }
 }
-// This mutation declares a dependency on the faction
-// into which this ship is to be introduced.
 AddSharingProviderMutation.fragments = {
     user: () => Relay.QL `fragment on User
                                   {
@@ -41,5 +33,4 @@ AddSharingProviderMutation.fragments = {
                                      sharingProviders
                                   }`
 };
-module.exports = AddSharingProviderMutation;
 //# sourceMappingURL=AddSharingProviderMutation.js.map
