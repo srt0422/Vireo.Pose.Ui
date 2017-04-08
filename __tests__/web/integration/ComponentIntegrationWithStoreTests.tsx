@@ -33,13 +33,13 @@ describe("Component integration with flux store tests", () => {
     });
 
     it("should show loader", () => {
-        
+
         loadingActions.StartLoading();
 
         testAppComponent = shallow(<App store={Store} loading={Store.getState().Loading} />);
 
-        testAppComponent.render();
+        let htmlWrapper = testAppComponent.render();
 
-        assert.strictEqual(testAppComponent.find("LoadingScreen").length, 1);
+        assert.strictEqual(htmlWrapper.find("LoadingScreen").length, 1);
     });
 });

@@ -18,6 +18,7 @@ export class FacebookSdk extends React.Component<IFacebookSdkProps, any>{
     componentWillMount() {
         (function (d, s, id, callback) {
             var js, fjs = d.getElementsByTagName(s)[0];
+
             if (d.getElementById(id)) { return; }
             js = d.createElement(s) as HTMLInputElement; js.id = id;
             js.src = "//connect.facebook.net/en_US/sdk.js";
@@ -32,7 +33,12 @@ export class FacebookSdk extends React.Component<IFacebookSdkProps, any>{
 
             js["onreadystatechange"] = onreadystatechange;
 
-            fjs.parentNode.insertBefore(js, fjs);
+            if(fjs){
+                fjs.parentNode.insertBefore(js, fjs);
+            }
+            else{
+                document.head.appendChild(js);
+            }
         }(document, 'script', 'facebook-jssdk', this.onFBLoaded));
     }
 

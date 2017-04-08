@@ -1,14 +1,28 @@
-import * as React from "react";
-export class FacebookSdk extends React.Component {
-    constructor() {
-        super();
-        this.initializeFBSdk = this.initializeFBSdk.bind(this);
-        this.onFBLoaded = this.onFBLoaded.bind(this);
+"use strict";
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = require("react");
+var FacebookSdk = (function (_super) {
+    __extends(FacebookSdk, _super);
+    function FacebookSdk() {
+        var _this = _super.call(this) || this;
+        _this.initializeFBSdk = _this.initializeFBSdk.bind(_this);
+        _this.onFBLoaded = _this.onFBLoaded.bind(_this);
+        return _this;
     }
-    render() {
+    FacebookSdk.prototype.render = function () {
         return null;
-    }
-    componentWillMount() {
+    };
+    FacebookSdk.prototype.componentWillMount = function () {
         (function (d, s, id, callback) {
             var js, fjs = d.getElementsByTagName(s)[0];
             if (d.getElementById(id)) {
@@ -17,7 +31,7 @@ export class FacebookSdk extends React.Component {
             js = d.createElement(s);
             js.id = id;
             js.src = "//connect.facebook.net/en_US/sdk.js";
-            let onreadystatechange = js.onload = function () {
+            var onreadystatechange = js.onload = function () {
                 var state = s["readyState"];
                 if (!callback["done"] && (!state || /loaded|complete/.test(state))) {
                     callback["done"] = true;
@@ -25,16 +39,21 @@ export class FacebookSdk extends React.Component {
                 }
             };
             js["onreadystatechange"] = onreadystatechange;
-            fjs.parentNode.insertBefore(js, fjs);
+            if (fjs) {
+                fjs.parentNode.insertBefore(js, fjs);
+            }
+            else {
+                document.head.appendChild(js);
+            }
         }(document, 'script', 'facebook-jssdk', this.onFBLoaded));
-    }
-    onFBLoaded() {
+    };
+    FacebookSdk.prototype.onFBLoaded = function () {
         this.initializeFBSdk();
         if (this.props.onLoad) {
             this.props.onLoad();
         }
-    }
-    initializeFBSdk() {
+    };
+    FacebookSdk.prototype.initializeFBSdk = function () {
         if (FB && FB.init) {
             FB.init({
                 appId: this.props.appId,
@@ -44,6 +63,8 @@ export class FacebookSdk extends React.Component {
             return;
         }
         console.warn("FB failed to load");
-    }
-}
-export default FacebookSdk;
+    };
+    return FacebookSdk;
+}(React.Component));
+exports.FacebookSdk = FacebookSdk;
+exports.default = FacebookSdk;
