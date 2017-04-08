@@ -16,6 +16,6 @@
 //    return await manager.authorize("twitter");
 //}
 
-export var manager {};
+export var manager = {};
 
 export default manager;

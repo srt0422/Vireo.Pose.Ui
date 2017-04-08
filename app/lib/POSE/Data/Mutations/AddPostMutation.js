@@ -22,4 +22,3 @@ class AddPostMutation extends Relay.Mutation {
     }
 }
 AddPostMutation.fragments = {};
-//# sourceMappingURL=AddPostMutation.js.map

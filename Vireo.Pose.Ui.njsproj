@@ -20,16 +20,17 @@
     <TypeScriptJSXEmit>Preserve</TypeScriptJSXEmit>
     <TypeScriptCompileOnSaveEnabled>True</TypeScriptCompileOnSaveEnabled>
     <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
-    <TypeScriptModuleKind>ES6</TypeScriptModuleKind>
+    <TypeScriptModuleKind>es2015</TypeScriptModuleKind>
     <TypeScriptRemoveComments>True</TypeScriptRemoveComments>
-    <TypeScriptExperimentalDecorators>true</TypeScriptExperimentalDecorators>
+    <TypeScriptExperimentalDecorators>True</TypeScriptExperimentalDecorators>
     <TypeScriptOutFile />
     <TypeScriptOutDir />
-    <TypeScriptGeneratesDeclarations>True</TypeScriptGeneratesDeclarations>
+    <TypeScriptGeneratesDeclarations>False</TypeScriptGeneratesDeclarations>
     <TypeScriptNoEmitOnError>False</TypeScriptNoEmitOnError>
-    <TypeScriptSourceMap>True</TypeScriptSourceMap>
+    <TypeScriptSourceMap>False</TypeScriptSourceMap>
     <TypeScriptMapRoot />
     <TypeScriptSourceRoot />
+    <TypeScriptModuleResolution>node</TypeScriptModuleResolution>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
   <ItemGroup>
@@ -38,7 +39,6 @@
     <Folder Include="app\lib\" />
     <Folder Include="app\lib\HTML\" />
     <Folder Include="app\lib\HTML\Components\" />
-    <Folder Include="app\lib\HTML\Interfaces\" />
     <Folder Include="app\lib\POSE\" />
     <Folder Include="app\lib\POSE\Authentication\" />
     <Folder Include="app\lib\POSE\Components\" />
@@ -67,44 +67,28 @@
     <Folder Include="app\lib\POSE\Flux\" />
     <Folder Include="app\lib\POSE\Flux\Interfaces\" />
     <Folder Include="app\lib\POSE\Flux\Actions\" />
+    <Folder Include="app\lib\POSE\Flux\Reducers\" />
     <Folder Include="app\lib\POSE\Flux\Stores\" />
     <Folder Include="app\lib\POSE\Flux\Stores\Interfaces\" />
     <Folder Include="app\lib\POSE\SocialMedia\" />
     <Folder Include="app\lib\POSE\styles\" />
     <Folder Include="app\web\" />
-    <Folder Include="app\web\public\" />
-    <Folder Include="app\web\public\js\" />
-    <Folder Include="app\web\public\js\tests\" />
-    <Folder Include="app\web\public\js\tests\Components\" />
-    <Folder Include="app\web\public\js\tests\Components\POSE\" />
-    <Folder Include="app\web\public\js\tests\Components\POSE\Presentation\" />
-    <Folder Include="app\web\public\js\tests\Components\POSE\Presentation\SocialMedia\" />
-    <Folder Include="app\web\public\js\tests\Components\POSE\Presentation\SocialMedia\Twitter\" />
-    <Folder Include="app\web\public\js\tests\Components\POSE\unit\" />
-    <Folder Include="app\web\public\js\tests\lib\" />
+    <Folder Include="app\web\images\" />
+    <Folder Include="app\web\scss\" />
+    <Folder Include="app\web\scss\global\" />
+    <Folder Include="app\web\scss\greater-than-414\" />
     <Folder Include="node_modules\" />
-    <Folder Include="node_modules\%40types\" />
-    <Folder Include="node_modules\%40types\chai\" />
-    <Folder Include="node_modules\%40types\cheerio\" />
-    <Folder Include="node_modules\%40types\core-js\" />
-    <Folder Include="node_modules\%40types\enzyme\" />
-    <Folder Include="node_modules\%40types\firebase\" />
-    <Folder Include="node_modules\%40types\history\" />
-    <Folder Include="node_modules\%40types\history\lib\" />
-    <Folder Include="node_modules\%40types\mocha\" />
-    <Folder Include="node_modules\%40types\node\" />
-    <Folder Include="node_modules\%40types\react-native\" />
-    <Folder Include="node_modules\%40types\react-relay\" />
-    <Folder Include="node_modules\%40types\react-router\" />
-    <Folder Include="node_modules\%40types\react-router\lib\" />
-    <Folder Include="node_modules\%40types\react-test-renderer\" />
-    <Folder Include="node_modules\%40types\react\" />
+    <Folder Include="node_modules\redux\" />
     <Folder Include="typings\" />
     <Folder Include="typings\mobx\" />
     <Folder Include="typings\mobx-react\" />
     <Folder Include="web\" />
     <Folder Include="web\public\" />
+    <Folder Include="web\public\images\" />
     <Folder Include="__tests__\" />
+    <Folder Include="__tests__\global\" />
+    <Folder Include="__tests__\global\integration\" />
+    <Folder Include="__tests__\global\unit\" />
     <Folder Include="__tests__\webpack\" />
     <Folder Include="__tests__\web\" />
     <Folder Include="__tests__\web\integration\" />
@@ -132,43 +116,23 @@
     <Content Include="app\lib\POSE\Components\Presentation\SocialMedia\LinkedIn\LinkedInSdk.tsx" />
     <Content Include="app\lib\POSE\Components\Routing\AppRouter.tsx" />
     <Content Include="app\lib\POSE\Components\Routing\NativeNavigation.tsx" />
-    <Content Include="app\web\public\js\tests\Components\POSE\Presentation\PoserTests.tsx" />
-    <Content Include="node_modules\%40types\chai\package.json" />
-    <Content Include="node_modules\%40types\chai\README.md" />
-    <Content Include="node_modules\%40types\chai\types-metadata.json" />
-    <Content Include="node_modules\%40types\cheerio\package.json" />
-    <Content Include="node_modules\%40types\cheerio\README.md" />
-    <Content Include="node_modules\%40types\core-js\package.json" />
-    <Content Include="node_modules\%40types\core-js\README.md" />
-    <Content Include="node_modules\%40types\core-js\types-metadata.json" />
-    <Content Include="node_modules\%40types\enzyme\package.json" />
-    <Content Include="node_modules\%40types\enzyme\README.md" />
-    <Content Include="node_modules\%40types\enzyme\types-metadata.json" />
-    <Content Include="node_modules\%40types\firebase\package.json" />
-    <Content Include="node_modules\%40types\firebase\README.md" />
-    <Content Include="node_modules\%40types\firebase\types-metadata.json" />
-    <Content Include="node_modules\%40types\history\package.json" />
-    <Content Include="node_modules\%40types\history\README.md" />
-    <Content Include="node_modules\%40types\mocha\package.json" />
-    <Content Include="node_modules\%40types\mocha\README.md" />
-    <Content Include="node_modules\%40types\node\package.json" />
-    <Content Include="node_modules\%40types\node\README.md" />
-    <Content Include="node_modules\%40types\node\types-metadata.json" />
-    <Content Include="node_modules\%40types\react-native\package.json" />
-    <Content Include="node_modules\%40types\react-native\README.md" />
-    <Content Include="node_modules\%40types\react-native\types-metadata.json" />
-    <Content Include="node_modules\%40types\react-relay\package.json" />
-    <Content Include="node_modules\%40types\react-relay\README.md" />
-    <Content Include="node_modules\%40types\react-router\package.json" />
-    <Content Include="node_modules\%40types\react-router\README.md" />
-    <Content Include="node_modules\%40types\react-test-renderer\package.json" />
-    <Content Include="node_modules\%40types\react-test-renderer\README.md" />
-    <Content Include="node_modules\%40types\react-test-renderer\types-metadata.json" />
-    <Content Include="node_modules\%40types\react\package.json" />
-    <Content Include="node_modules\%40types\react\README.md" />
+    <Content Include="app\web\images\default.gif" />
+    <Content Include="app\web\scss\global\_loading-screen.scss" />
+    <Content Include="app\web\scss\global\_bootstrap-overrides.scss" />
+    <Content Include="app\web\scss\global\_sharing-component.scss" />
+    <Content Include="app\web\scss\greater-than-414\_sharing-component.scss" />
+    <Content Include="app\web\scss\styles.scss" />
+    <Content Include="app\web\scss\_bootstrap-variables.scss" />
+    <Content Include="app\web\scss\_global.scss" />
+    <Content Include="app\web\scss\_greater-than-414.scss" />
+    <Content Include="web\public\images\default.gif" />
     <Content Include="web\public\index.html" />
     <Content Include="__tests__\web\unit\LoadingScreenTests.web.tsx" />
     <Content Include="__tests__\web\unit\AppComponentTests.web.tsx" />
+    <TypeScriptCompile Include="app\lib\POSE\Flux\ActionNames.ts" />
+    <TypeScriptCompile Include="app\lib\POSE\Flux\reducers.ts" />
+    <TypeScriptCompile Include="app\lib\POSE\Flux\Reducers\UIReducer.ts" />
+    <TypeScriptCompile Include="node_modules\redux\index.d.ts" />
     <TypeScriptCompile Include="typings\index.d.ts" />
     <TypeScriptCompile Include="typings\mobx\index.d.ts" />
     <TypeScriptCompile Include="typings\mobx-react\index.d.ts" />
@@ -177,82 +141,50 @@
       <TestFramework>Mocha</TestFramework>
     </TypeScriptCompile>
     <TypeScriptCompile Include="__tests__\web\unit\PoserTests.web.tsx" />
-    <TypeScriptCompile Include="__tests__\FluxStoreTests.ts" />
+    <TypeScriptCompile Include="__tests__\global\unit\FluxStoreTests.ts" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="app\config\config.ts" />
     <TypeScriptCompile Include="app\config\IPoseConfiguration.ts" />
-    <TypeScriptCompile Include="app\lib\HTML\Components\bootstrapcontainerlayout.d.ts" />
-    <TypeScriptCompile Include="app\lib\HTML\Components\unorderedlistcomponent.d.ts" />
-    <TypeScriptCompile Include="app\lib\HTML\Interfaces\IUnorderedListComponentProps.d.ts" />
-    <TypeScriptCompile Include="app\lib\HTML\Interfaces\IUnorderedListComponentProps.ts" />
-    <TypeScriptCompile Include="app\lib\Main.d.ts" />
     <TypeScriptCompile Include="app\lib\mainConfig.d.ts" />
     <TypeScriptCompile Include="app\lib\mainConfig.ts" />
     <TypeScriptCompile Include="app\lib\POSE\Authentication\authenticationManager.ios.ts" />
     <TypeScriptCompile Include="app\lib\POSE\Authentication\authenticationManager.ts" />
-    <TypeScriptCompile Include="app\lib\POSE\Components\App.d.ts" />
     <TypeScriptCompile Include="app\lib\POSE\Components\App.tsx" />
-    <TypeScriptCompile Include="app\lib\POSE\Components\Presentation\Interfaces\IPOSESharingContentComponentProps.d.ts" />
     <TypeScriptCompile Include="app\lib\POSE\Components\Presentation\Interfaces\IPOSESharingContentComponentProps.ts" />
-    <TypeScriptCompile Include="app\lib\POSE\Components\Presentation\Interfaces\IPOSESharingContentComponentState.d.ts" />
     <TypeScriptCompile Include="app\lib\POSE\Components\Presentation\Interfaces\IPOSESharingContentComponentState.ts" />
-    <TypeScriptCompile Include="app\lib\POSE\Components\Presentation\Interfaces\IPOSESharingInputTypeComponentProps.d.ts" />
     <TypeScriptCompile Include="app\lib\POSE\Components\Presentation\Interfaces\IPOSESharingInputTypeComponentProps.ts" />
-    <TypeScriptCompile Include="app\lib\POSE\Components\Presentation\Interfaces\IPOSESocialMediaOptionProps.d.ts" />
     <TypeScriptCompile Include="app\lib\POSE\Components\Presentation\Interfaces\IPOSESocialMediaOptionProps.ts" />
-    <TypeScriptCompile Include="app\lib\POSE\Components\Presentation\Interfaces\ISocialMediaSelectorComponent.d.ts" />
     <TypeScriptCompile Include="app\lib\POSE\Components\Presentation\Interfaces\ISocialMediaSelectorComponent.ts" />
-    <TypeScriptCompile Include="app\lib\POSE\Components\Presentation\Poser.d.ts" />
     <TypeScriptCompile Include="app\lib\POSE\Components\Presentation\Poser.ts" />
-    <TypeScriptCompile Include="app\lib\POSE\Components\Presentation\SharingContentComponent.d.ts" />
     <TypeScriptCompile Include="app\lib\POSE\Components\Presentation\SharingContentComponent.ts" />
     <TypeScriptCompile Include="app\lib\POSE\Components\Presentation\SharingInputComponent.ts" />
-    <TypeScriptCompile Include="app\lib\POSE\Components\Presentation\SharingInputTypeComponent.d.ts" />
     <TypeScriptCompile Include="app\lib\POSE\Components\Presentation\SharingInputTypeComponent.ts" />
-    <TypeScriptCompile Include="app\lib\POSE\Components\Presentation\SocialMediaOption.d.ts" />
     <TypeScriptCompile Include="app\lib\POSE\Components\Presentation\SocialMediaOption.ts" />
-    <TypeScriptCompile Include="app\lib\POSE\Components\Presentation\SocialMediaSelectorComponent.d.ts" />
     <TypeScriptCompile Include="app\lib\POSE\Components\Presentation\SocialMediaSelectorComponent.ts" />
-    <TypeScriptCompile Include="app\lib\POSE\Components\Presentation\SocialMedia\Facebook\FacebookSdk.d.ts" />
-    <TypeScriptCompile Include="app\lib\POSE\Components\Presentation\SocialMedia\Facebook\Interfaces\IFacebookSdkProps.d.ts" />
     <TypeScriptCompile Include="app\lib\POSE\Components\Presentation\SocialMedia\Facebook\Interfaces\IFacebookSdkProps.ts" />
-    <TypeScriptCompile Include="app\lib\POSE\Components\Presentation\SocialMedia\Interfaces\ISocialAuthenticationProps.d.ts" />
     <TypeScriptCompile Include="app\lib\POSE\Components\Presentation\SocialMedia\Interfaces\ISocialAuthenticationProps.ts" />
     <TypeScriptCompile Include="app\lib\POSE\Components\Presentation\SocialMedia\LinkedIn\Interfaces\ILinkedInSdkProps.ts" />
     <TypeScriptCompile Include="app\lib\POSE\Components\Presentation\SocialMedia\Twitter\Interfaces\ITwitterLoginHelper.ts" />
-    <TypeScriptCompile Include="app\lib\POSE\Components\Presentation\SocialMedia\Twitter\TwitterLoginFlow.d.ts" />
     <TypeScriptCompile Include="app\lib\POSE\Components\Presentation\SocialMedia\Twitter\TwitterLoginFlow.ts" />
-    <TypeScriptCompile Include="app\lib\POSE\Components\Routing\AppRouter.d.ts" />
-    <TypeScriptCompile Include="app\lib\POSE\Components\Routing\Enums\Routes.d.ts" />
     <TypeScriptCompile Include="app\lib\POSE\Components\Routing\Enums\Routes.ts" />
-    <TypeScriptCompile Include="app\lib\POSE\Components\SocialProviders.d.ts" />
     <TypeScriptCompile Include="app\lib\POSE\Components\SocialProviders.ts" />
     <TypeScriptCompile Include="app\lib\POSE\Data\Mutations\AddPostMutation.ts" />
     <TypeScriptCompile Include="app\lib\POSE\Data\Mutations\AddSharingProviderMutation.ts" />
-    <TypeScriptCompile Include="app\lib\POSE\Data\Routes\SharingRoute.d.ts" />
     <TypeScriptCompile Include="app\lib\POSE\Data\Routes\SharingRoute.ts" />
     <TypeScriptCompile Include="app\lib\POSE\Flux\Actions\LoadingActions.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="app\lib\POSE\Flux\Interfaces\IPostProps.d.ts" />
     <TypeScriptCompile Include="app\lib\POSE\Flux\Interfaces\IPostProps.ts" />
-    <TypeScriptCompile Include="app\lib\POSE\Flux\Interfaces\ISharingProviderCollection.d.ts" />
     <TypeScriptCompile Include="app\lib\POSE\Flux\Interfaces\ISharingProviderCollection.ts" />
-    <TypeScriptCompile Include="app\lib\POSE\Flux\Interfaces\ISharingProviderModel.d.ts" />
-    <TypeScriptCompile Include="app\lib\POSE\Flux\Interfaces\ISharingProviderModelProps.d.ts" />
     <TypeScriptCompile Include="app\lib\POSE\Flux\Interfaces\ISharingProviderModelProps.ts" />
-    <TypeScriptCompile Include="app\lib\POSE\Flux\PostModel.d.ts" />
     <TypeScriptCompile Include="app\lib\POSE\Flux\PostModel.ts" />
     <TypeScriptCompile Include="app\lib\POSE\Flux\SharingProviderCollection.ts" />
-    <TypeScriptCompile Include="app\lib\POSE\Flux\SharingProviderCollectionDeclaration.d.ts" />
     <TypeScriptCompile Include="app\lib\POSE\Flux\SharingProviderModel.ts" />
     <TypeScriptCompile Include="app\lib\POSE\Flux\Store.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="app\lib\POSE\Flux\Stores\Interfaces\Document.d.ts" />
     <TypeScriptCompile Include="app\lib\POSE\Flux\Stores\Interfaces\Document.ts" />
-    <TypeScriptCompile Include="app\lib\POSE\Flux\Stores\PostStore.d.ts" />
     <TypeScriptCompile Include="app\lib\POSE\Flux\Stores\PostStore.ts" />
     <TypeScriptCompile Include="app\lib\POSE\SocialMedia\FacebookManager.ios.ts" />
     <TypeScriptCompile Include="app\lib\POSE\SocialMedia\FacebookManager.ts" />
@@ -263,67 +195,13 @@
     <TypeScriptCompile Include="app\lib\POSE\styles.ts" />
     <TypeScriptCompile Include="app\lib\POSE\styles\styles.android.ts" />
     <TypeScriptCompile Include="app\lib\POSE\styles\styles.ios.ts" />
-    <TypeScriptCompile Include="app\web\public\js\tests\Components\POSE\Presentation\PoserTests.d.ts" />
-    <TypeScriptCompile Include="app\web\public\js\tests\Components\POSE\Presentation\SocialMedia\Twitter\TwitterLoginFlowTests.d.ts" />
-    <TypeScriptCompile Include="app\web\public\js\tests\Components\POSE\Presentation\SocialMedia\Twitter\TwitterLoginFlowTests.ts" />
-    <TypeScriptCompile Include="app\web\public\js\tests\Components\POSE\Specs.d.ts" />
-    <TypeScriptCompile Include="app\web\public\js\tests\Components\POSE\Specs.ts" />
-    <TypeScriptCompile Include="app\web\public\js\tests\Components\POSE\TestsMain.d.ts" />
-    <TypeScriptCompile Include="app\web\public\js\tests\Components\POSE\TestsMain.ts" />
-    <TypeScriptCompile Include="app\web\public\js\tests\Components\POSE\unit\TwitterLoginFlowTests.d.ts" />
-    <TypeScriptCompile Include="app\web\public\js\tests\lib\TestSpecRunner.d.ts" />
-    <TypeScriptCompile Include="app\web\public\js\tests\lib\TestSpecRunner.ts" />
-    <TypeScriptCompile Include="app\web\public\js\tests\main.d.ts" />
-    <TypeScriptCompile Include="app\web\public\js\tests\main.ts" />
-    <TypeScriptCompile Include="app\web\public\js\tests\testConfig.d.ts" />
-    <TypeScriptCompile Include="app\web\public\js\tests\testConfig.ts" />
-    <TypeScriptCompile Include="node_modules\%40types\chai\index.d.ts" />
-    <TypeScriptCompile Include="node_modules\%40types\cheerio\index.d.ts" />
-    <TypeScriptCompile Include="node_modules\%40types\core-js\index.d.ts" />
-    <TypeScriptCompile Include="node_modules\%40types\enzyme\index.d.ts" />
-    <TypeScriptCompile Include="node_modules\%40types\firebase\firebase-simplelogin.d.ts" />
-    <TypeScriptCompile Include="node_modules\%40types\firebase\index.d.ts" />
-    <TypeScriptCompile Include="node_modules\%40types\history\index.d.ts" />
-    <TypeScriptCompile Include="node_modules\%40types\history\lib\actions.d.ts" />
-    <TypeScriptCompile Include="node_modules\%40types\history\lib\createBrowserHistory.d.ts" />
-    <TypeScriptCompile Include="node_modules\%40types\history\lib\createHashHistory.d.ts" />
-    <TypeScriptCompile Include="node_modules\%40types\history\lib\createLocation.d.ts" />
-    <TypeScriptCompile Include="node_modules\%40types\history\lib\createMemoryHistory.d.ts" />
-    <TypeScriptCompile Include="node_modules\%40types\history\lib\LocationUtils.d.ts" />
-    <TypeScriptCompile Include="node_modules\%40types\history\lib\useBasename.d.ts" />
-    <TypeScriptCompile Include="node_modules\%40types\history\lib\useBeforeUnload.d.ts" />
-    <TypeScriptCompile Include="node_modules\%40types\history\lib\useQueries.d.ts" />
-    <TypeScriptCompile Include="node_modules\%40types\mocha\index.d.ts" />
-    <TypeScriptCompile Include="node_modules\%40types\node\index.d.ts" />
-    <TypeScriptCompile Include="node_modules\%40types\react-native\index.d.ts" />
-    <TypeScriptCompile Include="node_modules\%40types\react-relay\index.d.ts" />
-    <TypeScriptCompile Include="node_modules\%40types\react-router\index.d.ts" />
-    <TypeScriptCompile Include="node_modules\%40types\react-router\lib\applyRouterMiddleware.d.ts" />
-    <TypeScriptCompile Include="node_modules\%40types\react-router\lib\browserHistory.d.ts" />
-    <TypeScriptCompile Include="node_modules\%40types\react-router\lib\createMemoryHistory.d.ts" />
-    <TypeScriptCompile Include="node_modules\%40types\react-router\lib\hashHistory.d.ts" />
-    <TypeScriptCompile Include="node_modules\%40types\react-router\lib\IndexLink.d.ts" />
-    <TypeScriptCompile Include="node_modules\%40types\react-router\lib\IndexRedirect.d.ts" />
-    <TypeScriptCompile Include="node_modules\%40types\react-router\lib\IndexRoute.d.ts" />
-    <TypeScriptCompile Include="node_modules\%40types\react-router\lib\Link.d.ts" />
-    <TypeScriptCompile Include="node_modules\%40types\react-router\lib\match.d.ts" />
-    <TypeScriptCompile Include="node_modules\%40types\react-router\lib\PatternUtils.d.ts" />
-    <TypeScriptCompile Include="node_modules\%40types\react-router\lib\PropTypes.d.ts" />
-    <TypeScriptCompile Include="node_modules\%40types\react-router\lib\Redirect.d.ts" />
-    <TypeScriptCompile Include="node_modules\%40types\react-router\lib\Route.d.ts" />
-    <TypeScriptCompile Include="node_modules\%40types\react-router\lib\Router.d.ts" />
-    <TypeScriptCompile Include="node_modules\%40types\react-router\lib\RouterContext.d.ts" />
-    <TypeScriptCompile Include="node_modules\%40types\react-router\lib\RouteUtils.d.ts" />
-    <TypeScriptCompile Include="node_modules\%40types\react-router\lib\useRouterHistory.d.ts" />
-    <TypeScriptCompile Include="node_modules\%40types\react-router\lib\withRouter.d.ts" />
-    <TypeScriptCompile Include="node_modules\%40types\react-test-renderer\index.d.ts" />
-    <TypeScriptCompile Include="node_modules\%40types\react\index.d.ts" />
     <TypeScriptCompile Include="transformJsxFiles.babel.ts" />
-    <TypeScriptCompile Include="__tests__\LoadingActionsTests.ts">
+    <TypeScriptCompile Include="__tests__\global\unit\LoadingActionsTests.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="__tests__\global\integration\LoadingActionsIntegrationWithStore.ts" />
     <Compile Include="__tests__\webpack\webpack.config.babel.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />

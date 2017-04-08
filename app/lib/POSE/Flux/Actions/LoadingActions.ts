@@ -1,16 +1,18 @@
 ﻿import Store from "../Store";
+import ActionNames from "../ActionNames";
 
 //use variable declaration to make rewire work in unit tests
-let store = Store;
+let store = Store; 
 
 export function StartLoading() {
-    store.Loading = true;
+    store.dispatch({ type: ActionNames.START_LOADING });
 }
 
 export function StopLoading() {
-    store.Loading = false;
+    store.dispatch({ type: ActionNames.STOP_LOADING });
 }
 
 export interface ILoadingActions {
     StartLoading();
+    StopLoading();
 }

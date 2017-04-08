@@ -6,22 +6,25 @@ import SocialOptions = require("../SocialProviders");
 import ReactRouter = require("react-router");
 import Relay = require("react-relay");
 import renderer from "./PoserRenderer/renderer";
-import LoadingActions from "../../Flux/Actions/LoadingActions";
+import * as LoadingActions from "../../Flux/Actions/LoadingActions";
 var postStore: PostModel = PostStore;
+var loadingActions = LoadingActions;
 
-//set this up as a relay container
 export default class Poser extends React.Component<PoserProps, any>
 {
-    private postValue: string;
+    public postValue: string;
 
     public render() {
         return renderer.call(this);
     }
 
     public onClick() {
+
         postStore.setContent(this.postValue);
 
-        postStore.save();
+        postStore.save().then(()=> loadingActions.StopLoading());
+
+        loadingActions.StartLoading();
     }
 
     //TODO: find out why ios picker always resets to devault value

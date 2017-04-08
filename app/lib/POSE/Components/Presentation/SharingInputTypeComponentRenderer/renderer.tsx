@@ -23,7 +23,8 @@ export function renderer() {
 
             <UnorderedListComponent
                 onItemClick={this.props.onTypeChanged}
-                types={this.props.types} />
+                types={this.props.types}
+                styles={this.props.styles} />
 
         </div>
     );

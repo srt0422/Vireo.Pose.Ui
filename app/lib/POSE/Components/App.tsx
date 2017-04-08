@@ -1,25 +1,22 @@
 import * as React from "react";
-import { Provider } from "mobx-react";
-import { observer } from "mobx";
-
+import { Store as ReduxStore } from "redux";
+import { connect } from "react-redux";
 import BootstrapContainerLayout from "../../HTML/Components/BootstrapContainerLayout";
 import "../Authentication/authenticationManager";
-import Store from "../Flux/Store";
 
-import renderer from "./AppRenderer/renderer";
+import Store, { Store as StoreType } from "../Flux/Store";
 
 let store = Store; // set a variable that can be tested with rewire (ref: ../../../../__tests__/web/unit/AppComponentTests.web.tsx)
 
-@observer
-class App extends React.Component<any, any>{
+import renderer from "./AppRenderer/renderer";
 
-    public Store = Store;
+
+export class App extends React.Component<any, any>{
+
+    public Store = store;
+
     public render() {
-        return (
-            <Provider store={store}>
-                {renderer.call(this)}
-            </Provider>
-        );
+        return renderer.call(this);
     }
 
     public componentDidMount() {
@@ -33,4 +30,10 @@ class App extends React.Component<any, any>{
     // }
 }
 
-export default App;
+export default connect((store) => {
+    if (store) {
+        return { loading: store.Loading };
+    }
+
+    return { loading: false };
+})(App);

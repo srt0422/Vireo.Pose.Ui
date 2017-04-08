@@ -1,5 +1,5 @@
 import * as React from "react";
-class FacebookSdk extends React.Component {
+export class FacebookSdk extends React.Component {
     constructor() {
         super();
         this.initializeFBSdk = this.initializeFBSdk.bind(this);
@@ -46,5 +46,4 @@ class FacebookSdk extends React.Component {
         console.warn("FB failed to load");
     }
 }
-FacebookSdk;
 export default FacebookSdk;

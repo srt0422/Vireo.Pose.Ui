@@ -1,5 +1,4 @@
 import * as React from "react";
-import IUnorderedListComponentProps from "../Interfaces/IUnorderedListComponentProps";
 
 export class UnorderedListComponent extends React.Component<IUnorderedListComponentProps, any> {
     public render() {
@@ -18,3 +17,8 @@ export class UnorderedListComponent extends React.Component<IUnorderedListCompon
 }
 
 export default UnorderedListComponent;
+
+export interface IUnorderedListComponentProps {
+    types: string[];
+    onItemClick: (e: any) => void
+}

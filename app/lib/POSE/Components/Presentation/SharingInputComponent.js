@@ -6,4 +6,3 @@ export class SharingInputComponent extends React.Component {
     }
 }
 export default SharingInputComponent;
-//# sourceMappingURL=SharingInputComponent.js.map

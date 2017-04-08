@@ -1,7 +1,5 @@
 ﻿import PostModel from "../PostModel";
 
-var postModel = new PostModel();
-
-export  postModel;
+export var postModel = new PostModel();
 
 export default postModel;

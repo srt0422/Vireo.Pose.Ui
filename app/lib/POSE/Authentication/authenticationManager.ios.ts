@@ -1,7 +1,7 @@
 import OAuthManager from 'react-native-oauth';
 import config from "../../../config/config"
 
-let manager = {};
+let manager:any = {};
 
 manager = manager || new OAuthManager('POSE');
 

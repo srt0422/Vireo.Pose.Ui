@@ -29,7 +29,7 @@ switch (process.env.NODE_ENV) {
         configuration.SharingUrl = "http://poseapi.cloudvireo.com/";
         break;
     default:
-        configuration.SharingUrl = "https://localhost:44317/";
+        configuration.SharingUrl = "http://poseapi.cloudvireo.com/"; //"https://localhost:44317/";
         break;
 }
 export var config = configuration;

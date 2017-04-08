@@ -1,8 +1,9 @@
-﻿import { observable } from "mobx";
+﻿import { createStore, Store as ReduxStore } from "redux";
 
-export class Store {
-    @observable
-    Loading = false;
-};
+import uiReducer from "./Reducers/UIReducer";
 
-export default Store;
+export type Store = {
+    Loading: boolean;
+}
+
+export default createStore(uiReducer) as ReduxStore<Store>;

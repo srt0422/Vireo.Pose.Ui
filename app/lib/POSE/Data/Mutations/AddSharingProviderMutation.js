@@ -33,4 +33,3 @@ AddSharingProviderMutation.fragments = {
                                      sharingProviders
                                   }`
 };
-//# sourceMappingURL=AddSharingProviderMutation.js.map

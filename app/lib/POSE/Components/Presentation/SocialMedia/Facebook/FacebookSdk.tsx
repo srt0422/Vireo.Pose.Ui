@@ -2,7 +2,7 @@ declare var FB;
 
 import * as React from "react";
 
-class FacebookSdk extends React.Component<IFacebookSdkProps, any>{
+export class FacebookSdk extends React.Component<IFacebookSdkProps, any>{
 
     constructor() {
         super();
@@ -33,7 +33,7 @@ class FacebookSdk extends React.Component<IFacebookSdkProps, any>{
             js["onreadystatechange"] = onreadystatechange;
 
             fjs.parentNode.insertBefore(js, fjs);
-        } (document, 'script', 'facebook-jssdk', this.onFBLoaded));
+        }(document, 'script', 'facebook-jssdk', this.onFBLoaded));
     }
 
     onFBLoaded() {
@@ -58,7 +58,5 @@ class FacebookSdk extends React.Component<IFacebookSdkProps, any>{
         console.warn("FB failed to load");
     }
 }
-
-export FacebookSdk;
 
 export default FacebookSdk;

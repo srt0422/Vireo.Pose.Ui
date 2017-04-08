@@ -1,8 +1,9 @@
 import * as React from "react";
 import PostStore from "../../Flux/Stores/PostStore";
 import renderer from "./PoserRenderer/renderer";
+import * as LoadingActions from "../../Flux/Actions/LoadingActions";
 var postStore = PostStore;
-//set this up as a relay container
+var loadingActions = LoadingActions;
 export default class Poser extends React.Component {
     constructor(props, context) {
         super(props, context);
@@ -29,7 +30,8 @@ export default class Poser extends React.Component {
     }
     onClick() {
         postStore.setContent(this.postValue);
-        postStore.save();
+        postStore.save().then(() => loadingActions.StopLoading());
+        loadingActions.StartLoading();
     }
     //TODO: find out why ios picker always resets to devault value
     componentWillMount() {

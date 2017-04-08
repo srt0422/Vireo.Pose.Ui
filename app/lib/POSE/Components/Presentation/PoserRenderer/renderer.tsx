@@ -16,9 +16,10 @@ export function render(props, state) {
                     type: this.typeMap[e.target.innerText]
                 })}
                 onContentChange={(val) => this.postValue = val}
-                wrapperClass="form-group" />
+                wrapperClass="form-group"
+                styles={this.props.styles} />
 
-            <SocialMediaSelectorComponent options={SocialOptions}></SocialMediaSelectorComponent>
+            <SocialMediaSelectorComponent styles={this.props.styles} options={SocialOptions}></SocialMediaSelectorComponent>
 
             <button
                 onClick={this.onClick}

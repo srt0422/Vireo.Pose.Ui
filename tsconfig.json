@@ -5,7 +5,8 @@
     "target": "es6",
     "jsx": "preserve",
     "sourceMap": true,
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "noEmitOnError": false
   },
   "files": [
     "./*.ts",

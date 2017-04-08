@@ -5,10 +5,16 @@ import * as React from "react";
 
 class LoadingScreen extends React.Component<any, any>{
     render() {
+        const { loadingScreen, loadingIcon } = this.props.styles;
+
         if (this.props.loading) {
-            return (<div></div>);
+            return (
+                <div className={this.props.styles.loadingScreen}>
+                    <i className={this.props.styles.loadingIcon} />
+                </div>
+            );
         }
-        else return null
+        else return (null)
     }
 }
 

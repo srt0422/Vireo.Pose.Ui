@@ -8,19 +8,23 @@ import "mocha";
 import { assert } from "chai";
 import { ShallowWrapper, shallow } from 'enzyme';
 import * as React from "react";
-
+import * as sinon from "sinon";
+import rewire, { RewireInterfaces } from "rewire";
 import LoadingScreen from "../../../app/lib/POSE/Components/Presentation/LoadingScreen";
 import Poser from "../../../app/lib/POSE/Components/Presentation/Poser";
 
 describe("Poser Screen Test Suite", () => {
 
     let testPoser: ShallowWrapper<any, any> = null;
+    let rewiredPoser: any; //RewireInterfaces.RewiredModule;// : { default: () => React.Component<any, any> } ;
 
     beforeEach(() => {
+        rewiredPoser = rewire("../../../app/lib/POSE/Components/Presentation/Poser");
     });
 
     afterEach(() => {
         testPoser = null;
+        rewiredPoser = null;
     });
 
     it("Should render", () => {
@@ -30,10 +34,39 @@ describe("Poser Screen Test Suite", () => {
     });
 
     it("Should handle click", () => {
-        testPoser = shallow(<Poser styles={{}} />);
 
-        testPose.instance as Poser;
+        let postStoreMock:any = sinon.mock({ setContent: () => { }, save: () => { } });
+        let loadingActionsMock: any = sinon.mock({ StartLoading: () => { }, StopLoading: () => { } });
 
-        assert.strictEqual(testPoser.children().length, 3);
+        let savePromiseMock: any = sinon.mock({ then: () => { } });
+
+        let revertPostStore = rewiredPoser.__set__("postStore", postStoreMock.object);
+        let revertLoadingActions = rewiredPoser.__set__("loadingActions", loadingActionsMock.object);
+
+        let poserInstance = new rewiredPoser.default();
+
+        poserInstance.postValue = "test value";
+
+        postStoreMock.expects("setContent").withArgs("test value");
+
+        postStoreMock.expects("save")
+            .once()
+            .returns(savePromiseMock.object);
+
+        let expectation = savePromiseMock.expects("then").once();
+
+        loadingActionsMock.expects("StartLoading").once();
+
+        loadingActionsMock.expects("StopLoading").once();
+
+        poserInstance.onClick();
+
+        expectation.yield();
+
+        postStoreMock.verify();
+        loadingActionsMock.verify();
+
+        revertPostStore();
+        revertLoadingActions();
     });
 });

@@ -23,4 +23,3 @@ function transformJsxFilesInDirectory(pathName) {
     });
 }
 ;
-//# sourceMappingURL=transformJsxFiles.babel.js.map

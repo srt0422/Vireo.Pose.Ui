@@ -8,7 +8,9 @@ export function renderer(props, state) {
                   <SharingInputTypeComponent
                       value={this.props.value}
                       types={['Message', 'Link', 'Picture']}
-                      onTypeChanged={this.props.onChange} />
+                      onTypeChanged={this.props.onChange}
+                      styles={this.props.styles}
+            />
               </div>
 
               <label className="">{this.props.label}</label>

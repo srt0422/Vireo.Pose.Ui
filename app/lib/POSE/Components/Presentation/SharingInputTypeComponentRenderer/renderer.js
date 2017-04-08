@@ -12,7 +12,7 @@ export function renderer() {
 
             </button>
 
-            <UnorderedListComponent onItemClick={this.props.onTypeChanged} types={this.props.types}/>
+            <UnorderedListComponent onItemClick={this.props.onTypeChanged} types={this.props.types} styles={this.props.styles}/>
 
         </div>);
 }

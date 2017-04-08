@@ -2,26 +2,28 @@ import "mocha";
 import { assert } from "chai";
 import { shallow } from 'enzyme';
 import * as React from "react";
+import { Provider } from "react-redux";
 import Store from "../../../app/lib/POSE/Flux/Store";
 import App from "../../../app/lib/POSE/Components/App";
+import * as loadingActions from "../../../app/lib/POSE/Flux/Actions/LoadingActions";
 describe("Component integration with flux store tests", () => {
     let testAppComponent = null;
     beforeEach(() => {
     });
     afterEach(() => {
         testAppComponent = null;
-        Store.Loading = false;
-    });
-    it("should show loader", () => {
-        testAppComponent = shallow(<App />);
-        assert.strictEqual(testAppComponent.find("LoadingScreen").length, 0);
-        Store.Loading = false;
-        assert.strictEqual(testAppComponent.find("LoadingScreen").length, 0);
+        loadingActions.StopLoading();
     });
     it("should not show loader", () => {
-        Store.Loading = true;
-        testAppComponent = shallow(<App />);
+        testAppComponent = shallow(<Provider store={Store}><App /></Provider>);
+        assert.strictEqual(testAppComponent.find("LoadingScreen").length, 0);
+        loadingActions.StopLoading();
+        assert.strictEqual(testAppComponent.find("LoadingScreen").length, 0);
+    });
+    it("should show loader", () => {
+        loadingActions.StartLoading();
+        testAppComponent = shallow(<App store={Store} loading={Store.getState().Loading}/>);
+        testAppComponent.render();
         assert.strictEqual(testAppComponent.find("LoadingScreen").length, 1);
     });
 });
-//# sourceMappingURL=ComponentIntegrationWithStoreTests.jsx.map

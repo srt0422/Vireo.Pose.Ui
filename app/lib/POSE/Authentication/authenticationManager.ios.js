@@ -21,4 +21,3 @@ export function signInToTwitter() {
         return yield manager.authorize("twitter");
     });
 }
-//# sourceMappingURL=authenticationManager.ios.js.map

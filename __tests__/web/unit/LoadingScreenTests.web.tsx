@@ -15,7 +15,13 @@ describe("Loading Screen Test Suite", () => {
 
     let testLoadingScreen: ShallowWrapper<any, any> = null;
 
+    const mockStyles = {
+        loadingScreen:"",
+        loadingIcon:""
+    };
+
     beforeEach(() => {
+
     });
 
     afterEach(() => {
@@ -23,13 +29,14 @@ describe("Loading Screen Test Suite", () => {
     });
 
     it("Should not be loading", () => {
-        testLoadingScreen = shallow(<LoadingScreen loading={false} />);
+        testLoadingScreen = shallow(<LoadingScreen loading={false} styles={mockStyles} />);
         assert(testLoadingScreen.equals(null))
     });
 
     it("Should be loading", () => {
-        testLoadingScreen = shallow(<LoadingScreen loading={true} />);
+        testLoadingScreen = shallow(<LoadingScreen loading={true} styles={mockStyles} />);
 
-        assert(testLoadingScreen.equals(<div></div>))
+        assert.equal(testLoadingScreen.children().length, 1);
+        assert.equal(testLoadingScreen.find("div").length, 1);
     });
 });
