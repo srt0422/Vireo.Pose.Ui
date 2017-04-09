@@ -1,8 +1,8 @@
-import * as React from "react";
+import { PureComponent } from "react";
 import PostStore from "../../Flux/Stores/PostStore";
 import renderer from "./SocialMediaOptionComponentRenderer/renderer";
 var postStore = PostStore;
-export default class SocialMediaOption extends React.Component {
+export default class SocialMediaOption extends PureComponent {
     render() {
         return renderer.call(this);
     }
@@ -10,7 +10,6 @@ export default class SocialMediaOption extends React.Component {
         this.setState({ selected: false });
     }
     componentWillUpdate(nextProps, nextState) {
-        // update flux store to track selected sharingProviders
         if (nextState.selected) {
             postStore.tryAddSharingProvider(this.props.value);
         }

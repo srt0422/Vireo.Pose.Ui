@@ -10,4 +10,6 @@ export default (state = { Loading: false }, action) => {
         case actionNames.STOP_LOADING:
             return { ...state, Loading: false };
     }
+
+    return state;
 };

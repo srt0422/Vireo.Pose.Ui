@@ -5,10 +5,11 @@ import Poser from "../Presentation/Poser";
 import LoadingScreen from "../Presentation/LoadingScreen";
 let styles;
 try {
-    styles = require("../../styles");
+    styles = require("../../styles").default;
 }
 catch (e) {
     styles = {};
+    throw e;
 }
 const fn = function () {
     return (<div>
@@ -17,8 +18,7 @@ const fn = function () {
                 <BootstrapContainerLayout styles={styles}>
                     {this.props.children || (<Poser styles={styles}></Poser>)}
                 </BootstrapContainerLayout>
-                
-                {this.props.loading ? (<LoadingScreen styles={styles}/>) : null}
+                <LoadingScreen styles={styles} loading={this.props.loading}/>
             </div>);
 };
 export var renderer = fn;

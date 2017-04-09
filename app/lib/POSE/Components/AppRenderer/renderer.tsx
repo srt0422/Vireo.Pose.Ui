@@ -10,10 +10,11 @@ import LoadingScreen from "../Presentation/LoadingScreen";
 let styles;
 
 try {
-    styles = require("../../styles");
+    styles = require("../../styles").default;
 }
 catch (e) {
     styles = {};
+    throw e;
 }
 const fn = function () {
 
@@ -24,8 +25,7 @@ const fn = function () {
                 <BootstrapContainerLayout styles={styles}>
                     {this.props.children || (<Poser styles={styles}></Poser>)}
                 </BootstrapContainerLayout>
-                {/*Show the loading screen if the loading property is set to true*/}
-                {this.props.loading ? (<LoadingScreen styles={styles} />) : null}
+                <LoadingScreen styles={styles} loading={this.props.loading} />
             </div>
     );
 }

@@ -8,22 +8,14 @@ export class App extends React.Component {
     constructor() {
         super(...arguments);
         this.Store = store;
-        // public handleDeepLink(e) {
-        //   const route = e.url.replace(/.*?:\/\//g, "");
-        //   this._navigator.replace(this.state.routes[route]);
-        // }
     }
     render() {
         return renderer.call(this);
     }
-    componentDidMount() {
-    }
-    componentWillUnmount() {
-    }
 }
 export default connect((store) => {
-    if (store) {
-        return { loading: store.Loading };
+    if (store && store.uiReducer) {
+        return { loading: store.uiReducer.Loading };
     }
     return { loading: false };
 })(App);

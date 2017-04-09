@@ -6,4 +6,5 @@ export default (state = { Loading: false }, action) => {
         case actionNames.STOP_LOADING:
             return Object.assign({}, state, { Loading: false });
     }
+    return state;
 };

@@ -13,6 +13,8 @@ import config from "../../../config/config";
 import * as FacebookManager from "../SocialMedia/FacebookManager";
 import * as LinkedinManager from "../SocialMedia/LinkedinManager";
 import * as TwitterManager from "../SocialMedia/TwitterManager";
+import * as LoadingActions from "./Actions/LoadingActions";
+var loadingActions = LoadingActions;
 export default class PostModel extends Backbone.Model {
     constructor() {
         super(...arguments);
@@ -36,21 +38,26 @@ export default class PostModel extends Backbone.Model {
     tryAddSharingProvider(name) {
         if (this.sharingProviderExists(name))
             return;
+        let loginPromise;
+        loadingActions.StartLoading();
         switch (name) {
             case SocialProviders.Facebook:
-                this.addFacebookSharingProvider();
+                loginPromise = this.addFacebookSharingProvider();
                 break;
             case SocialProviders.LinkedIn:
-                this.addLinkedInSharingProvider();
+                loginPromise = this.addLinkedInSharingProvider();
                 break;
             case SocialProviders.Twitter:
-                this.addTwitterSharingProvider();
+                loginPromise = this.addTwitterSharingProvider();
                 break;
         }
+        loginPromise.then(loadingActions.StopLoading).catch(loadingActions.StopLoading);
     }
     addTwitterSharingProvider() {
-        TwitterManager.ensureLoggedIn()
+        return TwitterManager.ensureLoggedIn()
             .then(() => {
+            if (this.sharingProviderExists(SocialProviders.Twitter))
+                return;
             var sharingProvider = this.addNewSharingProvider(SocialProviders.Twitter);
             TwitterManager.fillSharingProviderWithAuthInfo(sharingProvider);
         })
@@ -59,8 +66,10 @@ export default class PostModel extends Backbone.Model {
         });
     }
     addFacebookSharingProvider() {
-        FacebookManager.ensureLoggedIn()
+        return FacebookManager.ensureLoggedIn()
             .then((response) => {
+            if (this.sharingProviderExists(SocialProviders.Facebook))
+                return;
             let sharingProvider = this.addNewSharingProvider(SocialProviders.Facebook);
             FacebookManager.fillSharingProviderWithAuthInfo(sharingProvider);
         })
@@ -69,8 +78,10 @@ export default class PostModel extends Backbone.Model {
         });
     }
     addLinkedInSharingProvider() {
-        LinkedinManager.ensureLoggedIn()
+        return LinkedinManager.ensureLoggedIn()
             .then(() => {
+            if (this.sharingProviderExists(SocialProviders.LinkedIn))
+                return;
             var sharingProvider = this.addNewSharingProvider(SocialProviders.LinkedIn);
             LinkedinManager.fillSharingProviderWithAuthInfo(sharingProvider);
         })

@@ -1,4 +1,5 @@
 ﻿import * as React from "react";
+import { connect } from "react-redux";
 import Routes = require("../Routing/Enums/Routes");
 import PostModel from "../../Flux/PostModel";
 import PostStore from "../../Flux/Stores/PostStore";
@@ -7,8 +8,8 @@ import ReactRouter = require("react-router");
 import Relay = require("react-relay");
 import renderer from "./PoserRenderer/renderer";
 import * as LoadingActions from "../../Flux/Actions/LoadingActions";
-var postStore: PostModel = PostStore;
 var loadingActions = LoadingActions;
+var postStore: PostModel = PostStore;
 
 export default class Poser extends React.Component<PoserProps, any>
 {
@@ -22,7 +23,9 @@ export default class Poser extends React.Component<PoserProps, any>
 
         postStore.setContent(this.postValue);
 
-        postStore.save().then(()=> loadingActions.StopLoading());
+        postStore.save()
+            .then(() => loadingActions.StopLoading())
+            .catch(()=> loadingActions.StopLoading());
 
         loadingActions.StartLoading();
     }
@@ -70,9 +73,10 @@ export default class Poser extends React.Component<PoserProps, any>
 
 export interface PoserProps extends React.Props<Poser> {
     navigator?: Navigator;
-    styles?: { "center-block"?: string, clearfix?: "string", sharingComponent? : string };
+    styles?: { "center-block"?: string, clearfix?: "string", sharingComponent?: string };
 }
 
+//export default connect((store) => { return { loading: store.Loading }; })(Poser);
 //export default Relay.createContainer<any>(Poser, {
 //    fragments: {
 //        post: () => postStore.getFragment()

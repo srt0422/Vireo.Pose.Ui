@@ -6,7 +6,7 @@ import { Provider } from "react-redux";
 import jsdom from "jsdom";
 import Store from "../../../app/lib/POSE/Flux/Store";
 
-import App from "../../../app/lib/POSE/Components/App";
+import { App } from "../../../app/lib/POSE/Components/App";
 import * as loadingActions from "../../../app/lib/POSE/Flux/Actions/LoadingActions";
 
 describe("Component integration with flux store tests", () => {
@@ -23,7 +23,7 @@ describe("Component integration with flux store tests", () => {
 
     it("should not show loader", () => {
 
-        testAppComponent = shallow(<Provider store={Store}><App /></Provider>);
+        testAppComponent = shallow(<App />);
 
         assert.strictEqual(testAppComponent.find("LoadingScreen").length, 0);
 
@@ -36,10 +36,8 @@ describe("Component integration with flux store tests", () => {
 
         loadingActions.StartLoading();
 
-        testAppComponent = shallow(<App store={Store} loading={Store.getState().Loading} />);
+        testAppComponent = shallow(<App loading={Store.getState().Loading} />);
 
-        let htmlWrapper = testAppComponent.render();
-
-        assert.strictEqual(htmlWrapper.find("LoadingScreen").length, 1);
+        assert.strictEqual(testAppComponent.find("LoadingScreen").length, 1);
     });
 });

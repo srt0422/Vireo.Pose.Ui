@@ -1,4 +1,4 @@
-import * as React from "react";
+import { PureComponent } from "react";
 import PostStore from "../../Flux/Stores/PostStore";
 import PostModel from "../../Flux/PostModel";
 import renderer from "./SocialMediaOptionComponentRenderer/renderer";
@@ -6,7 +6,7 @@ import IPOSESocialMediaOptionProps from "./Interfaces/IPOSESocialMediaOptionProp
 
 var postStore: PostModel = PostStore;
 
-export default class SocialMediaOption extends React.Component<IPOSESocialMediaOptionProps, any>{
+export default class SocialMediaOption extends PureComponent<IPOSESocialMediaOptionProps, any>{
 
     public render() {
         return renderer.call(this);

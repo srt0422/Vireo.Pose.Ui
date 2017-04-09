@@ -18,21 +18,11 @@ export class App extends React.Component<any, any>{
     public render() {
         return renderer.call(this);
     }
-
-    public componentDidMount() {
-    }
-
-    public componentWillUnmount() {
-    }
-    // public handleDeepLink(e) {
-    //   const route = e.url.replace(/.*?:\/\//g, "");
-    //   this._navigator.replace(this.state.routes[route]);
-    // }
 }
 
 export default connect((store) => {
-    if (store) {
-        return { loading: store.Loading };
+    if (store && store.uiReducer) {
+        return { loading: store.uiReducer.Loading };
     }
 
     return { loading: false };
