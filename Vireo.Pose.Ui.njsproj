@@ -78,6 +78,8 @@
     <Folder Include="app\web\scss\global\" />
     <Folder Include="app\web\scss\greater-than-414\" />
     <Folder Include="node_modules\" />
+    <Folder Include="node_modules\%40types\" />
+    <Folder Include="node_modules\%40types\react-router\" />
     <Folder Include="node_modules\redux\" />
     <Folder Include="typings\" />
     <Folder Include="typings\mobx\" />
@@ -132,6 +134,7 @@
     <TypeScriptCompile Include="app\lib\POSE\Flux\ActionNames.ts" />
     <TypeScriptCompile Include="app\lib\POSE\Flux\reducers.ts" />
     <TypeScriptCompile Include="app\lib\POSE\Flux\Reducers\UIReducer.ts" />
+    <TypeScriptCompile Include="node_modules\%40types\react-router\index.d.ts" />
     <TypeScriptCompile Include="node_modules\redux\index.d.ts" />
     <TypeScriptCompile Include="typings\index.d.ts" />
     <TypeScriptCompile Include="typings\mobx\index.d.ts" />
