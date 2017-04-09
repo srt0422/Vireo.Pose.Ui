@@ -1,4 +1,6 @@
-let Platform, process;
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var Platform, process;
 try {
     Platform = require("react-native");
 }
@@ -17,7 +19,7 @@ finally {
         process = require("process");
     }
 }
-let configuration = {
+var configuration = {
     FacebookAppId: "775514852467101",
     Twitter: {
         consumerKey: "4jtgZPwRFMtCXXjuWadM2MqNC",
@@ -32,5 +34,5 @@ switch (process.env.NODE_ENV) {
         configuration.SharingUrl = "http://poseapi.cloudvireo.com/"; //"https://localhost:44317/";
         break;
 }
-export var config = configuration;
-export default configuration;
+exports.config = configuration;
+exports.default = configuration;

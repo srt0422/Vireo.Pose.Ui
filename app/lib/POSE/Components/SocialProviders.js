@@ -1,9 +1,14 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //module POSE.SocialMedia {
-//module POSE.SocialMedia {
-export default class SocialProviders {
-}
+var SocialProviders = (function () {
+    function SocialProviders() {
+    }
+    return SocialProviders;
+}());
 SocialProviders.Facebook = "facebook";
 SocialProviders.Twitter = "twitter";
 SocialProviders.LinkedIn = "linkedin";
 SocialProviders.Google_Plus = "google_plus";
+exports.default = SocialProviders;
 //}

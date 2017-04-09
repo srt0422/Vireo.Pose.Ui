@@ -10,17 +10,24 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
+//module POSE.Html {
 var React = require("react");
-var renderer_1 = require("./SharingContentComponentRenderer/renderer");
-var SharingContentComponent = (function (_super) {
-    __extends(SharingContentComponent, _super);
-    function SharingContentComponent() {
+var BootstrapContainerLayout = (function (_super) {
+    __extends(BootstrapContainerLayout, _super);
+    function BootstrapContainerLayout() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    SharingContentComponent.prototype.render = function () {
-        return renderer_1.default.call(this);
+    BootstrapContainerLayout.prototype.render = function () {
+        return (<div className={this.props.styles.container}>
+                <div className={this.props.styles.row}>
+                    <div className={this.props.styles["col-sm-12"]}>
+                        {this.props.children}
+                    </div>
+                </div>
+            </div>);
     };
-    return SharingContentComponent;
+    return BootstrapContainerLayout;
 }(React.Component));
-exports.SharingContentComponent = SharingContentComponent;
-exports.default = SharingContentComponent;
+exports.default = BootstrapContainerLayout;
+//export = BootstrapContainerLayout;
+//} 
