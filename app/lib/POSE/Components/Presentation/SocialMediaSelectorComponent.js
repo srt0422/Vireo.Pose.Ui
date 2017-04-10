@@ -1,8 +1,26 @@
-import renderer from "./SocialMediaSelectorComponentRenderer/renderer";
-import * as React from "react";
-export class SocialMediaSelectorComponent extends React.Component {
-    render() {
-        return renderer.call(this);
+"use strict";
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+var renderer_1 = require("./SocialMediaSelectorComponentRenderer/renderer");
+var React = require("react");
+var SocialMediaSelectorComponent = (function (_super) {
+    __extends(SocialMediaSelectorComponent, _super);
+    function SocialMediaSelectorComponent() {
+        return _super !== null && _super.apply(this, arguments) || this;
     }
-}
-export default SocialMediaSelectorComponent;
+    SocialMediaSelectorComponent.prototype.render = function () {
+        return renderer_1.default.call(this);
+    };
+    return SocialMediaSelectorComponent;
+}(React.Component));
+exports.SocialMediaSelectorComponent = SocialMediaSelectorComponent;
+exports.default = SocialMediaSelectorComponent;

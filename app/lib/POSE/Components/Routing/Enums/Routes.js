@@ -1,8 +1,9 @@
 //module POSE {
-//module POSE {
-export const App = "/";
-export const Post = "post";
-export const Pose = "pose";
-export const Auth = "auth";
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.App = "/";
+exports.Post = "post";
+exports.Pose = "pose";
+exports.Auth = "auth";
 //export = Routes;
 //} 

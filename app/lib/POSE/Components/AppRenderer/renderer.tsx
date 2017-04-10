@@ -14,8 +14,8 @@ try {
 }
 catch (e) {
     styles = {};
-    throw e;
 }
+
 const fn = function () {
 
     return (

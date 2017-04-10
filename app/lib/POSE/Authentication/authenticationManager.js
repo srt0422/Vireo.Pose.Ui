@@ -1,5 +1,7 @@
 //import OAuthManager from 'react-native-oauth';
 //import config from "../../../config/config"
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //let manager;
 //manager = manager || new OAuthManager('POSE');
 //manager.configure({
@@ -11,6 +13,5 @@
 //export async function signInToTwitter() {
 //    return await manager.authorize("twitter");
 //}
-//import OAuthManager from 'react-native-oauth';
-export var manager = {};
-export default manager;
+exports.manager = {};
+exports.default = exports.manager;
