@@ -6,23 +6,18 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-let authInfo;
-export function fillSharingProviderWithAuthInfo(sharingProvider) {
-    sharingProvider.setAuthToken(authInfo.accessToken);
-}
-export function ensureLoggedIn() {
+import OAuthManager from 'react-native-oauth';
+import config from "../../../config/config";
+let manager = {};
+manager = manager || new OAuthManager('POSE');
+manager.configure({
+    twitter: {
+        consumer_key: config.Twitter.consumerKey,
+        consumer_secret: config.Twitter.consumerKey
+    }
+});
+export function signInToTwitter() {
     return __awaiter(this, void 0, void 0, function* () {
-        return new Promise((fullfill, reject) => {
-            try {
-                IN.User.authorize((options) => {
-                    authInfo = { accessToken: IN.ENV.auth.oauth_token };
-                    fullfill();
-                });
-            }
-            catch (e) {
-                console.log("failed linkedin auth");
-                reject(e);
-            }
-        });
+        return yield manager.authorize("twitter");
     });
 }

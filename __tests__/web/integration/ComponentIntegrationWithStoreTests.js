@@ -1,29 +1,27 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-require("mocha");
-var chai_1 = require("chai");
-var enzyme_1 = require("enzyme");
-var React = require("react");
-var Store_1 = require("../../../app/lib/POSE/Flux/Store");
-var App_1 = require("../../../app/lib/POSE/Components/App");
-var loadingActions = require("../../../app/lib/POSE/Flux/Actions/LoadingActions");
-describe("Component integration with flux store tests", function () {
-    var testAppComponent = null;
-    beforeEach(function () {
+import "mocha";
+import { assert } from "chai";
+import { shallow } from 'enzyme';
+import * as React from "react";
+import Store from "../../../app/lib/POSE/Flux/Store";
+import { App } from "../../../app/lib/POSE/Components/App";
+import * as loadingActions from "../../../app/lib/POSE/Flux/Actions/LoadingActions";
+describe("Component integration with flux store tests", () => {
+    let testAppComponent = null;
+    beforeEach(() => {
     });
-    afterEach(function () {
+    afterEach(() => {
         testAppComponent = null;
         loadingActions.StopLoading();
     });
-    it("should not show loader", function () {
-        testAppComponent = enzyme_1.shallow(<App_1.App />);
-        chai_1.assert.strictEqual(testAppComponent.find("LoadingScreen").length, 0);
+    it("should not show loader", () => {
+        testAppComponent = shallow(<App />);
+        assert.strictEqual(testAppComponent.find("LoadingScreen").length, 0);
         loadingActions.StopLoading();
-        chai_1.assert.strictEqual(testAppComponent.find("LoadingScreen").length, 0);
+        assert.strictEqual(testAppComponent.find("LoadingScreen").length, 0);
     });
-    it("should show loader", function () {
+    it("should show loader", () => {
         loadingActions.StartLoading();
-        testAppComponent = enzyme_1.shallow(<App_1.App loading={Store_1.default.getState().Loading}/>);
-        chai_1.assert.strictEqual(testAppComponent.find("LoadingScreen").length, 1);
+        testAppComponent = shallow(<App loading={Store.getState().Loading}/>);
+        assert.strictEqual(testAppComponent.find("LoadingScreen").length, 1);
     });
 });
