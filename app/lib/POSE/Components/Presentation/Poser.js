@@ -35,6 +35,7 @@ export default class Poser extends React.Component {
             .catch(() => loadingActions.StopLoading());
         loadingActions.StartLoading();
     }
+    //TODO: find out why ios picker always resets to devault value
     componentWillMount() {
         this.setState({
             type: "text",
@@ -48,3 +49,9 @@ export default class Poser extends React.Component {
         });
     }
 }
+//export default connect((store) => { return { loading: store.Loading }; })(Poser);
+//export default Relay.createContainer<any>(Poser, {
+//    fragments: {
+//        post: () => postStore.getFragment()
+//    }
+//});

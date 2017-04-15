@@ -14,14 +14,15 @@ describe("Component integration with flux store tests", () => {
         loadingActions.StopLoading();
     });
     it("should not show loader", () => {
-        testAppComponent = shallow(<App />);
-        assert.strictEqual(testAppComponent.find("LoadingScreen").length, 0);
+        testAppComponent = shallow(<App loading={Store.getState().uiReducer.Loading}/>);
+        assert.strictEqual(testAppComponent.find("LoadingScreen").props().loading, false);
         loadingActions.StopLoading();
-        assert.strictEqual(testAppComponent.find("LoadingScreen").length, 0);
+        testAppComponent.setState({ loading: Store.getState().uiReducer.Loading });
+        assert.strictEqual(testAppComponent.find("LoadingScreen").props().loading, false);
     });
     it("should show loader", () => {
         loadingActions.StartLoading();
-        testAppComponent = shallow(<App loading={Store.getState().Loading}/>);
+        testAppComponent = shallow(<App loading={Store.getState().uiReducer.Loading}/>);
         assert.strictEqual(testAppComponent.find("LoadingScreen").length, 1);
     });
 });

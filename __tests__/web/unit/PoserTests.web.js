@@ -5,7 +5,7 @@ import * as React from "react";
 import * as sinon from "sinon";
 import rewire from "rewire";
 import Poser from "../../../app/lib/POSE/Components/Presentation/Poser";
-describe("Poser Screen Test Suite", () => {
+describe("Poser Test Suite", () => {
     let testPoser = null;
     let rewiredPoser;
     beforeEach(() => {
@@ -23,6 +23,7 @@ describe("Poser Screen Test Suite", () => {
         let postStoreMock = sinon.mock({ setContent: () => { }, save: () => { } });
         let loadingActionsMock = sinon.mock({ StartLoading: () => { }, StopLoading: () => { } });
         let savePromiseMock = sinon.mock({ then: () => { } });
+        let savePromiseCatchMock = sinon.mock({ catch: () => { } });
         let revertPostStore = rewiredPoser.__set__("postStore", postStoreMock.object);
         let revertLoadingActions = rewiredPoser.__set__("loadingActions", loadingActionsMock.object);
         let poserInstance = new rewiredPoser.default();
@@ -31,7 +32,7 @@ describe("Poser Screen Test Suite", () => {
         postStoreMock.expects("save")
             .once()
             .returns(savePromiseMock.object);
-        let expectation = savePromiseMock.expects("then").once();
+        let expectation = savePromiseMock.expects("then").once().returns(savePromiseCatchMock.object);
         loadingActionsMock.expects("StartLoading").once();
         loadingActionsMock.expects("StopLoading").once();
         poserInstance.onClick();

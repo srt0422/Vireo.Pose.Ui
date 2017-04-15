@@ -5,6 +5,7 @@ try {
 catch (e) {
 }
 finally {
+    // const {Platform} = ReactNative;
     if (Platform && (Platform.OS === "ios" || Platform.OS !== "android")) {
         process = {
             env: {
@@ -28,7 +29,7 @@ switch (process.env.NODE_ENV) {
         configuration.SharingUrl = "http://poseapi.cloudvireo.com/";
         break;
     default:
-        configuration.SharingUrl = "http://poseapi.cloudvireo.com/";
+        configuration.SharingUrl = "http://poseapi.cloudvireo.com/"; //"https://localhost:44317/";
         break;
 }
 export var config = configuration;

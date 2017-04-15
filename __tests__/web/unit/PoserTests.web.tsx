@@ -13,7 +13,7 @@ import rewire, { RewireInterfaces } from "rewire";
 import LoadingScreen from "../../../app/lib/POSE/Components/Presentation/LoadingScreen";
 import Poser from "../../../app/lib/POSE/Components/Presentation/Poser";
 
-describe("Poser Screen Test Suite", () => {
+describe("Poser Test Suite", () => {
 
     let testPoser: ShallowWrapper<any, any> = null;
     let rewiredPoser: any; //RewireInterfaces.RewiredModule;// : { default: () => React.Component<any, any> } ;
@@ -39,6 +39,7 @@ describe("Poser Screen Test Suite", () => {
         let loadingActionsMock: any = sinon.mock({ StartLoading: () => { }, StopLoading: () => { } });
 
         let savePromiseMock: any = sinon.mock({ then: () => { } });
+        let savePromiseCatchMock: any = sinon.mock({ catch: () => { } });
 
         let revertPostStore = rewiredPoser.__set__("postStore", postStoreMock.object);
         let revertLoadingActions = rewiredPoser.__set__("loadingActions", loadingActionsMock.object);
@@ -53,7 +54,7 @@ describe("Poser Screen Test Suite", () => {
             .once()
             .returns(savePromiseMock.object);
 
-        let expectation = savePromiseMock.expects("then").once();
+        let expectation = savePromiseMock.expects("then").once().returns(savePromiseCatchMock.object);
 
         loadingActionsMock.expects("StartLoading").once();
 
