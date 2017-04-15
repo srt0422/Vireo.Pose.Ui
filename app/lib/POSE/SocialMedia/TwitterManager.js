@@ -7,6 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import * as firebaseImport from "firebase";
+//const twitterLoginHelper: ITwitterLoginHelper = new TwitterLoginHelper();
 const firebase = firebaseImport;
 const accessInfo = {};
 export function fillSharingProviderWithAuthInfo(sharingProvider) {

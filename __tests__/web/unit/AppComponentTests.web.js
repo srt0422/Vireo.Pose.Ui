@@ -11,10 +11,11 @@ describe("App component Test Suite", () => {
         testAppComponent = null;
     });
     it("Should render", () => {
-        testAppComponent = shallow(<App />);
+        testAppComponent = shallow(<App loading={false}/>);
         assert.strictEqual(testAppComponent.find("FacebookSdk").length, 1);
         assert.strictEqual(testAppComponent.find("BootstrapContainerLayout").length, 1);
-        assert.strictEqual(testAppComponent.find("LoadingScreen").length, 0);
+        assert.strictEqual(testAppComponent.find("LoadingScreen").length, 1);
+        assert.strictEqual(testAppComponent.find("LoadingScreen").props().loading, false);
     });
     it("Should show loading screen", () => {
         testAppComponent = shallow(<App loading={true}/>);
@@ -22,6 +23,7 @@ describe("App component Test Suite", () => {
     });
     it("Should not show loading screen", () => {
         testAppComponent = shallow(<App loading={false}/>);
-        assert.equal(testAppComponent.find("LoadingScreen").length, 0);
+        assert.equal(testAppComponent.find("LoadingScreen").length, 1);
+        assert.strictEqual(testAppComponent.find("LoadingScreen").props().loading, false);
     });
 });

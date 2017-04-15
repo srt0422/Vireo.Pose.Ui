@@ -22,6 +22,6 @@ describe("FluxStore Test Suite", () => {
 
     it("should not be loading", () => {
 
-        assert.isFalse(Store.getState().Loading);
+        assert.isFalse(Store.getState().uiReducer.Loading);
     });
 });
