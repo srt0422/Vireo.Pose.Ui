@@ -2,10 +2,11 @@ import React, {Component} from 'react';
 import {AppRegistry, StyleSheet, Text, View, Linking} from 'react-native';
 import Navigation from "./app/lib/POSE/Components/Routing/NativeNavigation";
 import App from "./app/lib/POSE/Components/App";
+import codePush from "react-native-code-push";
 
 import {Container, Header, Title, Content} from 'native-base';
-
-export default class PoseUi extends Component {
+@codePush
+ class PoseUi extends Component {
 
     render(){return <App></App>;}
 
@@ -44,3 +45,5 @@ const styles = StyleSheet.create({
 });
 
 AppRegistry.registerComponent('PoseUi', () => PoseUi);
+
+export default PoseUi;
