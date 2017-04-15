@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -48,6 +47,8 @@
 		EF248CF6FEB740B59849E50F /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 501D0AF3BBFE4BDF84CE388D /* Zocial.ttf */; };
 		FA28837E5CBB4AF2B90AB5F2 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 38C46A006FA649E598FC22EF /* FontAwesome.ttf */; };
 		FCCF5A5EFB5F4F978B5F0F7E /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C9DD956A1F924B4A8026922E /* SimpleLineIcons.ttf */; };
+		7E65F47558334F9397B54A5E /* libCodePush.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B8BB85AD6F3A4D288C78150F /* libCodePush.a */; };
+		F53F0AF66940433A8CCA7792 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 59C82AD479524B85923CE8A1 /* libz.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -328,6 +329,9 @@
 		E652614C2EC64B26BE4870C3 /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
 		ECE20E0C077E4A45AB2FF61A /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 		F94E2ADD4407444A95103C39 /* libRCTFBSDK.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRCTFBSDK.a; sourceTree = "<group>"; };
+		D973EEB874424671B91F7E70 /* CodePush.xcodeproj */ = {isa = PBXFileReference; name = "CodePush.xcodeproj"; path = "../node_modules/react-native-code-push/ios/CodePush.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		B8BB85AD6F3A4D288C78150F /* libCodePush.a */ = {isa = PBXFileReference; name = "libCodePush.a"; path = "libCodePush.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		59C82AD479524B85923CE8A1 /* libz.tbd */ = {isa = PBXFileReference; name = "libz.tbd"; path = "usr/lib/libz.tbd"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = sourcecode.text-based-dylib-definition; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -365,6 +369,8 @@
 				6E6FA56B676B4F9E8C547C02 /* libRCTFBSDK.a in Frameworks */,
 				770CB70AF17AAE1305050F27 /* Pods_PoseUi.framework in Frameworks */,
 				B521D402BE414D498E47393D /* libFirestack.a in Frameworks */,
+				7E65F47558334F9397B54A5E /* libCodePush.a in Frameworks */,
+				F53F0AF66940433A8CCA7792 /* libz.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -565,6 +571,7 @@
 				6FE437EC1E5F5B600076B37A /* FBSDKShareKit.framework */,
 				AB4390DAC1B01E3D0CC588AA /* Pods_PoseUi.framework */,
 				BF73CF1039922044ABE68030 /* Pods_PoseUiTests.framework */,
+				59C82AD479524B85923CE8A1 /* libz.tbd */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -597,6 +604,7 @@
 				90DB3CAD3EBC4ED29C2ED73F /* RCTFBSDK.xcodeproj */,
 				B42843205A604325BC47F927 /* Firestack.xcodeproj */,
 				0840EA6CEFE7426CA9F1A187 /* OAuthManager.xcodeproj */,
+				D973EEB874424671B91F7E70 /* CodePush.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -1213,6 +1221,7 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PoseUi.app/PoseUi";
@@ -1231,6 +1240,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
